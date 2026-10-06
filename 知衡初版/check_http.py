@@ -72,6 +72,7 @@ def main():
     code, _, data = request('/api/runs/' + run_id)
     result = json.loads(data)
     expected_calls = [2,3,5] if result['mode'] == 'llm' else [0]
+    if result.get('retrieval') and result['mode']=='llm':expected_calls=[3,4,5,6,7]
     check('研究记录完整保留当前模式的调用过程', code == 200 and len(result['model_calls']) in expected_calls)
     check('最新行业数据和补贴政策进入证据包',
           {'IND_010', 'IND_020', 'IND_022'}.issubset({e['source_id'] for e in result['evidence']}))

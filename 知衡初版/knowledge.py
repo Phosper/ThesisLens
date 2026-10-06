@@ -2,6 +2,7 @@
 import base64
 import datetime
 import hashlib
+import gzip
 import io
 import ipaddress
 import json
@@ -52,17 +53,26 @@ def decorate(r):
     s=source(r['source_id'])
     return dict(r,stock_code=s.get('stock_code'),publication_date=s['publication_date'],report_period=s.get('report_period'),
                 title=s['title'],company=s.get('company'),publisher=s['publisher'],source_url=s.get('url',''),ocr=0,
-                kind='financial' if s.get('report_period') else 'industry' if s['category']=='04_行业数据与政策' else 'announcement',date_conflict=False,revision_flag=False,
+                kind='financial' if s.get('report_period') else 'industry' if s['category']=='04_行业数据与政策' else 'announcement',date_conflict=bool(s.get('official_metadata',{}).get('date_conflict')),revision_flag=False,
                 user_imported=True,score=r.get('score',0),
                 file_url='/api/files/'+s['source_id']+(f"#page={r['pdf_page']}" if r.get('pdf_page') else ''))
 
 def search(query,code,cutoff,limit,kind='',period='',include_industry=True):
     match=' OR '.join('"'+t+'"' for t in list(dict.fromkeys(core.tokens(query)))[:45])
     if not match:return []
+    # Filter before LIMIT: excluded documents must not crowd out valid passages.
+    filters=['passage_fts MATCH ?','d.enabled=1',"json_extract(d.metadata,'$.publication_date')<=?"];params=[match,cutoff]
+    if code:
+        filters.append("(json_extract(d.metadata,'$.stock_code')=? OR json_extract(d.metadata,'$.stock_code') IS NULL)" if include_industry else "json_extract(d.metadata,'$.stock_code')=?")
+        params.append(code)
+    if period:filters.append("json_extract(d.metadata,'$.report_period')=?");params.append(period)
+    if kind:
+        filters.append("(CASE WHEN json_extract(d.metadata,'$.report_period') IS NOT NULL THEN 'financial' WHEN json_extract(d.metadata,'$.category')='04_行业数据与政策' THEN 'industry' ELSE 'announcement' END)=?")
+        params.append(kind)
     with connect() as db:
         rows=db.execute('''SELECT p.*,d.metadata,bm25(passage_fts) rank FROM passage_fts
             JOIN passages p ON p.id=passage_fts.rowid JOIN documents d ON d.id=p.source_id
-            WHERE passage_fts MATCH ? AND d.enabled=1 ORDER BY rank LIMIT 60''',(match,)).fetchall()
+            WHERE '''+' AND '.join(filters)+' ORDER BY rank LIMIT 180',params).fetchall()
     output=[]
     for raw in rows:
         r=dict(raw);s=json.loads(r.pop('metadata'))
@@ -104,7 +114,24 @@ class SafeRedirect(urllib.request.HTTPRedirectHandler):
         allowed_url(newurl)
         return super().redirect_request(req,fp,code,msg,headers,newurl)
 
-def import_document(body,on_step=None):
+def fetch_document(url):
+    allowed_url(url)
+    try:
+        req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 ThesisLens/0.3 PublicResearch',
+            'Referer':'https://www.sse.com.cn/' if urllib.parse.urlparse(url).hostname.endswith('sse.com.cn') else 'https://www.cninfo.com.cn/' if urllib.parse.urlparse(url).hostname.endswith('cninfo.com.cn') else url})
+        with urllib.request.build_opener(SafeRedirect()).open(req,timeout=35) as fp:
+            raw=fp.read(20*1024*1024+1);ctype=fp.headers.get('Content-Type','')
+        if raw.startswith(b'\x1f\x8b'):
+            with gzip.GzipFile(fileobj=io.BytesIO(raw)) as compressed:raw=compressed.read(20*1024*1024+1)
+    except (OSError,ValueError) as exc:
+        if isinstance(exc,ValueError):raise
+        raise ValueError('公开网址暂时无法读取。可以从发布方下载后上传，系统不会绕过访问验证。') from None
+    is_pdf=raw.startswith(b'%PDF-')
+    if (urllib.parse.urlparse(url).path.lower().endswith('.pdf') or 'pdf' in ctype.lower()) and not is_pdf:
+        raise ValueError('来源没有返回PDF原件，可能是访问提示。请从发布方手动下载后上传，未将提示网页存为证据。')
+    return raw,'pdf' if is_pdf else 'html'
+
+def import_document(body,on_step=None,verified_metadata=None):
     title=str(body.get('title','')).strip()[:200]
     if not title:raise ValueError('请填写资料标题')
     date=str(body.get('publication_date',''))
@@ -126,14 +153,7 @@ def import_document(body,on_step=None):
     elif body.get('text'):
         raw=str(body['text']).encode('utf-8');suffix='txt'
     elif url:
-        allowed_url(url)
-        try:
-            req=urllib.request.Request(url,headers={'User-Agent':'ThesisLens/0.2 PublicResearch'})
-            with urllib.request.build_opener(SafeRedirect()).open(req,timeout=35) as fp:
-                raw=fp.read(20*1024*1024+1);ctype=fp.headers.get('Content-Type','');suffix='pdf' if 'pdf' in ctype else 'html'
-        except (OSError,ValueError) as exc:
-            if isinstance(exc,ValueError):raise
-            raise ValueError('公开网址暂时无法读取。可以从发布方下载后上传，系统不会绕过访问验证。') from None
+        raw,suffix=fetch_document(url)
     else:raise ValueError('请上传文件、粘贴正文或填写公开网址')
     if not raw or len(raw)>20*1024*1024:raise ValueError('单份资料限20MB')
     if raw.startswith(b'%PDF-'):suffix='pdf'
@@ -161,6 +181,8 @@ def import_document(body,on_step=None):
         if len(text.strip())<30:raise ValueError('有效正文至少30字')
         pages_data=[(None,text[:1000000])]
     digest=hashlib.sha256(raw).hexdigest();sid='CUSTOM_'+digest[:16]
+    base_duplicate=next((s for s in core.base_manifest()['sources'] if s.get('sha256')==digest),None)
+    if base_duplicate:return {'source_id':base_duplicate['source_id'],'title':base_duplicate['title'],'duplicate':True,'note':'原件摘要与基础资料相同，复用已有原件。'}
     existing=source(sid)
     if existing:
         if not existing['enabled']:set_enabled(sid,True)
@@ -171,7 +193,8 @@ def import_document(body,on_step=None):
             'publisher':str(body.get('publisher','用户补充资料'))[:100],'publication_date':date,'url':url,
             'relative_path':file.relative_to(core.APP).as_posix(),'storage':'user-library','category':'01_公司财报' if period else '03_经营公告与调研' if code else '04_行业数据与政策',
             'sha256':digest,'page_count':len(pages_data) if suffix=='pdf' else None,'imported_at':core.now(),
-            'provenance_note':'用户补充的来源与披露日期，仍需人工核对元数据。'}
+            'provenance_note':'官方公告列表提供标题、公司和披露日期；正文与原页仍需核验。' if verified_metadata else '用户补充的来源与披露日期，仍需人工核对元数据。'}
+    if verified_metadata:record['official_metadata']=dict(verified_metadata)
     with connect() as db:
         db.execute('INSERT INTO documents(id,metadata) VALUES (?,?)',(sid,core.json_dump(record)))
         for page,text in pages_data:

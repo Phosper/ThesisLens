@@ -50,7 +50,7 @@ def make_plan(code,cutoff,question,period,mode):
     plan['missing']=plan.get('missing',[])[:5] if isinstance(plan.get('missing',[]),list) else []
     return plan,log
 
-def collect_evidence(code,cutoff,question,period,plan=None,tool_log=None):
+def collect_evidence(code,cutoff,question,period,plan=None,tool_log=None,semantic_rows=None):
     evidence=[];seen=set()
     def add(rows):
         for r in rows:
@@ -65,6 +65,7 @@ def collect_evidence(code,cutoff,question,period,plan=None,tool_log=None):
     for m in metrics:
         add([core.page_evidence(m['source_id'],m['page'])])
         for calculation in m['calculations'].values():add([core.page_evidence(m['source_id'],calculation['pdf_page'])])
+    add(semantic_rows or [])
     add(core.search(question,code,cutoff,5,period=period or '',include_industry=False))
     add(core.search('汇兑 衍生金融工具 扣非 风险 经营现金流',code,cutoff,3,period=period or '',include_industry=False))
     add(core.search('投资者关系经营风险 回购 关联交易',code,cutoff,2,kind='announcement'))
@@ -85,7 +86,11 @@ def collect_evidence(code,cutoff,question,period,plan=None,tool_log=None):
             if tool_log is not None:tool_log.append({'tool':'search_evidence','input':{'query':sub['query'],'code':code,'cutoff':cutoff,'period':use_period,'kind':kind},
                                                    'output':[{'source_id':e['source_id'],'locator':e['locator']} for e in rows]})
     add(core.search(question,code,cutoff,2))
-    evidence=evidence[:24]
+    mandatory={(m['source_id'],c['pdf_page']) for m in metrics for c in m['calculations'].values()}
+    pinned={'IND_020','IND_022'}|({latest['source_id']} if retail else set())
+    required=[e for e in evidence if (e['source_id'],e.get('pdf_page')) in mandatory or e['source_id'] in pinned]
+    other=[e for e in evidence if (e['source_id'],e.get('pdf_page')) not in mandatory and e['source_id'] not in pinned]
+    evidence=(required+other)[:24]
     for i,e in enumerate(evidence,1): e['citation']=f'E{i}'
     return evidence,metrics
 
@@ -150,6 +155,10 @@ def markdown(result):
     if result.get('plan'):
         lines.append('\n## 研究计划与分主题检索\n')
         for q in result['plan']['questions']:lines.append('- '+q['topic']+'：'+q['query']+'\n')
+    if result.get('retrieval'):
+        r=result['retrieval'];lines.append('\n## 检索方法与语义重排\n')
+        lines.append(f"检索记录：{r['id']}；候选数：{r['candidate_count']}；实际模式：{r['mode']}。{r['method']}。\n")
+        for q in r['queries']:lines.append('- '+q+'\n')
     if result.get('valuation'):
         lines.append('\n## 估值情景（用户假设）\n')
         v=result['valuation']
@@ -184,9 +193,18 @@ def run(code,cutoff,question,mode='local',on_step=None,options=None):
     plan,log=make_plan(code,cutoff,question,period,mode)
     if log:model_logs.append(dict(log,purpose='研究规划'))
     step('拆解研究问题',f"形成{len(plan['questions'])}个分主题检索任务与待验证假设")
-    evidence,metrics=collect_evidence(code,cutoff,question,period,plan,tool_log)
+    semantic_result=None
+    if mode=='llm' and options.get('semantic_retrieval'):
+        import retrieval
+        step('理解与重排证据','展开问题表述，按公司和截止日召回候选，再评估原文相关性')
+        semantic_result=retrieval.search(question,code,cutoff,8,period='' if any(w in question for w in ['行业','政策','公告','回购']) else period or '')
+        model_logs.extend(semantic_result['model_calls'])
+        tool_log.append({'tool':'semantic_search','input':{'question':question,'code':code,'cutoff':cutoff},
+            'search_id':semantic_result['id'],'queries':semantic_result['queries'],'mode':semantic_result['mode'],
+            'output':[{'source_id':e['source_id'],'locator':e['locator'],'relevance':e.get('semantic_relevance'),'reason':e.get('semantic_reason')} for e in semantic_result['data']]})
+    evidence,metrics=collect_evidence(code,cutoff,question,period,plan,tool_log,semantic_result['data'] if semantic_result else None)
     if not evidence: raise ValueError('这个研究时点未找到可引用资料，请调整日期或问题')
-    step('检索证据',f'取回{len(evidence)}条可回看原件的证据；中文关键词检索、公司与披露日期过滤')
+    step('检索证据',f'取回{len(evidence)}条可回看原件的证据；'+('多路关键词召回与语义重排' if semantic_result and semantic_result['mode']=='semantic' else '中文关键词检索')+'；公司与披露日期过滤')
     step('计算与核对',f'{len(metrics)}家公司同期间指标；Decimal金额换算与同比校验，保留基期和公式')
     selected_valuation=None
     if options.get('valuation_id'):
@@ -239,11 +257,13 @@ def run(code,cutoff,question,mode='local',on_step=None,options=None):
     if any(e.get('user_imported') for e in evidence):warnings.append('含用户补充资料，来源和披露日期元数据需人工核对')
     warnings.extend(['估值采用用户假设，不形成目标价或买卖评级' if selected_valuation else '本次没有附带估值情景，不给出目标价或买卖评级',
                      '引用存在不等于证据充分，论据与引用的支持关系仍需核验'])
+    if semantic_result:warnings.extend(semantic_result['warnings'])
     result={'id':uuid.uuid4().hex[:12],'created_at':core.now(),'code':code,'company':core.COMPANIES[code],
             'question':question.strip(),'cutoff':cutoff,'period':period,'mode':mode,
             'mode_label':'大模型分析 + 反向复核' if mode=='llm' else '资料模式 · 规则草稿',
             'draft':draft,'review':review,'evidence':evidence,'metrics':metrics,'warnings':list(dict.fromkeys(warnings)),
             'trace':trace,'model_calls':model_logs,'plan':plan,'tool_calls':tool_log,'valuation':selected_valuation,'previous_review':previous_review,
+            'retrieval':{k:v for k,v in semantic_result.items() if k not in ['data','model_calls']} if semantic_result else None,
             'dataset_sha256':hashlib.sha256(core.json_dump([(s['source_id'],s.get('sha256'),s['publication_date'],s.get('report_period')) for s in core.manifest()['sources']]).encode()).hexdigest(),
             'duration_seconds':round(time.monotonic()-started,2)}
     step('保存与导出','保存研究问题、证据、公式、模型输入输出与运行记录；可导出Markdown和JSON')

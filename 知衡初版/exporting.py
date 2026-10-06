@@ -32,6 +32,10 @@ def memo_html(run):
         pieces.append('<h2>估值情景（用户假设）</h2><ul>')
         for s in run['valuation']['pe_scenarios']:pieces.append(f'<li>{esc(s["label"])}：{esc(s["formula"])} = {esc(s["equity_value_yi"])}亿元</li>')
         pieces.append('</ul><p>情景结果不是目标价，假设与股数仍需核验。</p>')
+    if run.get('retrieval'):
+        r=run['retrieval'];pieces.append('<h2>检索方法</h2><p>'+esc(r['method'])+' · 检索记录 '+esc(r['id'])+'</p><ul>')
+        for q in r['queries']:pieces.append('<li>'+esc(q)+'</li>')
+        pieces.append('</ul>')
     pieces.append('<h2>核验记录</h2><p>'+paragraph(run['review']['summary'])+'</p><ul>')
     for issue in run['review'].get('issues',[]):pieces.append('<li>'+esc(issue.get('severity',''))+'：'+esc(issue.get('claim',''))+'；'+esc(issue.get('reason',''))+'</li>')
     pieces.append('</ul><h2>人工核验</h2><ul>')

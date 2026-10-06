@@ -1,0 +1,767 @@
+{
+  "version": "0.3.0",
+  "accepted_at": "2026-10-07T03:35:13+08:00",
+  "unit_tests": {
+    "passed": 38
+  },
+  "http_checks": {
+    "base_passed": 19,
+    "stage3_passed": 18,
+    "stage3": [
+      {
+        "name": "新版服务",
+        "passed": true
+      },
+      {
+        "name": "三家公司均已实测公告导入",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 000333",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 000333",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 600690",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 600690",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 000651",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 000651",
+        "passed": true
+      },
+      {
+        "name": "候选与已导入状态一致",
+        "passed": true
+      },
+      {
+        "name": "业绩说明会公告不误标成财报",
+        "passed": true
+      },
+      {
+        "name": "资料检索不调用模型",
+        "passed": true
+      },
+      {
+        "name": "独立检索记录可恢复",
+        "passed": true
+      },
+      {
+        "name": "语义研究任务已接受",
+        "passed": true
+      },
+      {
+        "name": "长任务防止重复发起",
+        "passed": true
+      },
+      {
+        "name": "语义检索任务接入完整备忘录",
+        "passed": true
+      },
+      {
+        "name": "排序失败不伪装为语义成功",
+        "passed": true
+      },
+      {
+        "name": "新流程仍保留财务原页与最新行业政策",
+        "passed": true
+      },
+      {
+        "name": "引用和日期完整有效",
+        "passed": true
+      }
+    ]
+  },
+  "retrieval_benchmark": {
+    "annotation_note": "初始开发验收标注：回看来源物理页的表头和正文后登记，仍需团队或金融评委复审；不是对模型事实正确率的测量。",
+    "metric": "Hit@5：前5条至少命中一个登记来源及物理页；MRR@5：首个命中名次的倒数。",
+    "case_sha256": "42b5a76e5a635aece83e3d618116be4fb040807ddfe19a39f929bf2f0a4e1edf",
+    "summary": {
+      "keyword": {
+        "hit_at_5": 0.3333333333333333,
+        "mrr_at_5": 0.1389
+      },
+      "semantic": {
+        "hit_at_5": 1.0,
+        "mrr_at_5": 0.7917
+      }
+    },
+    "samples": [
+      {
+        "id": "cash",
+        "question": "赚的钱真的收回来了吗",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "search_id": "780300f6099e",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 177,
+            "reason": "将净利润调节为经营现金流，直接展示利润与经营现金流入的匹配关系"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 99,
+            "reason": "现金流量表正表，包含销售商品提供劳务收到的现金等直接反映收款情况"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 7,
+            "reason": "主要财务指标，并列净利润与经营活动现金流量净额，可直接比较"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 51,
+            "reason": "包含经营活动现金流量净额与应收账款坏账损失变动，关联回款质量"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 147,
+            "reason": "应收账款账龄与坏账准备，直接反映已确认收入对应的收款进度"
+          }
+        ],
+        "queries": [
+          "赚的钱真的收回来了吗",
+          "美的集团 2026年半年度 经营活动现金流量净额 净利润",
+          "美的集团 2026H1 应收账款 周转率 回款",
+          "美的集团 2026年中期 销售商品提供劳务收到的现金 营业收入",
+          "美的集团 2026半年报 现金流 利润 匹配"
+        ],
+        "candidate_sha256": "64989ca748d4b19037bc4a66ddeb3437945a61e4c82db9400d024fed23c27a1b",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "000333",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      },
+      {
+        "id": "inventory",
+        "question": "钱是不是压在货上了",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.5,
+          "first_hit": 2
+        },
+        "mode": "semantic",
+        "search_id": "7b40e716c5c8",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 53,
+            "reason": "资产构成表直接列示存货期末金额及占总资产比例与变动，是判断资金是否压在货上的核心数据。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 154,
+            "reason": "存货附注给出库存商品、原材料等分类账面价值及跌价准备，直接反映存货占用资金规模与结构。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 96,
+            "reason": "资产负债表列示存货期末余额并与期初对比，直接支持资金占用分析。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 177,
+            "reason": "现金流量表补充资料含存货减少额，说明存货变动对经营现金流的影响，与是否压货部分相关。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 163,
+            "reason": "资产减值及损失准备表含存货跌价准备计提、转回和转销，部分反映存货积压风险。"
+          }
+        ],
+        "queries": [
+          "钱是不是压在货上了",
+          "美的集团 2026年半年报 存货 应收账款 经营活动现金流量净额",
+          "美的集团 2026H1 存货周转率 存货跌价准备 现金流",
+          "美的集团 2026年上半年 净利润 经营活动现金流 差异",
+          "美的集团 2026H1 应收账款周转 存货占比 营运资金"
+        ],
+        "candidate_sha256": "7ef5c8598a3e831708d9df0c3b96e11804a342fbb2ec1a92198ca7412c9fe3ab",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "000333",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      },
+      {
+        "id": "overseas",
+        "question": "国外生意占多少",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "search_id": "f66e064ef153",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 52,
+            "reason": "分地区附注直接列示海外收入金额及占比，直接回答国外生意占比。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 17,
+            "reason": "管理层概述海外销售额占比超四成，属解释性表述，可辅助佐证。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 58,
+            "reason": "风险披露提及海外收入占整体收入四成以上，提供定性占比线索。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 29,
+            "reason": "介绍海外OBM业务发展，未给出整体海外收入占比数据。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 18,
+            "reason": "说明OBM占智能家居海外收入比例，非整体海外生意占比。"
+          }
+        ],
+        "queries": [
+          "国外生意占多少",
+          "美的集团 2026年上半年 境外收入 占比",
+          "美的集团 2026年半年报 分地区收入 国外",
+          "美的集团 2026H1 海外收入 地区分部",
+          "美的集团 2026年中报 境外营业收入 比例"
+        ],
+        "candidate_sha256": "99ec394c853845b4f765c2cd388cb19b60af90d753c3b74cf9172d144505a543",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "000333",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      },
+      {
+        "id": "fx",
+        "question": "外币波动会不会影响利润",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.25,
+          "first_hit": 4
+        },
+        "mode": "semantic",
+        "search_id": "3bc4c265d130",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 7,
+            "reason": "直接说明扣非净利润同比下降因汇率持续走高导致汇兑损失，直接回应外币波动对利润的影响。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 173,
+            "reason": "财务收入附注列示汇兑损益本期与上年同期数据，量化外币波动对利润表项目的影响。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 50,
+            "reason": "主要财务数据变动表指出财务费用变动主要系汇兑损失增加，直接联系外币波动与利润。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 58,
+            "reason": "风险因素部分说明汇率大幅波动可能造成汇兑损失并增加财务成本，属定性解释。"
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 56,
+            "reason": "披露外汇合约、套期保值效果及衍生品实际损益，涉及汇率风险管理与利润影响。"
+          }
+        ],
+        "queries": [
+          "外币波动会不会影响利润",
+          "美的集团 2026年半年报 汇兑损益",
+          "美的集团 2026H1 外币财务报表折算差额",
+          "美的集团 2026半年报 汇率波动 风险 财务费用",
+          "美的集团 2026H1 外币货币性项目 汇兑影响"
+        ],
+        "candidate_sha256": "e727104a760b8ceb6b2d775bffba40780ebb40cefe7ce8aa39ff4e3c8e63b13b",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "000333",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      },
+      {
+        "id": "core_profit",
+        "question": "把一次性的收益拿掉后赚了多少",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "search_id": "65aaff6c85b8",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 7,
+            "reason": "直接列出扣非净利润，并披露非经常性损益合计，可直接回答剔除一次性收益后的利润。"
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 190,
+            "reason": "每股收益表直接列示扣除非经常损益后的基本每股收益，与问题直接相关。"
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 189,
+            "reason": "补充资料中非经常性损益明细表逐项列示一次性损益构成，支持扣非计算。"
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 8,
+            "reason": "说明其他符合非经常性损益定义项目的具体内容，辅助理解扣非口径。"
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 59,
+            "reason": "母公司利润表显示净利润及投资收益等，可部分辅助分析一次性收益来源。"
+          }
+        ],
+        "queries": [
+          "把一次性的收益拿掉后赚了多少",
+          "格力电器 2026年半年度报告 扣除非经常性损益后的净利润",
+          "格力电器 2026H1 非经常性损益明细",
+          "格力电器 2026年半年报 归母净利润 扣非归母净利润",
+          "格力电器 2026半年度 非经常性损益 投资收益 政府补助"
+        ],
+        "candidate_sha256": "7869d9a53148639509faefbeeee5646e65376f12f57ea317370e6aeb756b8056",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "000651",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      },
+      {
+        "id": "haier_cash",
+        "question": "卖东西收到的钱够不够付经营的支出",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.5,
+          "first_hit": 2
+        },
+        "semantic": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "search_id": "954f07555624",
+        "warnings": [],
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 74,
+            "reason": "合并现金流量表直接列示经营活动现金流入与流出，可判断销售收款是否覆盖经营支出"
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 75,
+            "reason": "母公司现金流量表经营活动部分含销售收款与各项经营支出，可部分回答但非合并口径"
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 16,
+            "reason": "管理层讨论提及经营现金流净额及同比变动原因，属解释性但涉及经营现金情况"
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 33,
+            "reason": "主要经营情况表列示营业收入、成本费用及经营活动现金流净额，可辅助分析"
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 6,
+            "reason": "主要会计数据含经营活动产生的现金流量净额，提供汇总性指标"
+          }
+        ],
+        "queries": [
+          "卖东西收到的钱够不够付经营的支出",
+          "海尔智家 2026年半年度 经营活动现金流入 流出 净额",
+          "海尔智家 2026年中报 销售商品提供劳务收到的现金",
+          "海尔智家 2026H1 经营活动现金流出 购买商品接受劳务支付现金",
+          "海尔智家 2026年半年报 经营活动现金流量净额 与净利润"
+        ],
+        "candidate_sha256": "6695c0290018f425379a227d900ea9354883e9aae9ea92a1fec7c382a288ca44",
+        "model": "deepseek-flash",
+        "scope": {
+          "code": "600690",
+          "cutoff": "2026-10-06",
+          "period": "2026-H1"
+        }
+      }
+    ],
+    "scope_limit": "固定的6个开发问题，非盲测；结果不代表整体准确率。语义排序理由仍需核验。"
+  },
+  "official_checks": [
+    {
+      "id": "70077b994968",
+      "created_at": "2026-10-07T03:25:58+08:00",
+      "start": "2026-08-01",
+      "end": "2026-10-07",
+      "code": "",
+      "keyword": "",
+      "count": 45,
+      "complete": true,
+      "companies": [
+        {
+          "code": "000333",
+          "company": "美的集团",
+          "official_total": 14,
+          "valid_count": 14,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        },
+        {
+          "code": "000651",
+          "company": "格力电器",
+          "official_total": 13,
+          "valid_count": 13,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        },
+        {
+          "code": "600690",
+          "company": "海尔智家",
+          "official_total": 18,
+          "valid_count": 18,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        }
+      ],
+      "queries": [
+        {
+          "endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+          "parameters": {
+            "pageNum": 1,
+            "pageSize": 30,
+            "column": "szse",
+            "tabName": "fulltext",
+            "stock": "000333,9900005965",
+            "searchkey": "",
+            "seDate": "2026-08-01~2026-10-07",
+            "sortName": "time",
+            "sortType": "desc",
+            "isHLtitle": "false"
+          },
+          "response_sha256": "2f3b1f9c451ee00c45b7f6d457b4372dac8ed5b18f189fc8f1d254aaddb45e84",
+          "code": "000333",
+          "page": 1
+        },
+        {
+          "endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+          "parameters": {
+            "pageNum": 1,
+            "pageSize": 30,
+            "column": "szse",
+            "tabName": "fulltext",
+            "stock": "000651,gssz0000651",
+            "searchkey": "",
+            "seDate": "2026-08-01~2026-10-07",
+            "sortName": "time",
+            "sortType": "desc",
+            "isHLtitle": "false"
+          },
+          "response_sha256": "7c340d395602daaf371eb365963edf4bd9315bbaedbae0ca0461c6cbf6754e15",
+          "code": "000651",
+          "page": 1
+        },
+        {
+          "endpoint": "https://query.sse.com.cn/security/stock/queryCompanyBulletin.do?isPagination=true&productId=600690&keyWord=&securityType=0101%2C120100%2C020100%2C020200%2C120200&pageHelp.pageSize=30&beginDate=2026-08-01&endDate=2026-10-07&pageHelp.pageNo=1",
+          "parameters": {
+            "isPagination": "true",
+            "productId": "600690",
+            "keyWord": "",
+            "securityType": "0101,120100,020100,020200,120200",
+            "pageHelp.pageSize": 30,
+            "beginDate": "2026-08-01",
+            "endDate": "2026-10-07",
+            "pageHelp.pageNo": 1
+          },
+          "response_sha256": "02338e5a2f1c4996af8b700342ea26082e56533f9ec7c0069a769ff8b62f5b03",
+          "code": "600690",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "67f6d9dd6cde",
+      "created_at": "2026-10-07T03:20:03+08:00",
+      "start": "2026-09-01",
+      "end": "2026-10-07",
+      "code": "",
+      "keyword": "",
+      "count": 17,
+      "complete": true,
+      "companies": [
+        {
+          "code": "000333",
+          "company": "美的集团",
+          "official_total": 8,
+          "valid_count": 8,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        },
+        {
+          "code": "000651",
+          "company": "格力电器",
+          "official_total": 1,
+          "valid_count": 1,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        },
+        {
+          "code": "600690",
+          "company": "海尔智家",
+          "official_total": 8,
+          "valid_count": 8,
+          "complete": true,
+          "error": null,
+          "note": "查询完整"
+        }
+      ],
+      "queries": [
+        {
+          "endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+          "parameters": {
+            "pageNum": 1,
+            "pageSize": 30,
+            "column": "szse",
+            "tabName": "fulltext",
+            "stock": "000333,9900005965",
+            "searchkey": "",
+            "seDate": "2026-09-01~2026-10-07",
+            "sortName": "time",
+            "sortType": "desc",
+            "isHLtitle": "false"
+          },
+          "response_sha256": "fff1a719081e46932dd4a59086aa34373062803796b3ecd0b745a4aae3a43d68",
+          "code": "000333",
+          "page": 1
+        },
+        {
+          "endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+          "parameters": {
+            "pageNum": 1,
+            "pageSize": 30,
+            "column": "szse",
+            "tabName": "fulltext",
+            "stock": "000651,gssz0000651",
+            "searchkey": "",
+            "seDate": "2026-09-01~2026-10-07",
+            "sortName": "time",
+            "sortType": "desc",
+            "isHLtitle": "false"
+          },
+          "response_sha256": "39ff0b1df8a2c4d6327d29f914f281dcf71b69b8ab7298a6d2695568f1bfa9f4",
+          "code": "000651",
+          "page": 1
+        },
+        {
+          "endpoint": "https://query.sse.com.cn/security/stock/queryCompanyBulletin.do?isPagination=true&productId=600690&keyWord=&securityType=0101%2C120100%2C020100%2C020200%2C120200&pageHelp.pageSize=30&beginDate=2026-09-01&endDate=2026-10-07&pageHelp.pageNo=1",
+          "parameters": {
+            "isPagination": "true",
+            "productId": "600690",
+            "keyWord": "",
+            "securityType": "0101,120100,020100,020200,120200",
+            "pageHelp.pageSize": 30,
+            "beginDate": "2026-09-01",
+            "endDate": "2026-10-07",
+            "pageHelp.pageNo": 1
+          },
+          "response_sha256": "42282126043460dc420abd373703415bdf2b395cec0b96c5a382fc406aa32fe7",
+          "code": "600690",
+          "page": 1
+        }
+      ]
+    }
+  ],
+  "imported_official_documents": [
+    {
+      "source_id": "CUSTOM_7f2be59f0f27be67",
+      "title": "关于全资子公司受让合伙企业份额暨与专业投资机构共同投资的公告",
+      "stock_code": "000333",
+      "publication_date": "2026-09-30",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588595.PDF",
+      "sha256": "7f2be59f0f27be67692232138eab38d3e78df549760b12dab78cb8002da0685a",
+      "page_count": 8,
+      "official_metadata": {
+        "announcement_id": "1225588595",
+        "discovery_id": "cninfo_dc86f3f3398fff83c40a",
+        "provider": "cninfo",
+        "query_endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+        "detail_url": "https://www.cninfo.com.cn/new/disclosure/detail?plate=szse&orgId=9900005965&stockCode=000333&announcementId=1225588595&announcementTime=2026-09-30",
+        "discovered_at": "2026-10-07T03:20:02+08:00",
+        "date_conflict": false
+      },
+      "provenance_note": "官方公告列表提供标题、公司和披露日期；正文与原页仍需核验。"
+    },
+    {
+      "source_id": "CUSTOM_2ed8d9840264d2ea",
+      "title": "海尔智家股份有限公司关于为控股子公司提供担保的公告",
+      "stock_code": "600690",
+      "publication_date": "2026-10-01",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-01/1225591356.PDF",
+      "sha256": "2ed8d9840264d2eacbbcecd9c3feb1aaef7e6b643c05cf4612410c2b8b85f097",
+      "page_count": 6,
+      "official_metadata": {
+        "announcement_id": "600690_20261001_FKJI.pdf",
+        "discovery_id": "sse_5926c570f9480b54ac99",
+        "provider": "sse",
+        "query_endpoint": "https://query.sse.com.cn/security/stock/queryCompanyBulletin.do",
+        "detail_url": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-01/600690_20261001_FKJI.pdf",
+        "discovered_at": "2026-10-07T03:25:58+08:00",
+        "date_conflict": false,
+        "original_url": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-01/600690_20261001_FKJI.pdf",
+        "file_verification": {
+          "provider": "cninfo",
+          "announcement_id": "1225591356",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-01/1225591356.PDF",
+          "publication_date": "2026-10-01",
+          "title": "海尔智家股份有限公司关于为控股子公司提供担保的公告",
+          "query_endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+          "parameters": {
+            "pageNum": 1,
+            "pageSize": 30,
+            "column": "sse",
+            "tabName": "fulltext",
+            "stock": "600690,gssh0600690",
+            "searchkey": "关于为控股子公司提供担保的公告",
+            "seDate": "2026-10-01~2026-10-01",
+            "sortName": "time",
+            "sortType": "desc",
+            "isHLtitle": "false"
+          },
+          "response_sha256": "717bcac7fe194163308ac5829dfb1f0d0a479f12c84b00e19d5376917db4bda2"
+        }
+      },
+      "provenance_note": "官方公告列表提供标题、公司和披露日期；正文与原页仍需核验。"
+    },
+    {
+      "source_id": "CUSTOM_8982682439668438",
+      "title": "关于会计政策变更的公告",
+      "stock_code": "000651",
+      "publication_date": "2026-08-27",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515008.PDF",
+      "sha256": "8982682439668438e124f52259c9528465b1bc1b343f816c0d73b13460864729",
+      "page_count": 2,
+      "official_metadata": {
+        "announcement_id": "1225515008",
+        "discovery_id": "cninfo_3bb9d6ff45922fcbe357",
+        "provider": "cninfo",
+        "query_endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+        "detail_url": "https://www.cninfo.com.cn/new/disclosure/detail?plate=szse&orgId=gssz0000651&stockCode=000651&announcementId=1225515008&announcementTime=2026-08-27",
+        "discovered_at": "2026-10-07T03:25:57+08:00",
+        "date_conflict": false,
+        "original_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515008.PDF"
+      },
+      "provenance_note": "官方公告列表提供标题、公司和披露日期；正文与原页仍需核验。"
+    }
+  ],
+  "local_source_count": 99,
+  "full_research": {
+    "id": "b72fe9c7e786",
+    "question": "美的集团2026年上半年赚的钱真的收回来了吗？请结合存货、汇兑损益和同行核验利润质量。",
+    "cutoff": "2026-10-06",
+    "period": "2026-H1",
+    "mode": "llm",
+    "retrieval_mode": "semantic",
+    "model_calls": 7,
+    "purposes": [
+      "研究规划",
+      "检索问题改写",
+      "证据语义重排",
+      "研究写作",
+      "反向复核",
+      "根据反证修订",
+      "修订后复核"
+    ],
+    "evidence_count": 21,
+    "trace_steps": 10,
+    "seconds": 43.89,
+    "revised": true,
+    "model": "deepseek-flash",
+    "data_sha256": "fe6279f50fe6cd7ee17778d048e1dba5d2b64b6a92c1241f68a1396eb8b4e877"
+  },
+  "verified_failure_handling": [
+    "未知候选编号不进入语义结果，显式退回关键词候选",
+    "PDF网址返回访问提示时拒绝入库",
+    "上交所文件不可读取时严格匹配巨潮同公司、同日、同名副本",
+    "分页或接口异常显示不完整",
+    "重复来源字节摘要复用",
+    "新公告不进入更早截止日研究"
+  ],
+  "remaining": [
+    "尚未使用向量召回",
+    "公告检查需要点击，不是无人值守定时监测",
+    "正文元数据与引用支持关系仍需人工核对",
+    "资产负债、分部、股本结构化与自动OCR尚未实现"
+  ],
+  "runtime_note": "模型输入输出、检索记录、查询与导入数据库及原件保存于本机data目录，不随仓库上传；验收记录仅保存公开资料摘要。"
+}

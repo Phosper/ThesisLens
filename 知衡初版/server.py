@@ -21,6 +21,8 @@ import workbench
 import knowledge
 import questions
 import exporting
+import retrieval
+import announcements
 
 JOBS={};JOBS_LOCK=threading.Lock();RESEARCH_GATE=threading.BoundedSemaphore(1)
 
@@ -32,6 +34,9 @@ def job_work(job_id,body,operation='research'):
             result=research.run(body.get('code','000333'),body.get('cutoff','2026-10-06'),body.get('question',''),body.get('mode','local'),progress,body.get('options'))
             payload={'run_id':result['id']}
         elif operation=='import':payload={'result':knowledge.import_document(body,progress)}
+        elif operation=='retrieval':payload={'result':retrieval.search(body.get('question',''),body.get('code',''),body.get('cutoff','2026-10-06'),body.get('limit',14),period=body.get('period',''),semantic=bool(body.get('semantic',True)),on_step=progress)}
+        elif operation=='discover':payload={'result':announcements.discover(body,progress)}
+        elif operation=='official_import':payload={'result':announcements.import_selected(body,progress)}
         else:payload={'result':questions.answer(body)}
         with JOBS_LOCK: JOBS[job_id].update(status='complete',**payload)
     except Exception as exc:
@@ -40,7 +45,7 @@ def job_work(job_id,body,operation='research'):
     finally: RESEARCH_GATE.release()
 
 class Handler(BaseHTTPRequestHandler):
-    server_version='Zhiheng/0.2'
+    server_version='Zhiheng/0.3'
 
     def log_message(self,*args):
         pass  # No URLs, user questions or credentials in access logs.
@@ -92,7 +97,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if path=='/api/status':
                 with core.connect() as db: index=dict(db.execute('SELECT key,value FROM meta').fetchall())
-                return self.reply({'version':'0.2.0','name':'知衡','instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
+                return self.reply({'version':'0.3.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
                       'companies':core.COMPANIES,'dataset':core.manifest()['stats'],
                       'cutoff':core.manifest()['research_cutoff'],'index':index,'model':model.get_config(),
                       'financial_coverage':financials.history(cutoff=core.manifest()['research_cutoff'])['coverage'],
@@ -107,6 +112,8 @@ class Handler(BaseHTTPRequestHandler):
             if path.startswith('/api/valuations/'):return self.reply(workbench.get_valuation(path.rsplit('/',1)[-1]))
             if path=='/api/watchlist':return self.reply(workbench.watchlist(get('cutoff','2026-10-06')))
             if path=='/api/knowledge':return self.reply({'data':knowledge.sources(True),'allowed_domains':knowledge.ALLOWED})
+            if path=='/api/announcements':return self.reply(announcements.list_candidates(get('code'),get('start'),get('end'),get('keyword')))
+            if path.startswith('/api/retrieval/'):return self.reply(retrieval.get(path.rsplit('/',1)[-1]))
             if path=='/api/questions':return self.reply({'data':questions.history(get('run_id'))})
             if path=='/api/metrics': return self.reply({'data':core.metric_rows(get('period','2026-H1'),get('cutoff','2026-10-06'))})
             if path=='/api/search': return self.reply({'data':core.search(get('q'),get('code'),get('cutoff','2026-10-06'),int(get('limit','12')),get('kind'),get('period'))})
@@ -177,7 +184,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(knowledge.set_enabled(self.path.split('/')[-2],body['enabled']))
             if self.path.startswith('/api/runs/') and self.path.endswith('/annotations'):
                 return self.reply(workbench.annotate(self.path.split('/')[-2],body))
-            if self.path in ['/api/research','/api/knowledge/import','/api/questions']:
+            if self.path in ['/api/research','/api/knowledge/import','/api/questions','/api/retrieval','/api/announcements/check','/api/announcements/import']:
                 if not RESEARCH_GATE.acquire(blocking=False): return self.reply({'error':'已有研究正在进行，请等它完成'},409)
                 job_id=uuid.uuid4().hex[:12]
                 with JOBS_LOCK:
@@ -185,7 +192,7 @@ class Handler(BaseHTTPRequestHandler):
                         done=next((k for k,v in JOBS.items() if v['status']!='running'),None)
                         if done: JOBS.pop(done)
                     JOBS[job_id]={'id':job_id,'status':'running','trace':[]}
-                operation={'/api/research':'research','/api/knowledge/import':'import','/api/questions':'questions'}[self.path]
+                operation={'/api/research':'research','/api/knowledge/import':'import','/api/questions':'questions','/api/retrieval':'retrieval','/api/announcements/check':'discover','/api/announcements/import':'official_import'}[self.path]
                 threading.Thread(target=job_work,args=(job_id,body,operation),daemon=True).start()
                 return self.reply({'job_id':job_id},202)
             return self.reply({'error':'接口不存在'},404)
