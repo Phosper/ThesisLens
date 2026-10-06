@@ -1,0 +1,17 @@
+[
+  {
+    "company": "美的集团",
+    "query": "定期报告",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "company": "格力电器",
+    "query": "定期报告",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "company": "海尔智家",
+    "query": "定期报告",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

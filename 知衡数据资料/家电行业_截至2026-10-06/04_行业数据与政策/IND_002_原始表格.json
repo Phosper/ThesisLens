@@ -1,0 +1,1004 @@
+{
+  "source_id": "IND_002",
+  "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202501/t20250117_1958327.html",
+  "title": "2024年12月份社会消费品零售总额",
+  "tables": [
+    {
+      "table_number": 1,
+      "rows": [
+        [
+          {
+            "text": "指 标",
+            "rowspan": 2,
+            "colspan": 1
+          },
+          {
+            "text": "12月",
+            "rowspan": 1,
+            "colspan": 2
+          },
+          {
+            "text": "1—12月",
+            "rowspan": 1,
+            "colspan": 2
+          }
+        ],
+        [
+          {
+            "text": "绝对量 （亿元）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "同比增长（%）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "绝对量 （亿元）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "比上年增长（%）",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "社会消费品零售总额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "45172",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "487895",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：除汽车以外的消费品零售额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "39509",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "437581",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：限额以上单位消费品零售额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "19453",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "192553",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：实物商品网上零售额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "130816",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "按经营地分",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "城镇",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "38445",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "421166",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.4",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "乡村",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6727",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "66729",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "按消费类型分",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "餐饮收入",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5549",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "55718",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：限额以上单位餐饮收入",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1403",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "15298",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "商品零售额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "39623",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "432177",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.2",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：限额以上单位商品零售额",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "18050",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "177255",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：粮油、食品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2185",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "21737",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "饮料类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "263",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-8.5",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3200",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "烟酒类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "632",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6159",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "服装、鞋帽、针纺织品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1629",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14691",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "化妆品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "345",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4357",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-1.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "金银珠宝类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "310",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-1.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3300",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "日用品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "738",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8091",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "体育、娱乐用品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "134",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "16.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1415",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "11.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "家用电器和音像器材类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1133",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "39.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10307",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "12.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "中西药品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "695",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7157",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "文化办公用品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "450",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4327",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "家具类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "194",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1691",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "通讯器材类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "743",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7902",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "石油及制品类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2024",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-2.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "24002",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "汽车类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5663",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.5",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "50314",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "建筑及装潢材料类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "186",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1692",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-2.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "注： 1.此表数据均为未扣除价格因素的名义增速。 2.此表中部分数据因四舍五入，存在总计与分项合计不等的情况。",
+            "rowspan": 1,
+            "colspan": 5
+          }
+        ]
+      ]
+    },
+    {
+      "table_number": 2,
+      "rows": [
+        [
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "月份",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "环比增速（%）",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2023年",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "12月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.45",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2024年",
+            "rowspan": 12,
+            "colspan": 1
+          },
+          {
+            "text": "1月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.04",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.15",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "3月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.64",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "4月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.11",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "5月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.58",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "6月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.15",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "7月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.49",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "8月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.26",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "9月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.58",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "10月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.45",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "11月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.23",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "12月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.12",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ]
+      ]
+    }
+  ],
+  "note": "保存原始单元格、跨行跨列和表头；去除完全相同的桌面/移动端重复表；尚未统一指标口径",
+  "raw_table_count": 2
+}

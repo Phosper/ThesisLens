@@ -1,0 +1,6 @@
+data/
+exports/
+.env*
+!.env.example
+config.local.json
+__pycache__/

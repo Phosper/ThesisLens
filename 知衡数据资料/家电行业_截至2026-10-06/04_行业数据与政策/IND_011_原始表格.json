@@ -1,0 +1,2158 @@
+{
+  "source_id": "IND_011",
+  "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965308.html",
+  "title": "2026年8月份规模以上工业增加值增长5.2%",
+  "tables": [
+    {
+      "table_number": 1,
+      "rows": [
+        [
+          {
+            "text": "指标",
+            "rowspan": 2,
+            "colspan": 1
+          },
+          {
+            "text": "8月",
+            "rowspan": 1,
+            "colspan": 2
+          },
+          {
+            "text": "1—8月",
+            "rowspan": 1,
+            "colspan": 2
+          }
+        ],
+        [
+          {
+            "text": "绝对量",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "同比增长 （%）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "绝对量",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "同比增长 （%）",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "规模以上工业增加值",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "分三大门类",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "采矿业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-1.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：高技术制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "16.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14.2",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "电力、热力、燃气及水生产和供应业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "分经济类型",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：国有控股企业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：股份制企业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "外商及港澳台投资企业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：私营企业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.4",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "主要行业增加值",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "煤炭开采和洗选业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-5.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "石油和天然气开采业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "农副食品加工业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "食品制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "酒、饮料和精制茶制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "纺织业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "化学原料和化学制品制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "医药制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "橡胶和塑料制品业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "非金属矿物制品业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-4.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "黑色金属冶炼和压延加工业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "有色金属冶炼和压延加工业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-4.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-1.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "金属制品业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "通用设备制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "专用设备制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "11.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.2",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "汽车制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7.4",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "铁路、船舶、航空航天和其他运输设备制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "13.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "12.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "电气机械和器材制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "计算机、通信和其他电子设备制造业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "17.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "15.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "电力、热力生产和供应业",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "…",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "规模以上工业主要产品产量",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "布（亿米）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "26",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "198",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.2",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "硫酸（折100％）（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "798",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-15.5",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6814",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-4.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "烧碱（折100％）（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "375",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-2.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3099",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "乙烯（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "360",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2788",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "化学纤维（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "700",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5590",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "水泥（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "12908",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-11.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "98891",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-9.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "平板玻璃（万重量箱）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7500",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-7.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "59442",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-6.4",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "生铁（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6765",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.5",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "56340",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "粗钢（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7461",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "65185",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "钢材（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "11475",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-5.5",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "95075",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-1.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "十种有色金属（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "710",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5558",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：原铝（电解铝）（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "398",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3112",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "金属切削机床（万台）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "58",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "8.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "工业机器人（套）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "96174",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "34.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "729352",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "29.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "服务机器人（套）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1656132",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "13931863",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "12.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "汽车（万辆）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "269.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-2.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2030.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：轿车（万辆）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "85.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-22.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "648.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-20.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "运动型多用途乘用车（SUV）（万辆）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "139.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "17.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "990.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：新能源汽车（万辆）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "164.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "21.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1059.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "11.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "发电机组（发电设备）（万千瓦）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2806",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-10.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "23696",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "太阳能电池（光伏电池）（万千瓦）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6702",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-12.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "50590",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-14.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "微型计算机设备（万台）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2075",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-25.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "18683",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-14.7",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "移动通信手持机（万台）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10207",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-18.0",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "87418",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-5.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "其中：智能手机（万台）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7931",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-22.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "72500",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-6.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "集成电路（亿块）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "529",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "20.6",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3860",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "22.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "原煤（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "36182",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-7.7",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "306443",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-3.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "焦炭（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3992",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-6.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "33410",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.3",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "原油（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1843",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14639",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "原油加工量（万吨）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "5907",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-6.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "45612",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-6.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "天然气（亿立方米）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "214",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1757",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.1",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "规模以上工业发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9438",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "66476",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.4",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "火力发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "6020",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-4.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "42170",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.9",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "水力发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1522",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9027",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7.8",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "核能发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "467",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "9.4",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "3271",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "1.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "风力发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "728",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7.9",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "7196",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.5",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "太阳能发电量（亿千瓦时）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "700",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10.3",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "4811",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10.6",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "产品销售率（%）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "96.8",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "-0.1（百分点）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "96.2",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.1（百分点）",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "出口交货值（亿元）",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "14357",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "11.1",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "110233",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "10.0",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ]
+      ]
+    },
+    {
+      "table_number": 2,
+      "rows": [
+        [
+          {
+            "text": "年份",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "月份",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "环比增速（%）",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2025年",
+            "rowspan": 5,
+            "colspan": 1
+          },
+          {
+            "text": "8月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.30",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "9月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.65",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "10月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.14",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "11月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.46",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "12月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.45",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2026年",
+            "rowspan": 8,
+            "colspan": 1
+          },
+          {
+            "text": "1月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.26",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "2月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.76",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "3月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.28",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "4月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.05",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "5月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.40",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "6月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.76",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "7月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.11",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "8月",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "0.54",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ]
+      ]
+    }
+  ],
+  "note": "保存原始单元格、跨行跨列和表头；去除完全相同的桌面/移动端重复表；尚未统一指标口径",
+  "raw_table_count": 4
+}

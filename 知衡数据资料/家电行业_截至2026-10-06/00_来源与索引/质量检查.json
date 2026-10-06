@@ -1,0 +1,34 @@
+{
+  "research_cutoff": "2026-10-06",
+  "checks": "文件存在、SHA256、PDF页数、来源编号唯一性、发布日期上限、公司和年份文字匹配、逐页行数、行情OHLC及日期检查",
+  "errors": [],
+  "duplicate_original_files": [],
+  "stats": {
+    "downloaded_sources": 96,
+    "company_pdfs": 69,
+    "financial_reports": 51,
+    "industry_web_pages": 23,
+    "policy_pdfs": 1,
+    "pdf_count": 70,
+    "pdf_pages": 7425,
+    "pdf_text_characters": 7371157,
+    "web_paragraphs": 3155,
+    "market_series": 3,
+    "market_rows": 3069,
+    "ocr_attempted_pages": 53,
+    "ocr_supplemented_pages": 31,
+    "remaining_sparse_pages": 25,
+    "industry_unique_tables": 26,
+    "unavailable_sources": 10,
+    "by_company": {
+      "美的集团": 28,
+      "格力电器": 24,
+      "海尔智家": 17
+    }
+  },
+  "visual_review": "抽看美的2025年报、格力2025年报、海尔2023年报和2026半年报封面，以及美的内控审计扫描封面，名称和期间吻合",
+  "date_conflicts": [
+    "IND_021"
+  ],
+  "limitations": "未逐项核算财务数字；OCR未逐页人工校对；行情未与第二数据源交叉核验；尚有低文字量页与10份海尔附属报告访问失败"
+}

@@ -1,0 +1,94 @@
+{
+  "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+  "collected_date": "2026-10-06",
+  "company": {
+    "code": "000333",
+    "name": "美的集团",
+    "org_id": "9900005965",
+    "column": "szse",
+    "role": "主研究公司"
+  },
+  "pages": [
+    {
+      "params": {
+        "pageNum": 1,
+        "pageSize": 100,
+        "column": "szse",
+        "tabName": "fulltext",
+        "stock": "000333,9900005965",
+        "searchkey": "风险",
+        "secid": "",
+        "plate": "",
+        "category": "",
+        "trade": "",
+        "seDate": "2025-01-01~2026-10-06",
+        "sortName": "time",
+        "sortType": "desc",
+        "isHLtitle": "true"
+      },
+      "response": {
+        "classifiedAnnouncements": null,
+        "totalSecurities": 0,
+        "totalAnnouncement": 1,
+        "totalRecordNum": 1,
+        "announcements": [
+          {
+            "id": null,
+            "secCode": "000333",
+            "secName": "美的集团",
+            "orgId": "9900005965",
+            "announcementId": "1223412468",
+            "announcementTitle": "关于分拆子公司上市的一般<em>风险</em>提示性公告",
+            "announcementTime": 1745942400000,
+            "adjunctUrl": "finalpage/2025-04-30/1223412468.PDF",
+            "adjunctSize": 158,
+            "adjunctType": "PDF",
+            "storageTime": null,
+            "columnId": "09020202||250101||251302",
+            "pageColumn": "SZZB",
+            "announcementType": "01010503||010112||012109",
+            "associateAnnouncement": null,
+            "important": null,
+            "batchNum": null,
+            "announcementContent": "",
+            "orgName": null,
+            "tileSecName": "美的集团",
+            "shortTitle": "关于分拆子公司上市的一般<em>风险</em>提示性公告",
+            "announcementTypeName": null,
+            "secNameList": null
+          }
+        ],
+        "categoryList": null,
+        "hasMore": false,
+        "totalpages": 0
+      }
+    }
+  ],
+  "announcements": [
+    {
+      "id": null,
+      "secCode": "000333",
+      "secName": "美的集团",
+      "orgId": "9900005965",
+      "announcementId": "1223412468",
+      "announcementTitle": "关于分拆子公司上市的一般<em>风险</em>提示性公告",
+      "announcementTime": 1745942400000,
+      "adjunctUrl": "finalpage/2025-04-30/1223412468.PDF",
+      "adjunctSize": 158,
+      "adjunctType": "PDF",
+      "storageTime": null,
+      "columnId": "09020202||250101||251302",
+      "pageColumn": "SZZB",
+      "announcementType": "01010503||010112||012109",
+      "associateAnnouncement": null,
+      "important": null,
+      "batchNum": null,
+      "announcementContent": "",
+      "orgName": null,
+      "tileSecName": "美的集团",
+      "shortTitle": "关于分拆子公司上市的一般<em>风险</em>提示性公告",
+      "announcementTypeName": null,
+      "secNameList": null
+    }
+  ]
+}

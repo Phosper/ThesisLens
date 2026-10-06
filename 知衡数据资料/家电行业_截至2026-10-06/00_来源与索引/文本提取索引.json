@@ -1,0 +1,1072 @@
+{
+  "results": [
+    {
+      "source_id": "CNINFO_000333_1216695016",
+      "page_count": 10,
+      "text_characters": 11475,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1216695016.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1216695016.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1216695045",
+      "page_count": 277,
+      "text_characters": 262414,
+      "sparse_pages": [
+        1
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1216695045.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1216695045.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1217718574",
+      "page_count": 207,
+      "text_characters": 206876,
+      "sparse_pages": [
+        1,
+        58
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1217718574.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1217718574.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        58
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1218202543",
+      "page_count": 12,
+      "text_characters": 12229,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1218202543.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1218202543.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1219429374",
+      "page_count": 291,
+      "text_characters": 275105,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1219429374.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1219429374.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1
+      ],
+      "ocr_supplemented_pages": [
+        1
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1219910111",
+      "page_count": 13,
+      "text_characters": 12281,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1219910111.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1219910111.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1220909926",
+      "page_count": 212,
+      "text_characters": 213515,
+      "sparse_pages": [
+        1,
+        102
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1220909926.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1220909926.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        102
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1221570980",
+      "page_count": 13,
+      "text_characters": 12972,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1221570980.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1221570980.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1222951181",
+      "page_count": 295,
+      "text_characters": 278997,
+      "sparse_pages": [
+        135,
+        144
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1222951181.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1222951181.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        135,
+        144
+      ],
+      "ocr_supplemented_pages": [
+        1
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1222951183",
+      "page_count": 3,
+      "text_characters": 866,
+      "sparse_pages": [
+        1
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1222951183.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1222951183.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        2,
+        3
+      ],
+      "ocr_supplemented_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1222951190",
+      "page_count": 6,
+      "text_characters": 4918,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1222951190.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1222951190.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1223412432",
+      "page_count": 11,
+      "text_characters": 12009,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1223412432.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1223412432.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1223412447",
+      "page_count": 15,
+      "text_characters": 8960,
+      "sparse_pages": [
+        15
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1223412447.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1223412447.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        15
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1223412468",
+      "page_count": 1,
+      "text_characters": 777,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1223412468.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1223412468.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1224626720",
+      "page_count": 205,
+      "text_characters": 210955,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1224626720.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1224626720.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1
+      ],
+      "ocr_supplemented_pages": [
+        1
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1224767336",
+      "page_count": 11,
+      "text_characters": 12621,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1224767336.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1224767336.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225058112",
+      "page_count": 151,
+      "text_characters": 132853,
+      "sparse_pages": [
+        1
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225058112.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225058112.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        150,
+        151
+      ],
+      "ocr_supplemented_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        150,
+        151
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1225058125",
+      "page_count": 5,
+      "text_characters": 3797,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225058125.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225058125.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225058128",
+      "page_count": 6,
+      "text_characters": 5508,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225058128.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225058128.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225058129",
+      "page_count": 3,
+      "text_characters": 1860,
+      "sparse_pages": [
+        1
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225058129.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225058129.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        2,
+        3
+      ],
+      "ocr_supplemented_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source_id": "CNINFO_000333_1225065145",
+      "page_count": 276,
+      "text_characters": 257425,
+      "sparse_pages": [
+        134,
+        138
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225065145.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225065145.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        134,
+        138
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225259066",
+      "page_count": 12,
+      "text_characters": 11601,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225259066.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225259066.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225460252",
+      "page_count": 2,
+      "text_characters": 935,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225460252.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225460252.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225531404",
+      "page_count": 205,
+      "text_characters": 200223,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225531404.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225531404.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225544342",
+      "page_count": 2,
+      "text_characters": 935,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225544342.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225544342.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000333_1225566519",
+      "page_count": 13,
+      "text_characters": 10977,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000333_1225566519.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000333_1225566519.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1216702261",
+      "page_count": 232,
+      "text_characters": 269761,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1216702261.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1216702261.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1216759023",
+      "page_count": 8,
+      "text_characters": 10527,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1216759023.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1216759023.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1217717484",
+      "page_count": 191,
+      "text_characters": 187596,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1217717484.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1217717484.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1218206761",
+      "page_count": 8,
+      "text_characters": 10949,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1218206761.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1218206761.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1219928418",
+      "page_count": 249,
+      "text_characters": 244558,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1219928418.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1219928418.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1219928431",
+      "page_count": 10,
+      "text_characters": 11512,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1219928431.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1219928431.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1221092767",
+      "page_count": 208,
+      "text_characters": 190775,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1221092767.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1221092767.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1221573963",
+      "page_count": 10,
+      "text_characters": 11912,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1221573963.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1221573963.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1223330613",
+      "page_count": 9,
+      "text_characters": 10929,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1223330613.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1223330613.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1223330631",
+      "page_count": 248,
+      "text_characters": 251701,
+      "sparse_pages": [
+        46
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1223330631.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1223330631.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        46
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1224613604",
+      "page_count": 189,
+      "text_characters": 182294,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1224613604.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1224613604.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1224779019",
+      "page_count": 9,
+      "text_characters": 11203,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1224779019.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1224779019.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250396",
+      "page_count": 219,
+      "text_characters": 234178,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250396.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250396.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250398",
+      "page_count": 144,
+      "text_characters": 152916,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250398.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250398.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250406",
+      "page_count": 9,
+      "text_characters": 10432,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250406.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250406.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250416",
+      "page_count": 5,
+      "text_characters": 4129,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250416.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250416.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250420",
+      "page_count": 3,
+      "text_characters": 2370,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250420.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250420.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225250421",
+      "page_count": 2,
+      "text_characters": 632,
+      "sparse_pages": [
+        1
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225250421.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225250421.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225379718",
+      "page_count": 3,
+      "text_characters": 1652,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225379718.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225379718.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225487186",
+      "page_count": 4,
+      "text_characters": 3265,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225487186.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225487186.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225515004",
+      "page_count": 190,
+      "text_characters": 186678,
+      "sparse_pages": [
+        108
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225515004.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225515004.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        108
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "CNINFO_000651_1225542476",
+      "page_count": 2,
+      "text_characters": 1400,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/CNINFO_000651_1225542476.jsonl",
+      "text_path": "05_可检索文本/CNINFO_000651_1225542476.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "IND_016_ATTACHMENT",
+      "page_count": 7,
+      "text_characters": 3807,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/IND_016_ATTACHMENT.jsonl",
+      "text_path": "05_可检索文本/IND_016_ATTACHMENT.txt",
+      "first_pages_company_match": false,
+      "first_pages_year_match": false,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SINA_000333_8182957",
+      "page_count": 270,
+      "text_characters": 248582,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SINA_000333_8182957.jsonl",
+      "text_path": "05_可检索文本/SINA_000333_8182957.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1
+      ],
+      "ocr_supplemented_pages": [
+        1
+      ]
+    },
+    {
+      "source_id": "SINA_000333_8507661",
+      "page_count": 199,
+      "text_characters": 198710,
+      "sparse_pages": [
+        1,
+        199
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SINA_000333_8507661.jsonl",
+      "text_path": "05_可检索文本/SINA_000333_8507661.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        1,
+        199
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SINA_000651_8179894",
+      "page_count": 248,
+      "text_characters": 244769,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SINA_000651_8179894.jsonl",
+      "text_path": "05_可检索文本/SINA_000651_8179894.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SINA_000651_8509229",
+      "page_count": 193,
+      "text_characters": 188319,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SINA_000651_8509229.jsonl",
+      "text_path": "05_可检索文本/SINA_000651_8509229.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        161
+      ],
+      "ocr_supplemented_pages": [
+        161
+      ]
+    },
+    {
+      "source_id": "SSE_600690_600690_20220331_2_AIxuoS2O",
+      "page_count": 225,
+      "text_characters": 244420,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20220331_2_AIxuoS2O.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20220331_2_AIxuoS2O.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20220830_2_AEqFTLEP",
+      "page_count": 190,
+      "text_characters": 190863,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20220830_2_AEqFTLEP.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20220830_2_AEqFTLEP.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20230331_R2G0",
+      "page_count": 236,
+      "text_characters": 242125,
+      "sparse_pages": [
+        236
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20230331_R2G0.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20230331_R2G0.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        236
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20230428_6J5C",
+      "page_count": 19,
+      "text_characters": 18608,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20230428_6J5C.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20230428_6J5C.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20230831_PLFW",
+      "page_count": 185,
+      "text_characters": 185498,
+      "sparse_pages": [
+        37,
+        185
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20230831_PLFW.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20230831_PLFW.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        37,
+        185
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20231031_TQP5",
+      "page_count": 21,
+      "text_characters": 21759,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20231031_TQP5.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20231031_TQP5.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20240328_3H3F",
+      "page_count": 243,
+      "text_characters": 240151,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20240328_3H3F.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20240328_3H3F.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20240430_SWG6",
+      "page_count": 20,
+      "text_characters": 19708,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20240430_SWG6.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20240430_SWG6.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20240828_CGF6",
+      "page_count": 195,
+      "text_characters": 187256,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20240828_CGF6.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20240828_CGF6.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20241030_FKET",
+      "page_count": 22,
+      "text_characters": 21882,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20241030_FKET.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20241030_FKET.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20250328_MJE1",
+      "page_count": 247,
+      "text_characters": 251539,
+      "sparse_pages": [
+        13,
+        99
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20250328_MJE1.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20250328_MJE1.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        13,
+        99
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20250430_EDPD",
+      "page_count": 20,
+      "text_characters": 19924,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20250430_EDPD.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20250430_EDPD.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20250829_PKAX",
+      "page_count": 197,
+      "text_characters": 198023,
+      "sparse_pages": [
+        35
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20250829_PKAX.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20250829_PKAX.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        35
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20251031_43T6",
+      "page_count": 22,
+      "text_characters": 23047,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20251031_43T6.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20251031_43T6.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20260327_DDD5",
+      "page_count": 245,
+      "text_characters": 250171,
+      "sparse_pages": [
+        71
+      ],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20260327_DDD5.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20260327_DDD5.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [
+        71
+      ],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20260428_YWPN",
+      "page_count": 20,
+      "text_characters": 20757,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20260428_YWPN.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20260428_YWPN.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    },
+    {
+      "source_id": "SSE_600690_600690_20260828_OP9Q",
+      "page_count": 192,
+      "text_characters": 196786,
+      "sparse_pages": [],
+      "pages_path": "05_可检索文本/逐份逐页/SSE_600690_600690_20260828_OP9Q.jsonl",
+      "text_path": "05_可检索文本/SSE_600690_600690_20260828_OP9Q.txt",
+      "first_pages_company_match": true,
+      "first_pages_year_match": true,
+      "extraction_method": "PDF原生文字；稀疏页补充Windows中文OCR；保留原生/OCR标识；表格未标准化",
+      "native_sparse_pages": [],
+      "ocr_supplemented_pages": []
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,42 @@
+{
+  "source": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+  "collected_date": "2026-10-06",
+  "company": {
+    "code": "000651",
+    "name": "格力电器",
+    "org_id": "gssz0000651",
+    "column": "szse",
+    "role": "对比公司"
+  },
+  "pages": [
+    {
+      "params": {
+        "pageNum": 1,
+        "pageSize": 100,
+        "column": "szse",
+        "tabName": "fulltext",
+        "stock": "000651,gssz0000651",
+        "searchkey": "投资者关系活动记录",
+        "secid": "",
+        "plate": "",
+        "category": "",
+        "trade": "",
+        "seDate": "2025-01-01~2026-10-06",
+        "sortName": "time",
+        "sortType": "desc",
+        "isHLtitle": "true"
+      },
+      "response": {
+        "classifiedAnnouncements": null,
+        "totalSecurities": 0,
+        "totalAnnouncement": 0,
+        "totalRecordNum": 0,
+        "announcements": null,
+        "categoryList": null,
+        "hasMore": false,
+        "totalpages": 0
+      }
+    }
+  ],
+  "announcements": []
+}

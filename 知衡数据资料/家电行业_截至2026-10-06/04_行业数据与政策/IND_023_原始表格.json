@@ -1,0 +1,102 @@
+{
+  "source_id": "IND_023",
+  "url": "https://www.haier.com/global/press-events/news/20260402_288863.shtml",
+  "title": "海尔智家2025年度业绩新闻发布",
+  "tables": [
+    {
+      "table_number": 1,
+      "rows": [
+        [
+          {
+            "text": "Metric (RMB bn unless stated)",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "FY2025",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "FY2024",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "Change",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "Revenue",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "302.35",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "286.02",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "+5.71%",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "Net profit attr. to shareholders of the parent company",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "19.55",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "18.73",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "+4.39%",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ],
+        [
+          {
+            "text": "Basic EPS (RMB)",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.12",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "2.02",
+            "rowspan": 1,
+            "colspan": 1
+          },
+          {
+            "text": "+4.95%",
+            "rowspan": 1,
+            "colspan": 1
+          }
+        ]
+      ]
+    }
+  ],
+  "note": "保存原始单元格、跨行跨列和表头；去除完全相同的桌面/移动端重复表；尚未统一指标口径",
+  "raw_table_count": 1
+}
