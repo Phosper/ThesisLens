@@ -57,6 +57,8 @@ def complete(system,user,max_tokens=2600):
         body['max_completion_tokens']=body.pop('max_tokens')
     if hostname=='api.deepseek.com':
         body['thinking']={'type':'disabled'}
+    if hostname=='dashscope.aliyuncs.com' and cfg['model'].startswith('qwen'):
+        body['enable_thinking']=False
     data=json_dump(body).encode('utf-8')
     req=urllib.request.Request(cfg['base_url'].rstrip('/')+'/chat/completions',data=data,
              headers={'Content-Type':'application/json','Authorization':'Bearer '+key,'User-Agent':'Zhiheng-Prototype/0.1'})

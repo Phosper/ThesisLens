@@ -1,0 +1,2 @@
+# Only needed to import new PDF documents; core workflows use the standard library.
+pypdf==6.10.0

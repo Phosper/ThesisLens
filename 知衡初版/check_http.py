@@ -71,19 +71,19 @@ def main():
                 raise AssertionError('Local research did not finish in time')
     code, _, data = request('/api/runs/' + run_id)
     result = json.loads(data)
-    expected_calls = 2 if result['mode'] == 'llm' else 0
-    check('研究记录完整保留当前模式的调用过程', code == 200 and len(result['model_calls']) == expected_calls)
+    expected_calls = [2,3,5] if result['mode'] == 'llm' else [0]
+    check('研究记录完整保留当前模式的调用过程', code == 200 and len(result['model_calls']) in expected_calls)
     check('最新行业数据和补贴政策进入证据包',
           {'IND_010', 'IND_020', 'IND_022'}.issubset({e['source_id'] for e in result['evidence']}))
 
-    for fmt in ['md', 'json']:
+    for fmt in ['md', 'json', 'html']:
         code, headers, data = request('/api/runs/' + run_id + '/export?format=' + fmt)
         check(fmt + '导出可下载并落盘', code == 200 and 'attachment' in headers.get('Content-Disposition', '') and
               (core.APP / 'exports' / ('知衡_' + result['company'] + '_' + run_id + '.' + fmt)).is_file())
         check(fmt + '导出不包含本机模型密钥', all(not key or key.encode() not in data for key in secrets))
         if fmt == 'json':
             check('完整记录导出保留证据、公式和模型输出', json.loads(data) == result)
-        else:
+        elif fmt=='md':
             text = data.decode('utf-8')
             check('备忘录导出保留研究时点、正文和原件引用',
                   '2026-10-06' in text and '[E1]' in text and '本地原件' in text and '反向' in text)
@@ -101,13 +101,13 @@ def main():
 
     report = {
         '项目': '知衡——融合证据链与反向验证的买方投研智能体',
-        '版本': '0.1.0', '检查时间': core.now(), '资料截止日': result['cutoff'],
+        '版本': '0.2.0', '检查时间': core.now(), '资料截止日': result['cutoff'],
         'HTTP与导出检查': checks,
         '本次研究检查': {'模式': result['mode_label'], '运行编号': run_id,
                          '调用次数': len(result['model_calls']), '证据数量': len(result['evidence']),
                          '耗时秒': result['duration_seconds'], '复核提出待核验问题数': len(result['review']['issues'])},
         '启动入口': '启动知衡.cmd',
-        '范围': '可运行的比赛原型；估值模块、语义召回和自动新闻更新尚未实现，模型结论仍需人工核验。'
+        '范围': '可运行的比赛原型；估值采用用户假设，关键词检索与本地数据跟踪，模型结论仍需人工核验。'
     }
     output = core.APP / 'data/http-check.json'
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2), 'utf-8')

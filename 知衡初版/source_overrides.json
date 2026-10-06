@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-07",
+  "reason": "V0.2联调发现历史财报的索引日期登记错误；按对应公告页面的公告日期更正。保留原始索引与PDF字节，应用层叠加更正。",
+  "sources": {
+    "SINA_000333_8507661": {"original_publication_date":"2026-08-29","publication_date":"2022-08-31","verification_url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8507661&stockid=000333","corroborating_url":"https://static.cninfo.com.cn/finalpage/2022-08-31/1214472467.PDF"},
+    "SINA_000333_8182957": {"original_publication_date":"2026-03-31","publication_date":"2022-04-30","verification_url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8182957&stockid=000333","corroborating_url":"https://www.chinamoney.com.cn/chinese/cwbg/20220430/2368345.html"},
+    "SINA_000651_8509229": {"original_publication_date":"2026-08-27","publication_date":"2022-08-31","verification_url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8509229&stockid=000651"},
+    "SINA_000651_8179894": {"original_publication_date":"2026-06-17","publication_date":"2022-04-30","verification_url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8179894&stockid=000651"}
+  }
+}

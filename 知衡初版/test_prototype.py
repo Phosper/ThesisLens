@@ -30,7 +30,7 @@ class ResearchTests(unittest.TestCase):
         self.assertTrue(rows)
         self.assertTrue(all(r['publication_date']<=cutoff for r in rows))
         self.assertEqual(core.metric_rows('2026-H1',cutoff),[])
-        self.assertEqual(core.available_period('000333',cutoff),'2025-FY')
+        self.assertEqual(core.available_period('000333',cutoff),'2026-Q1')
         self.assertTrue(all(r['day'][:10]<=cutoff for r in core.prices('000333',cutoff)['data']))
 
     def test_chinese_alias_and_company_filter(self):
@@ -51,7 +51,8 @@ class ResearchTests(unittest.TestCase):
         self.assertTrue(all(ref in allowed for key,_ in research.SECTIONS for row in result['draft'][key] for ref in row['citations']))
         self.assertTrue(all(e['publication_date']<=result['cutoff'] for e in result['evidence']))
         self.assertIn('PDF第7页',result['markdown']);self.assertIn('2600.42',result['markdown'])
-        self.assertEqual(len(result['trace']),6)
+        self.assertEqual(len(result['trace']),7)
+        self.assertTrue(result['plan']['questions']);self.assertTrue(result['tool_calls'])
 
     def test_question_period_is_respected(self):
         with patch('core.save_run'):
@@ -72,9 +73,10 @@ class ResearchTests(unittest.TestCase):
                'risks':[],'invalidation':[],'monitoring':[],'open_questions':[]}
         review={'summary':'仍需人工核验','issues':[]}
         log={'provider':'test','model':'test','usage':{},'response':{}}
-        with patch('model.complete',side_effect=[(draft,log),(review,log)]) as complete,patch('core.save_run'):
+        plan={'questions':[{'topic':'现金流','query':'现金流量表补充资料'}],'hypotheses':[],'missing':[]}
+        with patch('model.complete',side_effect=[(plan,log),(draft,log),(review,log)]) as complete,patch('core.save_run'):
             result=research.run('000333','2026-10-06','美的2026年上半年经营表现','llm')
-        self.assertEqual(complete.call_count,2);self.assertEqual(len(result['model_calls']),2)
+        self.assertEqual(complete.call_count,3);self.assertEqual(len(result['model_calls']),3)
         self.assertEqual(result['review']['summary'],'仍需人工核验')
 
     def test_config_never_returns_secrets_and_rejects_bad_url(self):

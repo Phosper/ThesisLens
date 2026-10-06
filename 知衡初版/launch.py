@@ -8,13 +8,15 @@ import sys
 import time
 import urllib.request
 import webbrowser
+import hashlib
 from pathlib import Path
 
 APP=Path(__file__).resolve().parent
 def ready(port):
     try:
         with urllib.request.urlopen(f'http://127.0.0.1:{port}/api/status',timeout=2) as fp:
-            return json.load(fp).get('name')=='知衡'
+            status=json.load(fp)
+            return status.get('name')=='知衡' and status.get('instance_id')==hashlib.sha256(str(APP).encode()).hexdigest()[:16]
     except Exception: return False
 
 def main():
