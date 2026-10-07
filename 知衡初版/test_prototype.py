@@ -51,7 +51,7 @@ class ResearchTests(unittest.TestCase):
         self.assertTrue(all(ref in allowed for key,_ in research.SECTIONS for row in result['draft'][key] for ref in row['citations']))
         self.assertTrue(all(e['publication_date']<=result['cutoff'] for e in result['evidence']))
         self.assertIn('PDF第7页',result['markdown']);self.assertIn('2600.42',result['markdown'])
-        self.assertEqual(len(result['trace']),7)
+        self.assertEqual(len(result['trace']),8)
         self.assertTrue(result['plan']['questions']);self.assertTrue(result['tool_calls'])
 
     def test_question_period_is_respected(self):

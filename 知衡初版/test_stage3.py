@@ -61,7 +61,7 @@ class SemanticTests(unittest.TestCase):
         self.assertTrue({'IND_010','IND_020','IND_022'}.issubset({e['source_id'] for e in evidence}))
         locations={(e['source_id'],e.get('pdf_page')) for e in evidence}
         self.assertTrue(all((m['source_id'],c['pdf_page']) in locations for m in metrics for c in m['calculations'].values()))
-        self.assertLessEqual(len(evidence),24)
+        self.assertLessEqual(len(evidence),32)
 
 class AnnouncementTests(unittest.TestCase):
     def setUp(self):

@@ -16,6 +16,7 @@ import core
 import model
 import research
 import financials
+import financial_depth
 import valuation
 import workbench
 import knowledge
@@ -45,7 +46,7 @@ def job_work(job_id,body,operation='research'):
     finally: RESEARCH_GATE.release()
 
 class Handler(BaseHTTPRequestHandler):
-    server_version='Zhiheng/0.3'
+    server_version='Zhiheng/0.4'
 
     def log_message(self,*args):
         pass  # No URLs, user questions or credentials in access logs.
@@ -97,13 +98,18 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if path=='/api/status':
                 with core.connect() as db: index=dict(db.execute('SELECT key,value FROM meta').fetchall())
-                return self.reply({'version':'0.3.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
+                return self.reply({'version':'0.4.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
                       'companies':core.COMPANIES,'dataset':core.manifest()['stats'],
                       'cutoff':core.manifest()['research_cutoff'],'index':index,'model':model.get_config(),
                       'financial_coverage':financials.history(cutoff=core.manifest()['research_cutoff'])['coverage'],
                       'periods':sorted({r['period'] for r in financials.history(cutoff=core.manifest()['research_cutoff'])['data']},key=financials.period_end,reverse=True),
                       'pdf_import_available':importlib.util.find_spec('pypdf') is not None})
             if path=='/api/financial/history':return self.reply(financials.history(get('code'),get('cutoff','2026-10-06'),get('kind')))
+            if path=='/api/financial/depth':return self.reply(financial_depth.snapshot(get('code','000333'),get('cutoff','2026-10-06'),get('period') or None))
+            if path=='/api/financial/depth/export':
+                text=financial_depth.export_csv(get('code','000333'),get('cutoff','2026-10-06'),get('period') or None)
+                folder=core.APP/'exports';folder.mkdir(exist_ok=True)
+                file=folder/'知衡_财务解剖.csv';file.write_text(text,encoding='utf-8');return self.send_file(file,file.name)
             if path=='/api/financial/export':
                 text=exporting.financial_csv(get('code'),get('cutoff','2026-10-06'));folder=core.APP/'exports';folder.mkdir(exist_ok=True)
                 file=folder/f"知衡_财务指标_{core.COMPANIES.get(get('code'),'全部公司')}.csv";file.write_text(text,encoding='utf-8')

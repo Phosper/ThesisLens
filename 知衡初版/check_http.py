@@ -102,7 +102,7 @@ def main():
 
     report = {
         '项目': '知衡——融合证据链与反向验证的买方投研智能体',
-        '版本': '0.2.0', '检查时间': core.now(), '资料截止日': result['cutoff'],
+        '版本': status['version'], '检查时间': core.now(), '资料截止日': result['cutoff'],
         'HTTP与导出检查': checks,
         '本次研究检查': {'模式': result['mode_label'], '运行编号': run_id,
                          '调用次数': len(result['model_calls']), '证据数量': len(result['evidence']),

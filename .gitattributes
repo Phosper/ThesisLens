@@ -10,4 +10,5 @@
 *.pdf binary
 *.jpg binary
 *.png binary
+*.mp4 binary
 知衡数据资料/** -text

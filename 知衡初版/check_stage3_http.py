@@ -29,7 +29,7 @@ def main():
             if r['status']=='complete':return r
             time.sleep(1)
         raise AssertionError('Job timed out')
-    _,status=request('/api/status');check('新版服务',status['version']=='0.3.0')
+    _,status=request('/api/status');check('支持V0.3功能的服务',status['version'] in ['0.3.0','0.4.0'])
     _,sources=request('/api/knowledge');official=[r for r in sources['data'] if r.get('official_metadata') and r['enabled']]
     check('三家公司均已实测公告导入',{r['stock_code'] for r in official}=={'000333','000651','600690'})
     for r in official:

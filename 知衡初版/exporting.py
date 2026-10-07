@@ -26,8 +26,21 @@ def memo_html(run):
             '<h2>研究摘要</h2><p>'+paragraph(run['draft']['summary'])+'</p>']
     for key,name in [('thesis','投资论据'),('risks','风险与反向验证'),('invalidation','论据失效条件'),('monitoring','跟踪指标'),('open_questions','待核实问题')]:
         pieces.append('<h2>'+name+'</h2><ul>')
-        for row in run['draft'][key]:pieces.append('<li>'+paragraph(row['text'])+' '+''.join(f'<a href="#ref-{esc(c)}">[{esc(c)}]</a> ' for c in row['citations'])+'</li>')
+        for row in run['draft'][key]:
+            label='<b>'+esc(row['id'])+'</b> ' if row.get('id') else ''
+            links='；关联论据 '+esc(','.join(row['thesis_ids'])) if row.get('thesis_ids') else ''
+            pieces.append('<li>'+label+paragraph(row['text'])+' '+''.join(f'<a href="#ref-{esc(c)}">[{esc(c)}]</a> ' for c in row['citations'])+links+'</li>')
         pieces.append('</ul>')
+    if run.get('financial_depth',{}).get('available'):
+        import financial_depth
+        d=run['financial_depth'];pieces.append('<h2>财务解剖与口径</h2><ul>')
+        for k,f in d['fields'].items():pieces.append(f'<li>{esc(financial_depth.NAMES.get(k,"购建长期资产现金支出"))}：{esc(f["amount_yi"])}亿元；期初/同期{esc(f["prior_yi"])}亿元；{esc(f["basis"])}；物理第{f["pdf_page"]}页。</li>')
+        for r in d['ratios']:pieces.append(f'<li>{esc(r["name"])}：{esc(r["value"])}{esc(r["unit"])}；{esc(r["formula"])}。</li>')
+        for s in d['segments']:pieces.append(f'<li>{esc(s["group"])} · {esc(s["label"])}：{esc(s["amount_yi"])}亿元；同比{esc(s["change_pct"])}%；{esc(s["source_id"])}物理第{s["pdf_page"]}页；{esc(s["basis"])}。</li>')
+        sh=d['shares'];pieces.append(f'<li>报告期末股份：{sh["total"]}股；{esc(sh["source_id"])}物理第{sh["pdf_page"]}页。{esc(sh["note"])}<ul>')
+        pieces.extend(f'<li>{esc(c["label"])}：{c["count"]}股。</li>' for c in sh['classes'])
+        pieces.append('</ul></li></ul><p>'+esc(d['cash_proxy']['name'])+'：'+esc(d['cash_proxy']['amount_yi'])+'亿元。'+esc(d['cash_proxy']['note'])+'</p>')
+        pieces.extend('<p>'+esc(n)+'</p>' for n in d['notes'])
     if run.get('valuation'):
         pieces.append('<h2>估值情景（用户假设）</h2><ul>')
         for s in run['valuation']['pe_scenarios']:pieces.append(f'<li>{esc(s["label"])}：{esc(s["formula"])} = {esc(s["equity_value_yi"])}亿元</li>')

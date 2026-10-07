@@ -1,0 +1,1305 @@
+{
+  "version": "0.4.0",
+  "date": "2026-10-07T13:29:39+08:00",
+  "unit_tests": {
+    "passed": 52,
+    "total": 52
+  },
+  "upgrade_http": {
+    "version": "0.4.0",
+    "date": "2026-10-07T13:29:39+08:00",
+    "checks": [
+      {
+        "name": "V0.4实例",
+        "passed": true
+      },
+      {
+        "name": "000333 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000333 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000651 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000651 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "600690 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "600690 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "未披露期间不穿越",
+        "passed": true
+      },
+      {
+        "name": "未登记期间不套用",
+        "passed": true
+      },
+      {
+        "name": "CSV保留原页与口径",
+        "passed": true
+      },
+      {
+        "name": "估值分母原件可追溯",
+        "passed": true
+      },
+      {
+        "name": "伪造已核对股数被拒绝",
+        "passed": true
+      },
+      {
+        "name": "资料模式零模型调用",
+        "passed": true
+      },
+      {
+        "name": "资料模式含解剖与论据关联",
+        "passed": true
+      },
+      {
+        "name": "真实模型研究含财务解剖",
+        "passed": true
+      },
+      {
+        "name": "真实模型关联有效论据",
+        "passed": true
+      },
+      {
+        "name": "真实模型所附估值留存",
+        "passed": true
+      },
+      {
+        "name": "研究导出 md",
+        "passed": true
+      },
+      {
+        "name": "研究导出 json",
+        "passed": true
+      },
+      {
+        "name": "研究导出 html",
+        "passed": true
+      }
+    ],
+    "passed": 20,
+    "total": 20,
+    "local_run_id": "9b75878b5974",
+    "live_run_id": "8d74405af148",
+    "valuation_id": "63a4f4ca5f44",
+    "reused_model_record": true
+  },
+  "original_live_http": {
+    "version": "0.4.0",
+    "date": "2026-10-07T13:13:39+08:00",
+    "checks": [
+      {
+        "name": "V0.4实例",
+        "passed": true
+      },
+      {
+        "name": "000333 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000333 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000651 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "000651 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "600690 2025-FY财务解剖",
+        "passed": true
+      },
+      {
+        "name": "600690 2026-H1财务解剖",
+        "passed": true
+      },
+      {
+        "name": "未披露期间不穿越",
+        "passed": true
+      },
+      {
+        "name": "未登记期间不套用",
+        "passed": true
+      },
+      {
+        "name": "CSV保留原页与口径",
+        "passed": true
+      },
+      {
+        "name": "估值分母原件可追溯",
+        "passed": true
+      },
+      {
+        "name": "伪造已核对股数被拒绝",
+        "passed": true
+      },
+      {
+        "name": "资料模式零模型调用",
+        "passed": true
+      },
+      {
+        "name": "资料模式含解剖与论据关联",
+        "passed": true
+      },
+      {
+        "name": "真实模型研究含财务解剖",
+        "passed": true
+      },
+      {
+        "name": "真实模型关联有效论据",
+        "passed": true
+      },
+      {
+        "name": "真实模型所附估值留存",
+        "passed": true
+      },
+      {
+        "name": "研究导出 md",
+        "passed": true
+      },
+      {
+        "name": "研究导出 json",
+        "passed": true
+      },
+      {
+        "name": "研究导出 html",
+        "passed": true
+      }
+    ],
+    "passed": 20,
+    "total": 20,
+    "local_run_id": "af18585610a2",
+    "live_run_id": "8d74405af148",
+    "valuation_id": "348a1e36253e"
+  },
+  "legacy_http": {
+    "项目": "知衡——融合证据链与反向验证的买方投研智能体",
+    "版本": "0.4.0",
+    "检查时间": "2026-10-07T13:29:40+08:00",
+    "资料截止日": "2026-10-06",
+    "HTTP与导出检查": [
+      {
+        "检查": "服务启动、96份来源与7,855个检索片段",
+        "结果": "通过"
+      },
+      {
+        "检查": "设置接口不返回本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "2026-H1三家公司指标可读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "2025-FY三家公司指标可读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "研究截止日前未披露的半年报指标不返回",
+        "结果": "通过"
+      },
+      {
+        "检查": "研究记录完整保留当前模式的调用过程",
+        "结果": "通过"
+      },
+      {
+        "检查": "最新行业数据和补贴政策进入证据包",
+        "结果": "通过"
+      },
+      {
+        "检查": "md导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "md导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "备忘录导出保留研究时点、正文和原件引用",
+        "结果": "通过"
+      },
+      {
+        "检查": "json导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "json导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "完整记录导出保留证据、公式和模型输出",
+        "结果": "通过"
+      },
+      {
+        "检查": "html导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "html导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "PDF原件支持页预览所需的分段读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "静态文件路径不能越过页面目录",
+        "结果": "通过"
+      },
+      {
+        "检查": "拒绝外部网页修改本机模型设置",
+        "结果": "通过"
+      },
+      {
+        "检查": "拒绝非JSON设置请求",
+        "结果": "通过"
+      }
+    ],
+    "本次研究检查": {
+      "模式": "大模型分析 + 反向复核",
+      "运行编号": "8d74405af148",
+      "调用次数": 6,
+      "证据数量": 25,
+      "耗时秒": 44.55,
+      "复核提出待核验问题数": 8
+    },
+    "启动入口": "启动知衡.cmd",
+    "范围": "可运行的比赛原型；估值采用用户假设，关键词检索与本地数据跟踪，模型结论仍需人工核验。"
+  },
+  "announcement_http": {
+    "created_at": "2026-10-07",
+    "checks": [
+      {
+        "name": "支持V0.3功能的服务",
+        "passed": true
+      },
+      {
+        "name": "三家公司均已实测公告导入",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 000333",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 000333",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 600690",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 600690",
+        "passed": true
+      },
+      {
+        "name": "官方导入保留摘要和查询出处 000651",
+        "passed": true
+      },
+      {
+        "name": "新公告不能进入更早的研究 000651",
+        "passed": true
+      },
+      {
+        "name": "候选与已导入状态一致",
+        "passed": true
+      },
+      {
+        "name": "业绩说明会公告不误标成财报",
+        "passed": true
+      },
+      {
+        "name": "资料检索不调用模型",
+        "passed": true
+      },
+      {
+        "name": "独立检索记录可恢复",
+        "passed": true
+      }
+    ],
+    "count": 12,
+    "run_id": null
+  },
+  "retrieval_evaluation": {
+    "created_at": "2026-10-07T13:12:34+08:00",
+    "corpus_sha256": "95a4f26935721e58de2a0b7f2e9c1662cfd0063d0123f31923a5df7d881220f4",
+    "annotation_note": "20项开发验收标注，包含6个原口语题和14个新增报表/分部/股本题。来源与登记物理页已回看文本；部分关键页同时回看PDF图像。由开发者选题并标注，非独立盲测、非事实正确率。",
+    "live": true,
+    "cases": [
+      {
+        "id": "cash",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            99,
+            177
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "e74f40b1e2d5",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 99
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 147
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 177
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 7
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 51
+          }
+        ]
+      },
+      {
+        "id": "inventory",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            154,
+            177
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "dc0dd948b3e2",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 154
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 53
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 96
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 163
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 27
+          }
+        ]
+      },
+      {
+        "id": "overseas",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            52,
+            189
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "661e13f8b538",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 52
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 58
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 17
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 18
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 29
+          }
+        ]
+      },
+      {
+        "id": "fx",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            56,
+            58,
+            193,
+            194
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.25,
+          "first_hit": 4
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "9e399714aa8c",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 7
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 50
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 173
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 58
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 194
+          }
+        ]
+      },
+      {
+        "id": "core_profit",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "CNINFO_000651_1225515004",
+          "pages": [
+            7,
+            8,
+            190
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "c95ca81c63c7",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 7
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 190
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 189
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 8
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 57
+          }
+        ]
+      },
+      {
+        "id": "haier_cash",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260828_OP9Q",
+          "pages": [
+            74,
+            157
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "b7c496826113",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 74
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 75
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 33
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 16
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 6
+          }
+        ]
+      },
+      {
+        "id": "m_receivable",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            96,
+            53,
+            147
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "ca2f17ca21a6",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 147
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 53
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 96
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 148
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 163
+          }
+        ]
+      },
+      {
+        "id": "m_balance",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            96,
+            97
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "mode": "expanded",
+        "warnings": [
+          "语义排序出现未知编号、重复编号或无效评分，已保留关键词结果；使用本地候选顺序。"
+        ],
+        "search_id": "f9bfac08f456",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 199
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 94
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 83
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 193
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 64
+          }
+        ]
+      },
+      {
+        "id": "m_capex",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            99
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "52b1c8af4d05",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 99
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 193
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 158
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 53
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 96
+          }
+        ]
+      },
+      {
+        "id": "m_shares",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225531404",
+          "pages": [
+            87
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "5a7530bbce74",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 87
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 104
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 169
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 102
+          },
+          {
+            "source_id": "CNINFO_000333_1225531404",
+            "page": 90
+          }
+        ]
+      },
+      {
+        "id": "m_fy_capex",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "CNINFO_000333_1225065145",
+          "pages": [
+            137
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "expanded",
+        "warnings": [
+          "语义排序结果数量不符合候选集，已保留关键词结果；使用本地候选顺序。"
+        ],
+        "search_id": "c7c237f7c07f",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000333_1225065145",
+            "page": 137
+          },
+          {
+            "source_id": "CNINFO_000333_1225065145",
+            "page": 54
+          },
+          {
+            "source_id": "CNINFO_000333_1225065145",
+            "page": 261
+          },
+          {
+            "source_id": "CNINFO_000333_1225065145",
+            "page": 233
+          },
+          {
+            "source_id": "CNINFO_000333_1225065145",
+            "page": 234
+          }
+        ]
+      },
+      {
+        "id": "g_inventory",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.25,
+          "first_hit": 4
+        },
+        "gold": {
+          "source_id": "CNINFO_000651_1225515004",
+          "pages": [
+            52
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "c2ed2ed15918",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 117
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 118
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 52
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 25
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 55
+          }
+        ]
+      },
+      {
+        "id": "g_regions",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "CNINFO_000651_1225515004",
+          "pages": [
+            24
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "d5d2a277f6a0",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 24
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 9
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 14
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 146
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 57
+          }
+        ]
+      },
+      {
+        "id": "g_capex",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.5,
+          "first_hit": 2
+        },
+        "gold": {
+          "source_id": "CNINFO_000651_1225515004",
+          "pages": [
+            61
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "9bd7bd4275e4",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 61
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 63
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 150
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 151
+          },
+          {
+            "source_id": "CNINFO_000651_1225515004",
+            "page": 152
+          }
+        ]
+      },
+      {
+        "id": "g_shares",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "gold": {
+          "source_id": "CNINFO_000651_1225250396",
+          "pages": [
+            72
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "mode": "expanded",
+        "warnings": [
+          "模型没有返回有效的结构化结果。请重试或使用资料模式。；使用本地候选顺序。"
+        ],
+        "search_id": "69c2a1a5ec20",
+        "model_calls": 1,
+        "top_pages": [
+          {
+            "source_id": "CNINFO_000651_1225250396",
+            "page": 169
+          },
+          {
+            "source_id": "CNINFO_000651_1225250396",
+            "page": 74
+          },
+          {
+            "source_id": "CNINFO_000651_1225250396",
+            "page": 72
+          },
+          {
+            "source_id": "CNINFO_000651_1225250396",
+            "page": 75
+          },
+          {
+            "source_id": "CNINFO_000651_1225250396",
+            "page": 53
+          }
+        ]
+      },
+      {
+        "id": "h_inventory",
+        "keyword": {
+          "hit_at_5": 0,
+          "mrr_at_5": 0,
+          "first_hit": null
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260828_OP9Q",
+          "pages": [
+            66
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "a352a64b1fa2",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 66
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 122
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 34
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 123
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 68
+          }
+        ]
+      },
+      {
+        "id": "h_segment",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.3333,
+          "first_hit": 3
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260828_OP9Q",
+          "pages": [
+            172
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "fdf7da57e981",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 172
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 151
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 19
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 15
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 27
+          }
+        ]
+      },
+      {
+        "id": "h_regions",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260828_OP9Q",
+          "pages": [
+            172
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "2b507934721a",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 172
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 173
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 15
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 35
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 171
+          }
+        ]
+      },
+      {
+        "id": "h_capex",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.5,
+          "first_hit": 2
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260327_DDD5",
+          "pages": [
+            126
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "85ed8477877c",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260327_DDD5",
+            "page": 126
+          },
+          {
+            "source_id": "SSE_600690_600690_20260327_DDD5",
+            "page": 127
+          },
+          {
+            "source_id": "SSE_600690_600690_20260327_DDD5",
+            "page": 41
+          },
+          {
+            "source_id": "SSE_600690_600690_20260327_DDD5",
+            "page": 205
+          },
+          {
+            "source_id": "SSE_600690_600690_20260327_DDD5",
+            "page": 152
+          }
+        ]
+      },
+      {
+        "id": "h_shares",
+        "keyword": {
+          "hit_at_5": 1,
+          "mrr_at_5": 0.5,
+          "first_hit": 2
+        },
+        "gold": {
+          "source_id": "SSE_600690_600690_20260828_OP9Q",
+          "pages": [
+            149
+          ]
+        },
+        "enhanced": {
+          "hit_at_5": 1,
+          "mrr_at_5": 1.0,
+          "first_hit": 1
+        },
+        "mode": "semantic",
+        "warnings": [],
+        "search_id": "89a07907c137",
+        "model_calls": 2,
+        "top_pages": [
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 149
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 58
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 81
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 77
+          },
+          {
+            "source_id": "SSE_600690_600690_20260828_OP9Q",
+            "page": 70
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "keyword": {
+        "hit_count": 14,
+        "sample_count": 20,
+        "hit_at_5": 0.7,
+        "mrr_at_5": 0.4542
+      },
+      "enhanced": {
+        "hit_count": 19,
+        "sample_count": 20,
+        "hit_at_5": 0.95,
+        "mrr_at_5": 0.8458
+      }
+    },
+    "complete": true,
+    "limitations": "开发者固定题集上的页面命中；不测回答事实正确率、专业投资效果或未知样本泛化。增强含改写、融合与模型重排，不能归因于单一模块。"
+  },
+  "live_case": {
+    "id": "8d74405af148",
+    "duration_seconds": 44.55,
+    "successful_model_calls": 6,
+    "evidence_count": 25,
+    "steps": 11,
+    "remaining_review_severities": [
+      "高",
+      "中",
+      "中",
+      "中",
+      "中",
+      "低",
+      "低",
+      "低"
+    ],
+    "note": "真实运行8d74405af148耗时44.55秒，保存6次成功模型调用、25项证据及11个过程步骤。本次语义排序格式失败，实际采用问题展开后的本地排序，降级原因有记录。修订后保留1项高、4项中、3项低级复核问题，未经过独立专家签认；成功调用数不含失败且未形成日志的请求。"
+  },
+  "limits": [
+    "开发题集，非独立盲测",
+    "页面命中不等于结论事实正确率",
+    "历史模型输出和复核保留，未签认为正式投资结论"
+  ]
+}

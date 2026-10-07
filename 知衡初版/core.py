@@ -328,6 +328,6 @@ def get_run(run_id):
 
 def list_runs():
     with run_db() as db:
-        return [dict(r) for r in db.execute('SELECT id,created_at,code,question,mode FROM runs ORDER BY created_at DESC LIMIT 50')]
+        return [dict(r) for r in db.execute("SELECT id,created_at,code,question,mode,json_extract(result,'$.mode_label') mode_label FROM runs ORDER BY created_at DESC LIMIT 50")]
 
 if __name__=='__main__': build_index()

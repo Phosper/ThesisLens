@@ -2,6 +2,7 @@
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 import core
 import financials
+import financial_depth
 
 def decimal(value,name,low,high):
     if isinstance(value,bool):raise ValueError(name+'需要数字')
@@ -20,7 +21,9 @@ def context(code,cutoff):
     cash=financials.rolling(code,cutoff,'cashflow')
     prices=core.prices(code,cutoff)['data']
     last=prices[-1] if prices else None
+    depth=financial_depth.snapshot(code,cutoff)
     return {'company':core.COMPANIES[code],'code':code,'cutoff':cutoff,'ttm_profit':profit,'ttm_cashflow':cash,
+            'reported_shares':depth.get('shares'),'cash_proxy':depth.get('cash_proxy'),
             'price':{'date':last['day'][:10],'close':last['close'],'source_id':core.prices(code,cutoff)['metadata']['source_id']} if last else None,
             'defaults':{'pe_low':'8','pe_base':'12','pe_high':'16','earnings_change_pct':'0','shares_yi':'',
                         'fcfe_yi':'','growth_pct':'3','discount_pct':'10','terminal_pct':'2','years':5},
@@ -46,6 +49,11 @@ def calculate(body):
     multiples=[decimal(p.get(k,v),'PE倍数',1,100) for k,v in [('pe_low',8),('pe_base',12),('pe_high',16)]]
     if not multiples[0]<=multiples[1]<=multiples[2]:raise ValueError('PE倍数应按谨慎、基准、乐观递增')
     shares=decimal(p['shares_yi'],'股数（亿股）',.01,10000) if p.get('shares_yi') not in [None,''] else None
+    if p.get('shares_source_id'):
+        reported=ctx.get('reported_shares')
+        if not reported or reported['source_id']!=p['shares_source_id'] or shares!=Decimal(reported['total_yi']):
+            raise ValueError('报告期末股数或来源不匹配；请重新核对后选用')
+        p=dict(p,shares_basis=reported['note'],shares_report_date=financials.period_end(ctx['ttm_profit']['latest_period']))
     profit=Decimal(ctx['ttm_profit']['amount_yuan'])/100000000;adjusted=profit*(1+changes)
     if adjusted<=0:raise ValueError('PE情景需要正的盈利基数；亏损公司不能套用本模型')
     scenarios=[]
