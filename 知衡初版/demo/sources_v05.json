@@ -1,0 +1,25 @@
+[
+  {
+    "source_id": "CUSTOM_7f2be59f0f27be67",
+    "filename": "CUSTOM_7f2be59f0f27be67.pdf",
+    "sha256": "7f2be59f0f27be67692232138eab38d3e78df549760b12dab78cb8002da0685a",
+    "official_metadata": {
+      "announcement_id": "1225588595",
+      "discovery_id": "cninfo_dc86f3f3398fff83c40a",
+      "provider": "cninfo",
+      "query_endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+      "detail_url": "https://www.cninfo.com.cn/new/disclosure/detail?plate=szse&orgId=9900005965&stockCode=000333&announcementId=1225588595&announcementTime=2026-09-30",
+      "discovered_at": "2026-10-07T03:20:02+08:00",
+      "date_conflict": false
+    },
+    "body": {
+      "filename": "CUSTOM_7f2be59f0f27be67.pdf",
+      "title": "关于全资子公司受让合伙企业份额暨与专业投资机构共同投资的公告",
+      "code": "000333",
+      "publication_date": "2026-09-30",
+      "publisher": "巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588595.PDF",
+      "period": ""
+    }
+  }
+]

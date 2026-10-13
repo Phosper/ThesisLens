@@ -14,6 +14,7 @@ import urllib.request
 from html.parser import HTMLParser
 
 import core
+import audit
 
 DB=core.DATA/'library.sqlite3'
 ALLOWED=['gov.cn','cninfo.com.cn','sse.com.cn','midea.com','gree.com','gree.com.cn','haier.com','haier.net','sina.com.cn']
@@ -182,13 +183,17 @@ def import_document(body,on_step=None,verified_metadata=None):
         pages_data=[(None,text[:1000000])]
     digest=hashlib.sha256(raw).hexdigest();sid='CUSTOM_'+digest[:16]
     base_duplicate=next((s for s in core.base_manifest()['sources'] if s.get('sha256')==digest),None)
-    if base_duplicate:return {'source_id':base_duplicate['source_id'],'title':base_duplicate['title'],'duplicate':True,'note':'原件摘要与基础资料相同，复用已有原件。'}
+    if base_duplicate:
+        audit.cache_hit('import_duplicate',source_id=base_duplicate['source_id'],sha256=digest)
+        return {'source_id':base_duplicate['source_id'],'title':base_duplicate['title'],'duplicate':True,'note':'原件摘要与基础资料相同，复用已有原件。'}
     existing=source(sid)
     if existing:
+        audit.cache_hit('import_duplicate',source_id=sid,sha256=digest)
         if not existing['enabled']:set_enabled(sid,True)
         return {'source_id':sid,'title':existing['title'],'duplicate':True}
     folder=core.DATA/'library';folder.mkdir(exist_ok=True)
     file=folder/(sid+'.'+suffix);file.write_bytes(raw)
+    audit.event('source_import',source_id=sid,purpose='user_import',status='success',sha256=digest,bytes=len(raw))
     record={'source_id':sid,'title':title,'stock_code':code or None,'company':core.COMPANIES.get(code),'report_period':period or None,
             'publisher':str(body.get('publisher','用户补充资料'))[:100],'publication_date':date,'url':url,
             'relative_path':file.relative_to(core.APP).as_posix(),'storage':'user-library','category':'01_公司财报' if period else '03_经营公告与调研' if code else '04_行业数据与政策',

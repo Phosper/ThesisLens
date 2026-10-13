@@ -7,6 +7,7 @@ import threading
 from decimal import Decimal, ROUND_HALF_UP
 
 import core
+import audit
 
 LABELS = {
     'revenue': ['营业收入'],
@@ -141,18 +142,18 @@ def catalogue():
     sources=[s for s in core.manifest()['sources'] if s.get('report_period')]
     signature=hashlib.sha256(core.json_dump([(s['source_id'],s.get('sha256')) for s in sources]).encode()).hexdigest()
     with _lock:
-        if _cache is not None and signature==_signature:return _cache
+        if _cache is not None and signature==_signature:
+            audit.cache_hit('financial_catalogue',sha256=signature,count=len(_cache));return _cache
         pages={s['source_id']:[] for s in sources}
-        with (core.DATASET/'05_可检索文本/逐页语料.jsonl').open(encoding='utf-8') as fp:
-            for line in fp:
-                p=json.loads(line)
-                if p['source_id'] in pages and p['pdf_page']<=21:pages[p['source_id']].append(p)
+        for line in audit.read_text(core.DATASET/'05_可检索文本/逐页语料.jsonl',purpose='financial_text_corpus').splitlines():
+            p=json.loads(line)
+            if p['source_id'] in pages and p['pdf_page']<=21:pages[p['source_id']].append(p)
         if hasattr(core,'imported_pages'):
             for p in core.imported_pages():
                 if p['source_id'] in pages and p['pdf_page']<=21:pages[p['source_id']].append(p)
         result=[extract_source(s,pages[s['source_id']]) for s in sources]
-        curated=json.loads((core.APP/'metrics.json').read_text('utf-8'))['metrics']
-        curated+=json.loads((core.APP/'metrics_supplement.json').read_text('utf-8'))['metrics']
+        curated=json.loads(audit.read_text(core.APP/'metrics.json',purpose='financial_manual_registry'))['metrics']
+        curated+=json.loads(audit.read_text(core.APP/'metrics_supplement.json',purpose='financial_manual_registry'))['metrics']
         for row in result:
             original=next((m for m in curated if m['source_id']==row['source_id']),None)
             if not original:continue

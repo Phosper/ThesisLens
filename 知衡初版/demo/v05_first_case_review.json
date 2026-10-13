@@ -1,0 +1,529 @@
+{
+  "audit_version": "v05_finance_independent_1",
+  "run_id": "c30a0bb56179",
+  "valuation_id": "49306e8b4b95",
+  "created_at_utc": "2026-10-12T05:29:32.128984+00:00",
+  "scope": "独立财务与研究逻辑只读复核；不是金融同学最终确认或专家签认，不修改运行记录或用户核验批注，不调用真实模型或网络。",
+  "overall_status": "requires_revision_or_explicit_review_notes",
+  "snapshot_sha256": "be6960b9311008544e88242b918d622e8f09b4330d7b6f1e6f1d2538dba3e83a",
+  "model_review_counts": {
+    "high": 0,
+    "medium": 3,
+    "low": 2
+  },
+  "deterministic_rule_count": 1,
+  "decision_status": "暂缓投资判断",
+  "profile": {
+    "goal": "竞赛演示假设：评估投资价值及下行情景，投入与损失约束均为示例输入",
+    "horizon_months": 12,
+    "budget_yuan": "100000",
+    "max_loss_pct": "10",
+    "assumption_status": "用户研究假设",
+    "budget_note": "投入上限由用户提供；金额不构成仓位建议。"
+  },
+  "resolved_previous_feedback": [
+    {
+      "check": "T2_classification_boundary",
+      "status": "passed",
+      "claims": [
+        "T2"
+      ],
+      "citations": [
+        "E1",
+        "E16"
+      ],
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "reason": "最终T2明确缺少逐项量化桥，不能证明核心盈利稳定；原核心稳定过度推论已移除。"
+    },
+    {
+      "check": "T3_main_comparison_boundary",
+      "status": "passed_with_monitoring_wording_pending",
+      "claims": [
+        "T3"
+      ],
+      "citations": [
+        "E1",
+        "E4"
+      ],
+      "pdf_pages": [
+        7,
+        96
+      ],
+      "reason": "T3正文明确两者基期不同不能直接比较，不应据此归因回款恶化。"
+    },
+    {
+      "check": "historical_quote_and_share_basis",
+      "status": "passed",
+      "citations": [
+        "E9",
+        "E29",
+        "E1"
+      ],
+      "pdf_pages": [
+        87,
+        9,
+        7
+      ],
+      "reason": "A股2026-09-30保存报价80.100元人民币；发行股数7613438907，明确未扣库存、非EPS加权口径及A/H价格不共用；参考PE未标成官方当前PE。"
+    },
+    {
+      "check": "valuation_arithmetic_and_return_scope",
+      "status": "passed",
+      "reason": "TTM归母44377758000元、EPS5.828871623、参考PE13.741939294按原值正确；三档仅为演示，股利0及费用0.2明确输入；情景收益不是12个月收益预测，税未建模。"
+    },
+    {
+      "check": "pending_review_gate_and_loss_constraint",
+      "status": "passed",
+      "reason": "无用户human_review签认，4条论据支持关系待审；倍数依据未复核；谨慎-41.98%、基准-12.88%均超示例risk10，因此暂缓投资判断。"
+    },
+    {
+      "check": "previous_rule_findings",
+      "status": "same_monitoring_issue_not_removed",
+      "reason": "previous_comparison_checks与最终comparison_checks均为monitoring:2同一条；不能只汇报模型0高并省略规则残留。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A01",
+      "severity": "高",
+      "status": "confirmed",
+      "category": "numeric_error",
+      "claim_ids": [
+        "thesis:0"
+      ],
+      "thesis_ids": [
+        "T1"
+      ],
+      "citations": [
+        "E8"
+      ],
+      "pdf_pages": [
+        52
+      ],
+      "claim": "但两者增速差约1个百分点量级",
+      "actual": "海外5.54%减国内2.07%=3.47个百分点；原E8两项增速准确，差额叙述错误。",
+      "fix": "删除约1个百分点，若需要保留量化差额则写3.47个百分点。不能沿用previous_review这条错误建议。"
+    },
+    {
+      "id": "A02",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "source_locator",
+      "claim_ids": [
+        "thesis:2",
+        "risks:1",
+        "monitoring:2",
+        "invalidation:0"
+      ],
+      "thesis_ids": [
+        "T3"
+      ],
+      "citations": [
+        "E13",
+        "E26"
+      ],
+      "pdf_pages": [
+        147,
+        148
+      ],
+      "claim": "账龄一年以内612.93亿元、一至二年13.71亿元引用E13",
+      "actual": "E13物理148页是单项/组合坏账准备，不含该账龄表；两数来自E26物理147页，且为未扣坏账准备的账面余额。",
+      "fix": "账龄数据改引E26/物理147页，区分账面余额与E4净额619.55亿元。"
+    },
+    {
+      "id": "A03",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "signed_loss_semantics",
+      "claim_ids": [
+        "risks:1"
+      ],
+      "thesis_ids": [
+        "T3"
+      ],
+      "citations": [
+        "E7",
+        "E14"
+      ],
+      "pdf_pages": [
+        51,
+        98
+      ],
+      "claim": "信用减值损失同比-75.07%至6.06亿元",
+      "actual": "E7确列带符号值-606402/-346377千元及-75.07%；经济含义为损失绝对额3.46→6.06亿元、增加约75.07%，公司解释坏账损失增加。",
+      "fix": "写信用减值损失绝对额由3.46亿元增至6.06亿元，增加75.07%；若保留报表负变动率，必须注明是带符号损益口径，避免读成损失减少。"
+    },
+    {
+      "id": "A04",
+      "severity": "高",
+      "status": "confirmed",
+      "category": "invalidation_direction",
+      "claim_ids": [
+        "invalidation:2"
+      ],
+      "thesis_ids": [
+        "T2"
+      ],
+      "citations": [
+        "E1",
+        "E16"
+      ],
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "claim": "分类影响收窄、扣非与归母增速收敛，则T2被削弱",
+      "actual": "T2原意恰是若分类影响收窄，两种增速差可能收敛。发生预测情形属于支持，当前反证/退出重新将T2改写为分类扰动持续压低扣非。",
+      "fix": "保留原T2含义。将量化分类影响显著收窄而增速差仍不能合理收敛等列为反证核验；不能把支持性观察自动当撤回触发。"
+    },
+    {
+      "id": "A05",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "invalidation_direction",
+      "claim_ids": [
+        "invalidation:0",
+        "invalidation:3"
+      ],
+      "thesis_ids": [
+        "T3",
+        "T4"
+      ],
+      "citations": [
+        "E1",
+        "E4",
+        "E5",
+        "E13"
+      ],
+      "pdf_pages": [
+        7,
+        96,
+        97,
+        148
+      ],
+      "claim": "T3失效条件引用应收增速可能偏高；T4退出条件采用存货续降、合同负债回升",
+      "actual": "T3只保留需同基期核验的限制，并未提出应收增速偏高命题；T4恰把存货续降/合同负债回升列为待验证情形，退出层却把该支持情形一律包装为撤回。",
+      "fix": "T3改成取得同比/周转及季节性数据后更新核验结论；T4区分支持、反证和仅需重新评估，退出条件不得统一把支持条件前缀为撤回。"
+    },
+    {
+      "id": "A06",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "non_recurring_classification",
+      "claim_ids": [
+        "open_questions:0"
+      ],
+      "thesis_ids": [
+        "T2"
+      ],
+      "citations": [
+        "E14",
+        "E16"
+      ],
+      "pdf_pages": [
+        98,
+        8
+      ],
+      "claim": "非经常性损益各项目（公允价值变动49.97、投资收益30.40、其他收益14.83亿元等）",
+      "actual": "E14是合并利润表完整科目；E16非经常性表为特定工具公允/投资合计67.46亿元及其他7.44亿元等，税和少数股东扣除后68.51亿元。利润表科目不能直接等同非经常性分类。",
+      "fix": "改称利润表科目与非经常性损益表口径不同，需逐项映射和量化汇兑/衍生影响；不把利润表总额自动归入非经常。"
+    },
+    {
+      "id": "A07",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "saved_output_contradiction",
+      "claim_ids": [
+        "open_questions:3"
+      ],
+      "thesis_ids": [],
+      "citations": [
+        "E9",
+        "E29"
+      ],
+      "pdf_pages": [
+        87,
+        9
+      ],
+      "claim": "相关PE情景下估值结果、现金流折现均未完成",
+      "actual": "附带valuation 49306e8b4b95已有完整TTM、参考PE13.74194及三档每股结果46.63/69.95/93.26元；只有FCFE/DCF未提供。",
+      "fix": "分别写PE算术计算已完成、倍数依据尚未核验；FCFE未输入所以DCF未完成。不要把需要解释估值依据误写为未算出结果。"
+    },
+    {
+      "id": "A08",
+      "severity": "中",
+      "status": "needs_wording_and_rule_scope_review",
+      "category": "comparison_rule_scope",
+      "claim_ids": [
+        "monitoring:2"
+      ],
+      "thesis_ids": [
+        "T3"
+      ],
+      "citations": [
+        "E4",
+        "E13",
+        "E26"
+      ],
+      "pdf_pages": [
+        96,
+        147,
+        148
+      ],
+      "claim": "跟踪后续定期报告的同基期应收账款同比、账龄结构与周转天数，与2026H1期末较期初+53.16%、一年以内612.93亿元比较；若同基期应收增速显著高于营收增速，触发对T3回款节奏的复核。",
+      "actual": "后半若同基期应收增速高于营收增速可以作为后续核验条件；规则将同条前半历史较期初基准与后半同基期比较混为一体，不能将高风险判定直接当事实。前半把同比/周转天数与较期初53.16%比较，仍存在指标/基准含糊。",
+      "fix": "文案分开历史背景、后续比较方法：应收余额用同年同月同比，周转天数比上年同期间，营收用对应累计同比；规则作用域绑定比较所在分句并识别显式同基期限定，避免旧背景免检或误报合法同基期比较。"
+    }
+  ],
+  "manual_verification_remaining": [
+    "8/12/16倍尚无金融同学最终确认的依据，不得写为市场共识",
+    "汇兑/衍生分类逐项量化利润桥",
+    "应收同基期同比、周转天数、季节性及账龄/坏账净额口径",
+    "12个月及100000元预算、10%损失阈值均为竞赛演示输入；未形成实际投资建议",
+    "未提供FCFE，所以DCF不可用；股票类别、库存股、稀释及交易前价格仍需核验"
+  ],
+  "source_checks": {
+    "half_year_pdf_path": "ThesisLens\\知衡数据资料\\家电行业_截至2026-10-06\\01_公司财报\\000333_美的集团\\000333_2026-08-29_2026年半年度报告_1225531404.pdf",
+    "half_year_pdf_sha256_matches": true,
+    "annual_pdf_path": "ThesisLens\\知衡数据资料\\家电行业_截至2026-10-06\\01_公司财报\\000333_美的集团\\000333_2026-03-31_2025年年度报告_1225065145.pdf",
+    "annual_pdf_sha256_matches": true,
+    "physical_pages_checked": [
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 7,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 8,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 51,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 52,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 87,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 96,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 97,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 98,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 147,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225531404",
+        "pdf_page": 148,
+        "tokens_present": true
+      },
+      {
+        "source_id": "CNINFO_000333_1225065145",
+        "pdf_page": 9,
+        "tokens_present": true
+      }
+    ]
+  },
+  "source_evidence_map": [
+    {
+      "citation": "E1",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 7,
+      "locator": "PDF第7页"
+    },
+    {
+      "citation": "E2",
+      "source_id": "CNINFO_000651_1225515004",
+      "pdf_page": 7,
+      "locator": "PDF第7页"
+    },
+    {
+      "citation": "E3",
+      "source_id": "SSE_600690_600690_20260828_OP9Q",
+      "pdf_page": 6,
+      "locator": "PDF第6页"
+    },
+    {
+      "citation": "E4",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 96,
+      "locator": "PDF第96页"
+    },
+    {
+      "citation": "E5",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 97,
+      "locator": "PDF第97页"
+    },
+    {
+      "citation": "E6",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 99,
+      "locator": "PDF第99页"
+    },
+    {
+      "citation": "E7",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 51,
+      "locator": "PDF第51页"
+    },
+    {
+      "citation": "E8",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 52,
+      "locator": "PDF第52页"
+    },
+    {
+      "citation": "E9",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 87,
+      "locator": "PDF第87页"
+    },
+    {
+      "citation": "E10",
+      "source_id": "IND_010",
+      "pdf_page": null,
+      "locator": "网页段落1—114"
+    },
+    {
+      "citation": "E11",
+      "source_id": "IND_020",
+      "pdf_page": null,
+      "locator": "网页段落1—26"
+    },
+    {
+      "citation": "E12",
+      "source_id": "IND_022",
+      "pdf_page": null,
+      "locator": "网页段落1—1"
+    },
+    {
+      "citation": "E13",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 148,
+      "locator": "PDF第148页"
+    },
+    {
+      "citation": "E14",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 98,
+      "locator": "PDF第98页"
+    },
+    {
+      "citation": "E15",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 26,
+      "locator": "PDF第26页"
+    },
+    {
+      "citation": "E16",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 8,
+      "locator": "PDF第8页"
+    },
+    {
+      "citation": "E17",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 171,
+      "locator": "PDF第171页"
+    },
+    {
+      "citation": "E18",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 58,
+      "locator": "PDF第58页"
+    },
+    {
+      "citation": "E19",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 25,
+      "locator": "PDF第25页"
+    },
+    {
+      "citation": "E20",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 47,
+      "locator": "PDF第47页"
+    },
+    {
+      "citation": "E21",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 110,
+      "locator": "PDF第110页"
+    },
+    {
+      "citation": "E22",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 195,
+      "locator": "PDF第195页"
+    },
+    {
+      "citation": "E23",
+      "source_id": "CNINFO_000333_1225566519",
+      "pdf_page": 11,
+      "locator": "PDF第11页"
+    },
+    {
+      "citation": "E24",
+      "source_id": "CUSTOM_7f2be59f0f27be67",
+      "pdf_page": 7,
+      "locator": "PDF第7页"
+    },
+    {
+      "citation": "E25",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 177,
+      "locator": "PDF第177页"
+    },
+    {
+      "citation": "E26",
+      "source_id": "CNINFO_000333_1225531404",
+      "pdf_page": 147,
+      "locator": "PDF第147页"
+    },
+    {
+      "citation": "E27",
+      "source_id": "CNINFO_000333_1225058112",
+      "pdf_page": 98,
+      "locator": "PDF第98页"
+    },
+    {
+      "citation": "E28",
+      "source_id": "CNINFO_000333_1225058128",
+      "pdf_page": 4,
+      "locator": "PDF第4页"
+    },
+    {
+      "citation": "E29",
+      "source_id": "CNINFO_000333_1225065145",
+      "pdf_page": 9,
+      "locator": "PDF第9页"
+    }
+  ],
+  "human_annotations_modified": false,
+  "real_model_calls_made_by_auditor": 0
+}

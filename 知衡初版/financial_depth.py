@@ -13,6 +13,7 @@ from functools import lru_cache
 
 import core
 import financials
+import audit
 
 BALANCE = {
     'cash': ['货币资金'], 'receivables': ['应收账款'], 'inventory': ['存货'],
@@ -50,18 +51,29 @@ def row_values(text, label):
     values = [number(m.group()) for m in AMOUNT.finditer(content)]
     return (values, text[match.start():match.end()] + content) if values else None
 
-@lru_cache(maxsize=1)
 def registry():
-    return json.loads((core.APP/'financial_depth_registry.json').read_text('utf-8'))['reports']
+    if _registry.cache_info().currsize:audit.cache_hit('financial_depth_registry')
+    return _registry()
 
 @lru_cache(maxsize=1)
+def _registry():
+    return json.loads(audit.read_text(core.APP/'financial_depth_registry.json',purpose='depth_registry_read'))['reports']
+
+registry.cache_clear=_registry.cache_clear
+
 def registered_pages():
+    if _registered_pages.cache_info().currsize:audit.cache_hit('registered_financial_page_text')
+    return _registered_pages()
+
+@lru_cache(maxsize=1)
+def _registered_pages():
     ids={r['source_id'] for r in registry()}; pages={}
-    with (core.DATASET/'05_可检索文本/逐页语料.jsonl').open(encoding='utf-8') as fp:
-        for line in fp:
-            p=json.loads(line)
-            if p['source_id'] in ids:pages[(p['source_id'],p['pdf_page'])]=p['text']
+    for line in audit.read_text(core.DATASET/'05_可检索文本/逐页语料.jsonl',purpose='registered_page_text_corpus').splitlines():
+        p=json.loads(line)
+        if p['source_id'] in ids:pages[(p['source_id'],p['pdf_page'])]=p['text']
     return pages
+
+registered_pages.cache_clear=_registered_pages.cache_clear
 
 def reference(source, page):
     return {'source_id':source['source_id'],'pdf_page':page,'publication_date':source['publication_date'],

@@ -1,0 +1,813 @@
+{
+  "version": "0.5.0",
+  "checked_at": "2026-10-12T17:43:32+08:00",
+  "regression_tests": {
+    "passed": 114,
+    "failed": 0,
+    "scope": "114项全量回归：财务口径、决策规则、有限修订、安全日志、历史审计与导出；成功的是覆盖的功能与边界。"
+  },
+  "final_affected_export_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "new_http_checks": {
+    "version": "0.5.0",
+    "checked_at": "2026-10-12T13:14:02+08:00",
+    "run_id": "bb461c8cab31",
+    "valuation_id": "24c7140271f9",
+    "checks": [
+      "V0.5正式版可访问",
+      "未选股数不会自动产生PE",
+      "保存日期A股参考PE按原值计算",
+      "原件股数来源与A股价格类别保留",
+      "未签认倍数保持待核验",
+      "明确零股利费用可计算总回报",
+      "字符串不能冒充人工复核声明",
+      "无效期限在生成前拒绝",
+      "资料模式新研究完成",
+      "研究约束保存且不调用模型",
+      "未决依据和情景压力使判断暂缓",
+      "新研究不冒充历史兼容视图",
+      "brief/md导出保留判断风险约束",
+      "brief/html导出保留判断风险约束",
+      "brief HTML保留原件证据引用",
+      "brief打印页可用",
+      "full/md导出保留判断风险约束",
+      "full/html导出保留判断风险约束",
+      "full HTML保留原件证据引用",
+      "full打印页可用",
+      "JSON始终保留完整快照与当前判断",
+      "无效展示参数拒绝",
+      "保存待核验备注后读取最新记录",
+      "人工备注不会覆盖生成时判断",
+      "原核验案例明确标历史补充且保留高风险"
+    ],
+    "model_calls": 0,
+    "scope": "本机历史资料、规则研究和导出验收；未提交金融专家核验或发起真实模型调用。"
+  },
+  "existing_http_checks": {
+    "passed": 19,
+    "failed": 0,
+    "run_id": "d3393a64b0bb"
+  },
+  "browser_checks": [
+    "原件精度股数可选用并正常计算",
+    "保存日期参考PE及三档情景显示",
+    "资料模式页面生成与投资判断导航",
+    "简略/详细切换保持同一判断且更新导出链接",
+    "待核验备注保存后保留且刷新判断",
+    "页面无控制台错误"
+  ],
+  "new_real_model_calls": 14,
+  "remaining": [
+    "金融团队复审当前T2比较基准、T3反证对象、账龄占比预设与财务收入符号；不代表专家签认",
+    "金融同学复审PE倍数依据、利润桥、同基期应收及修订论据",
+    "团队自行制作最终视频并核对提交平台",
+    "最终演示/源码版本一致与现场陌生样例复现",
+    "公开资料整包再分发权限边界确认；Poppler工具不分发且发行版许可尚未逐件核实",
+    "独立盲测、另一实体电脑/团队模型账号验证属于建议质量检查而非公开通知逐项强制"
+  ],
+  "real_model_acceptance": {
+    "version": "0.5.0",
+    "checked_at": "2026-10-12T17:43:31+08:00",
+    "run_id": "eb64fcc72e43",
+    "valuation_id": "67a2d0fad46c",
+    "duration_seconds": 53.53,
+    "successful_model_calls": 7,
+    "model": "deepseek-flash",
+    "evidence_count": 29,
+    "trace_steps": 12,
+    "retrieval": {
+      "id": "2835ce3d13de",
+      "created_at": "2026-10-12T16:53:47+08:00",
+      "question": "请为美的集团2026年上半年形成买方投资备忘录，围绕增长与利润质量、应收与存货、海外业务和同行对照，说明进一步研究的依据、关键风险、论据失效条件和持续跟踪指标。结合所附估值，说明什么条件满足后才可以形成投资判断。",
+      "code": "000333",
+      "cutoff": "2026-10-06",
+      "period": "2026-H1",
+      "mode": "semantic",
+      "intent": "构建美的集团2026H1买方投研检索，覆盖增长质量、现金流与应收存货、海外业务及同行估值对比，支撑后续投资判断。",
+      "queries": [
+        "请为美的集团2026年上半年形成买方投资备忘录，围绕增长与利润质量、应收与存货、海外业务和同行对照，说明进一步研究的依据、关键风险、论据失效条件和持续跟踪指标。结合所附估值，说明什么条件满足后才可以形成投资判断。",
+        "美的集团 2026年上半年 营业收入 增长率 分产品 分地区",
+        "美的集团 2026H1 经营活动现金流量净额 净利润 应收账款 存货 周转率",
+        "美的集团 2026年上半年 海外收入 境外业务 占比 分部报告",
+        "美的集团 2026H1 同行 格力 海尔 估值 市盈率 市净率 比较"
+      ],
+      "candidate_count": 28,
+      "warnings": [],
+      "trace": [
+        {
+          "step": 1,
+          "title": "理解检索问题",
+          "detail": "由已配置模型展开财报术语，随后按公司与披露日期过滤"
+        },
+        {
+          "step": 2,
+          "title": "召回候选证据",
+          "detail": "5种表述；28个候选；过滤先于排序"
+        },
+        {
+          "step": 3,
+          "title": "语义重排完成",
+          "detail": "根据原文相关性排序，保留模型给出的逐条理由；原文与页码保持可追溯"
+        }
+      ],
+      "method": "关键词多路召回 + 倒数排名融合 + 模型语义重排；尚未使用向量召回",
+      "candidate_sha256": "edb8eedbd68388789ed049e4cb2a6dab983f0f9150810b1bf6444bd095e4da04"
+    },
+    "remaining_review_counts": {
+      "高": 0,
+      "中": 2,
+      "低": 3
+    },
+    "rule_checks_count": 0,
+    "first_rule_checks_count": 1,
+    "decision_status": "暂缓投资判断",
+    "checks": [
+      {
+        "name": "真实模型输出与调用留痕",
+        "passed": true
+      },
+      {
+        "name": "研究截止前原件及日期",
+        "passed": true
+      },
+      {
+        "name": "E编号均对应保存证据",
+        "passed": true
+      },
+      {
+        "name": "判断按未核验依据保持暂缓",
+        "passed": true
+      },
+      {
+        "name": "规则意见可回看且生成时判断留存",
+        "passed": true
+      },
+      {
+        "name": "原件股数与保存日期参考PE完整",
+        "passed": true
+      },
+      {
+        "name": "未将示例损失上限作为保证",
+        "passed": true
+      },
+      {
+        "name": "brief/md保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "brief/html保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "full/md保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "full/html保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "完整JSON导出保留当前与生成时判断",
+        "passed": true
+      }
+    ],
+    "model_record_reused": true,
+    "limitations": [
+      "示例期限、预算、损失和股利费率是竞赛演示输入",
+      "PE倍数依据未完成金融核验",
+      "程序验收不代表事实准确率或专家签认",
+      "成功日志数不包括无日志失败请求的账单次数"
+    ]
+  },
+  "final_offline_demo_restore": {
+    "version": "0.5.0",
+    "checked_at": "2026-10-12T17:38:34+08:00",
+    "scope": "同机离线、隔离空数据库公开示范恢复；无服务重启、网络或模型请求。",
+    "checks": [
+      {
+        "name": "恢复前无研究、增量来源与人审数据库",
+        "passed": true
+      },
+      {
+        "name": "默认选择本次V0.5真实历史记录",
+        "passed": true
+      },
+      {
+        "name": "模型原文、复核及调用记录未被开发润色",
+        "passed": true
+      },
+      {
+        "name": "恢复未签认金融论据",
+        "passed": true
+      },
+      {
+        "name": "前次开发审查与当前签认边界可见",
+        "passed": true
+      },
+      {
+        "name": "生成时判断与当前规则结果分别保留",
+        "passed": true
+      },
+      {
+        "name": "所需增量原件摘要一致",
+        "passed": true
+      },
+      {
+        "name": "估值可恢复并保留未核验依据",
+        "passed": true
+      },
+      {
+        "name": "brief/md保留暂缓、原引用及核验边界",
+        "passed": true
+      },
+      {
+        "name": "brief/html保留暂缓、原引用及核验边界",
+        "passed": true
+      },
+      {
+        "name": "full/md保留暂缓、原引用及核验边界",
+        "passed": true
+      },
+      {
+        "name": "full/html保留暂缓、原引用及核验边界",
+        "passed": true
+      },
+      {
+        "name": "读取与导出未改写公开原始模型记录",
+        "passed": true
+      },
+      {
+        "name": "全程没有模型或网络请求",
+        "passed": true
+      }
+    ],
+    "model_attempts": 0,
+    "network_attempts": 0,
+    "restored": {
+      "original_id": "eb64fcc72e43",
+      "rule_checks_count": 0,
+      "rule_checks_by_severity": {
+        "高": 0,
+        "中": 0,
+        "低": 0
+      },
+      "decision_status": "暂缓投资判断",
+      "successful_historical_model_calls": 7
+    },
+    "passed": 14,
+    "failed": 0,
+    "public_snapshot_sha256": "927c3c4ff0451743ec87b6f6a01616f4f6a4b712d627e26d2cdb22481029c383"
+  },
+  "clean_install_acceptance": {
+    "checked_at": "2026-10-12T13:27:45+08:00",
+    "passed": 91,
+    "total": 91,
+    "scope": "同机干净源码/语料副本，最终规则补强前的接口验收；不是第二实体电脑或独立盲测",
+    "model_attempts": 0,
+    "public_network_attempts": 0,
+    "tested_cases": [
+      {
+        "code": "000333",
+        "company": "美的集团",
+        "cutoff": "2025-06-01",
+        "question": "美的2025年一季度经营现金流同比与扣非利润是否一致，请给出可核验口径。",
+        "period": "2025-Q1",
+        "run_id": "3825357795cd",
+        "evidence_count": 14,
+        "max_evidence_date": "2025-04-30",
+        "metric_count": 3,
+        "target_metric_count": 1,
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "000651",
+        "company": "格力电器",
+        "cutoff": "2024-09-01",
+        "question": "格力2024年上半年归母和扣非利润有哪些差异，现金流能否支持这些判断？",
+        "period": "2024-H1",
+        "run_id": "45610ad45754",
+        "evidence_count": 14,
+        "max_evidence_date": "2024-08-31",
+        "metric_count": 3,
+        "target_metric_count": 1,
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "600690",
+        "company": "海尔智家",
+        "cutoff": "2023-11-01",
+        "question": "海尔2023年三季度现金流、营收与利润的累计口径如何核验？",
+        "period": "2023-Q3",
+        "run_id": "d136debca918",
+        "evidence_count": 11,
+        "max_evidence_date": "2023-10-31",
+        "metric_count": 3,
+        "target_metric_count": 1,
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "000333",
+        "company": "美的集团",
+        "cutoff": "2026-08-28",
+        "question": "美的2026年上半年营业收入、应收与现金流是否能形成研究结论？",
+        "period": "2026-H1",
+        "run_id": "a8aa130536cc",
+        "evidence_count": 10,
+        "max_evidence_date": "2026-08-28",
+        "metric_count": 2,
+        "target_metric_count": 0,
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "000333",
+        "company": "美的集团",
+        "cutoff": "2022-08-30",
+        "question": "美的2022年上半年营收和现金流有哪些已披露证据？",
+        "period": "2022-H1",
+        "run_id": "9f5ee924ee2b",
+        "evidence_count": 5,
+        "max_evidence_date": "2022-08-30",
+        "metric_count": 1,
+        "target_metric_count": 0,
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "source_hashes_at_check": {
+      "core.py": "e9ad8ea3a382bb60f05c17f911144510ef6418ee7513a730c357c38835586547",
+      "research.py": "6954ebea94c9b2ed65ab3e7f4f5b73a2f8bee18f11009a3f9b70c0d157cfbfa3",
+      "decision.py": "384ea07914e3b8e5c788775febc26e251f21106cbbe823ef0ead02a464857306",
+      "valuation.py": "a0ae8ad16ad24046aa0b26b24e6d9cc6d3b11d9d84b04a48c0fdffa1a07d7a49",
+      "exporting.py": "bbe4678e7f46dca19267902a22059f0264117ef6004232baa7320d7025f019e0",
+      "server.py": "e9b9f7950746cc1c84d643a27ce316eb0e7c8b833a0d5d9a51a2f0ed539c611b"
+    }
+  },
+  "postrun_development_audit": {
+    "findings": 8,
+    "record": "demo/v05_first_case_review.json",
+    "status": "原模型存在需修订问题；非金融专家签认",
+    "current_rule_checks": 8,
+    "current_rule_checks_by_severity": {
+      "高": 6,
+      "中": 2,
+      "低": 0
+    }
+  },
+  "post_fix_real_model_retest": {
+    "completed": true,
+    "run_id": "eb64fcc72e43",
+    "successful_model_calls": 7,
+    "safe_audit_events": 100,
+    "truncated": false,
+    "user_authorized_destination": "https://api.deepseek.com/chat/completions",
+    "after_run_rule_correction": "条件否定句误报已经33项相关及113项全量回归修正；未请求更多模型或改模型原文，生成时判断另行保留。"
+  },
+  "material_status": {
+    "pdf_version": "0.5.0",
+    "team_identity_completed": true,
+    "video_owner": "团队自行制作",
+    "video_included_in_experience_package": false
+  },
+  "current_source_sha256": {
+    "audit.py": "99bb39645947f69243fc15ac2ff21e8cc5a1a9e2ce2c7af6ebcd719c8dd1ed6d",
+    "research.py": "4875afdf1c433d6f4b65549d5b724c290041a7c083b368dcb81c0bab862d8ddf",
+    "decision.py": "4671fd8a8544edac4e2bc7b26fcb3aa1a245e9f385f6cc3a1f68984fef600e6e",
+    "valuation.py": "a0ae8ad16ad24046aa0b26b24e6d9cc6d3b11d9d84b04a48c0fdffa1a07d7a49",
+    "exporting.py": "9420cb32785c0af863de4ea2748ce6c20e8ec7e0820f7daa83172d3a1d73c702",
+    "demo_case.py": "02a6d2f114957fd1a18260e72618577976595cb9072503e9c4ac3edda0ea2f4b",
+    "model.py": "676394fc7fdfc5c9f29f980af7ff757f3dc0308e00610c9f18752186cb75154c",
+    "core.py": "7edc8ea6171fd6dc8c6d91158ad7c97d954ec8a24458231ac4abd239df9896d1",
+    "server.py": "95615b4742a405578e8e1e4951399ed67c45c11da2880a83d2a7df59641692b3"
+  },
+  "final_pdf_validation": {
+    "知衡_项目计划书.pdf": {
+      "pages": 8,
+      "all_team_names_present": true,
+      "all_pages_rendered_and_visually_reviewed": true,
+      "real_retest_and_pending_finance_disclosed": true
+    },
+    "知衡_演示与答辩手册.pdf": {
+      "pages": 6,
+      "all_team_names_present": true,
+      "all_pages_rendered_and_visually_reviewed": true,
+      "real_retest_and_pending_finance_disclosed": true
+    }
+  },
+  "audit_acceptance": {
+    "version": "0.5.0",
+    "checked_at": "2026-10-12T16:47:16+08:00",
+    "scope": "同机离线独立检查：真实本地文件读取、模型失败模拟与HTTP处理器字节输出，不使用服务端口或实际模型/外网。",
+    "checks": [
+      {
+        "name": "实际素材读取记录字节与实际SHA",
+        "passed": true
+      },
+      {
+        "name": "缓存与实读明确区分",
+        "passed": true
+      },
+      {
+        "name": "素材读取失败不丢失",
+        "passed": true
+      },
+      {
+        "name": "审计不复制素材正文或本机绝对路径",
+        "passed": true
+      },
+      {
+        "name": "成功请求持久记录含独立编号与用量",
+        "passed": true
+      },
+      {
+        "name": "请求模型别名与实际响应名称分开",
+        "passed": true
+      },
+      {
+        "name": "模型http失败独立持久留痕",
+        "passed": true
+      },
+      {
+        "name": "模型timeout失败独立持久留痕",
+        "passed": true
+      },
+      {
+        "name": "模型json失败独立持久留痕",
+        "passed": true
+      },
+      {
+        "name": "模型length失败独立持久留痕",
+        "passed": true
+      },
+      {
+        "name": "缺少凭据亦保留失败尝试",
+        "passed": true
+      },
+      {
+        "name": "没有研究结果也保留失败任务与已完成过程",
+        "passed": true
+      },
+      {
+        "name": "并行尝试编号独立且关联正确",
+        "passed": true
+      },
+      {
+        "name": "HTTP206真实分片与传输摘要一致",
+        "passed": true
+      },
+      {
+        "name": "HTTP200实际字节访问完整留痕",
+        "passed": true
+      },
+      {
+        "name": "无效Range失败仍可回查",
+        "passed": true
+      },
+      {
+        "name": "原件不存在失败仍可回查",
+        "passed": true
+      },
+      {
+        "name": "实际资料模式生成与访问过程关联",
+        "passed": true
+      },
+      {
+        "name": "典型研究日志未截断且原输出保存不变",
+        "passed": true
+      },
+      {
+        "name": "旧模型记录不追补生成审计",
+        "passed": true
+      },
+      {
+        "name": "全体安全元数据不泄露原文密钥路径",
+        "passed": true
+      }
+    ],
+    "real_model_calls": 0,
+    "external_network_calls": 0,
+    "local_research_event_count": 66,
+    "passed": 21,
+    "failed": 0
+  },
+  "third_party_disclosure": {
+    "completed_fields": [
+      "名称",
+      "实际版本",
+      "官方来源",
+      "具体用途",
+      "已核实许可证及原文"
+    ],
+    "notice": "NOTICE.md",
+    "original_licenses": 5,
+    "remaining_bounds": [
+      "Poppler本机QA工具发行版与DLL许可未逐件核实；该工具不分发",
+      "公开财报/网页/行情整包再分发授权尚未统一确认"
+    ]
+  },
+  "previous_real_model_acceptance": {
+    "version": "0.5.0",
+    "checked_at": "2026-10-12T13:24:35+08:00",
+    "run_id": "c30a0bb56179",
+    "valuation_id": "49306e8b4b95",
+    "duration_seconds": 56.02,
+    "successful_model_calls": 7,
+    "model": "deepseek-flash",
+    "evidence_count": 29,
+    "trace_steps": 12,
+    "retrieval": {
+      "id": "ad6efb59f8f6",
+      "created_at": "2026-10-12T13:23:50+08:00",
+      "question": "请为美的集团2026年上半年形成买方投资备忘录，围绕增长与利润质量、应收与存货、海外业务和同行对照，说明进一步研究的依据、关键风险、论据失效条件和持续跟踪指标。结合所附估值，说明什么条件满足后才可以形成投资判断。",
+      "code": "000333",
+      "cutoff": "2026-10-06",
+      "period": "2026-H1",
+      "mode": "semantic",
+      "intent": "检索美的集团2026年上半年增长与利润质量、应收存货、海外业务及同行对照的财务数据与估值信息，为买方投资备忘录提供依据、风险、论据失效条件和跟踪指标。",
+      "queries": [
+        "请为美的集团2026年上半年形成买方投资备忘录，围绕增长与利润质量、应收与存货、海外业务和同行对照，说明进一步研究的依据、关键风险、论据失效条件和持续跟踪指标。结合所附估值，说明什么条件满足后才可以形成投资判断。",
+        "美的集团 2026年上半年 营业收入 分地区 分部 增长驱动",
+        "美的集团 2026年上半年 净利润 经营活动现金流量 应收账款 存货",
+        "美的集团 2026年上半年 海外收入 境外业务 汇率影响",
+        "美的集团 2026年上半年 同行可比公司 毛利率 净利率 估值对比"
+      ],
+      "candidate_count": 28,
+      "warnings": [],
+      "trace": [
+        {
+          "step": 1,
+          "title": "理解检索问题",
+          "detail": "由已配置模型展开财报术语，随后按公司与披露日期过滤"
+        },
+        {
+          "step": 2,
+          "title": "召回候选证据",
+          "detail": "5种表述；28个候选；过滤先于排序"
+        },
+        {
+          "step": 3,
+          "title": "语义重排完成",
+          "detail": "根据原文相关性排序，保留模型给出的逐条理由；原文与页码保持可追溯"
+        }
+      ],
+      "method": "关键词多路召回 + 倒数排名融合 + 模型语义重排；尚未使用向量召回",
+      "candidate_sha256": "53e61baab0d2bfb1f9a67fcb3130f46c451af5988f7048a65f2d1aa84fc3d0fc"
+    },
+    "remaining_review_counts": {
+      "高": 0,
+      "中": 3,
+      "低": 2
+    },
+    "rule_checks_count": 1,
+    "first_rule_checks_count": 1,
+    "decision_status": "暂缓投资判断",
+    "checks": [
+      {
+        "name": "真实模型输出与调用留痕",
+        "passed": true
+      },
+      {
+        "name": "研究截止前原件及日期",
+        "passed": true
+      },
+      {
+        "name": "E编号均对应保存证据",
+        "passed": true
+      },
+      {
+        "name": "判断按未核验依据保持暂缓",
+        "passed": true
+      },
+      {
+        "name": "规则意见可回看且生成时判断留存",
+        "passed": true
+      },
+      {
+        "name": "原件股数与保存日期参考PE完整",
+        "passed": true
+      },
+      {
+        "name": "未将示例损失上限作为保证",
+        "passed": true
+      },
+      {
+        "name": "brief/md保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "brief/html保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "full/md保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "full/html保留暂缓与引用及假设",
+        "passed": true
+      },
+      {
+        "name": "完整JSON导出保留当前与生成时判断",
+        "passed": true
+      }
+    ],
+    "model_record_reused": false,
+    "limitations": [
+      "示例期限、预算、损失和股利费率是竞赛演示输入",
+      "PE倍数依据未完成金融核验",
+      "程序验收不代表事实准确率或专家签认",
+      "成功日志数不包括无日志失败请求的账单次数"
+    ]
+  },
+  "current_development_finance_review": {
+    "run_id": "eb64fcc72e43",
+    "record": "demo/v05_current_case_review.json",
+    "finding_count": 4,
+    "logic_medium": 2,
+    "wording_low": 2,
+    "scope": "开发复查；不表示金融专家签认或事实准确率"
+  },
+  "final_browser_recheck": {
+    "completed": false,
+    "reason": "本回合浏览器控制接口不可用；JS语法与关联链接回归通过，浏览器检查保留为较早历史记录。"
+  },
+  "logic_revision_2026_10_12": {
+    "checked_at": "2026-10-12T21:37:41+08:00",
+    "scope": "本次逻辑补强的工程验证；非金融专家签认，未新作真实模型研究。",
+    "revision": "0.5.0-logic1",
+    "source_sha256": {
+      "decision.py": "dfc5f74ba61531b5e2ac98f6d14658c2ca8adbd085d6153bc442814d7ecf538e",
+      "research.py": "8bea5e2dc1191a778277764678de8d91e3c17a5b7750f052163136e60b1796b9",
+      "demo_case.py": "fc90ff3ca698bbc3a26d0b4deb2b36e14c1a85c00217c419a02dfa8c46da01dc",
+      "workbench.py": "1b585b603c79719f5263cdd10c6bfd71d40564e4ff8a1e529a601fcc64741709",
+      "static/app.js": "8f8c8110b60b3e82d4a8a54e202a00cd9cc5d00300726d6b35c8064a2945fa49",
+      "test_decision_feedback.py": "980236e6b310ddf0691584f4d5f093b0387c610d054fac6701db2bd445c3f86d",
+      "test_logic_alignment.py": "386544ce77f0c7801f5df29f3942abf19885099820572c9bb57fc38d12a4cbd4"
+    },
+    "regression_tests": {
+      "passed": 128,
+      "failed": 0,
+      "new_logic_test_methods": 14,
+      "duration_seconds": 75.635
+    },
+    "original_demo_offline_restore": {
+      "passed": 14,
+      "failed": 0,
+      "model_attempts": 0,
+      "network_attempts": 0
+    },
+    "loaded_preview": {
+      "checked_at": "2026-10-12T21:34:43+08:00",
+      "base": "http://127.0.0.1:8765",
+      "run_id": "4cf15b90eadb",
+      "parent_run_id": "eb64fcc72e43",
+      "scope": "只读本机HTTP检查；未发起新模型研究或外网请求。",
+      "checks": [
+        {
+          "name": "当前正式工作区服务已加载",
+          "passed": true
+        },
+        {
+          "name": "开发逻辑修订身份清楚",
+          "passed": true
+        },
+        {
+          "name": "父案例与本例调用分开",
+          "passed": true
+        },
+        {
+          "name": "原实录新增两个有限逻辑意见",
+          "passed": true
+        },
+        {
+          "name": "修订稿有限规则通过但保留暂缓",
+          "passed": true
+        },
+        {
+          "name": "PE依据及金融人审未冒充完成",
+          "passed": true
+        },
+        {
+          "name": "当前恢复未产生模型请求",
+          "passed": true
+        },
+        {
+          "name": "开发文本未伪装模型复核分",
+          "passed": true
+        },
+        {
+          "name": "brief/md身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "brief/md利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "brief/html身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "brief/html利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "brief/json身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "brief/json利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "full/md身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "full/md利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "full/html身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "full/html利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "full/json身份与暂缓状态一致",
+          "passed": true
+        },
+        {
+          "name": "full/json利润桥与PE仍待核验",
+          "passed": true
+        },
+        {
+          "name": "预览使用开发修订标注的新界面",
+          "passed": true
+        }
+      ],
+      "passed": 21,
+      "failed": 0,
+      "new_model_calls": 0,
+      "external_network_requests": 0
+    },
+    "parent_record": {
+      "run_id": "eb64fcc72e43",
+      "snapshot_sha256": "927c3c4ff0451743ec87b6f6a01616f4f6a4b712d627e26d2cdb22481029c383",
+      "original_model_calls_retained": 7,
+      "current_rule_findings": [
+        {
+          "rule": "receivables_future_baseline_incompatible",
+          "claim_id": "thesis:1",
+          "severity": "中"
+        },
+        {
+          "rule": "invalidation_target_not_in_thesis",
+          "claim_id": "invalidation:2",
+          "severity": "中"
+        }
+      ],
+      "scope": "原始文本与生成时结果未修改；新增检查为当前补充视图。"
+    },
+    "development_revision": {
+      "snapshot_id": "logicb6db4b91f139",
+      "snapshot_sha256": "facf4d0b543174b78aff3b436a8a23624a4863886b5a25d3e30c229a1ec03f6f",
+      "restored_run_id": "4cf15b90eadb",
+      "theses": 3,
+      "current_finite_rule_issues": 0,
+      "decision": "暂缓投资判断",
+      "new_model_calls": 0,
+      "human_financial_review_completed": false,
+      "pe_basis_reviewed": false
+    },
+    "pdf_validation": {
+      "知衡_项目计划书.pdf": {
+        "pages": 8,
+        "sha256": "6f9fa195f1538039e94fbf17383b0e5b5781f1d53889ccedea22ad3f04dfa581",
+        "all_pages_rendered_and_visually_reviewed": true,
+        "logic_revision_and_pending_financial_review_disclosed": true
+      },
+      "知衡_演示与答辩手册.pdf": {
+        "pages": 6,
+        "sha256": "ca67dadf13199e4f8a79515d628b6ca0b42b35204a840bd248b123275d9f9ccd",
+        "all_pages_rendered_and_visually_reviewed": true,
+        "logic_revision_and_pending_financial_review_disclosed": true
+      }
+    },
+    "typora_same_text_with_page_break_conversion": true,
+    "remaining_finance": [
+      "同日期同口径应收同比与同公式周转天数基准",
+      "季节性、合并范围及账龄分母支持",
+      "量化利润调节桥",
+      "现金流/归母利润比值阈值适用性",
+      "PE倍数来源与区间"
+    ],
+    "remaining_verification": [
+      "本次逻辑补强后的真实模型复测",
+      "团队视频",
+      "建议另一实体电脑与未知题测试"
+    ]
+  }
+}

@@ -6,6 +6,7 @@ from decimal import Decimal, InvalidOperation
 import core
 import financials
 import valuation
+import decision
 
 DB=core.DATA/'workbench.sqlite3'
 METRICS={'revenue_growth':'营收同比','profit_growth':'归母利润同比','core_profit_growth':'扣非利润同比',
@@ -53,15 +54,18 @@ def quality(run):
     cited=sum(bool(r.get('citations')) and all(c in refs for c in r['citations']) for r in rows)
     date_pass=all(e['publication_date']<=run['cutoff'] for e in evidence)
     metrics=run.get('metrics',[]);financial=bool(metrics) and all(len(m.get('calculations',{}))==4 for m in metrics)
-    issues=run['review'].get('issues',[]);high=sum(i.get('severity')=='高' for i in issues)
+    review=run['review']
+    model_issues=review['model_review'].get('issues',[]) if isinstance(review.get('model_review'),dict) else [i for i in review.get('issues',[]) if i.get('source')!='deterministic']
+    checks=decision.comparison_checks(run)
+    issues=model_issues+checks;high=sum(i.get('severity')=='高' for i in issues)
     dimensions=[{'name':'章节完整度','score':complete*4,'maximum':20,'detail':f'{complete}/5个章节'},
                 {'name':'引用编号覆盖','score':round(cited/max(len(rows),1)*30),'maximum':30,'detail':f'{cited}/{len(rows)}条目有有效编号；未证明语义支持关系'},
                 {'name':'披露时点检查','score':20 if date_pass else 0,'maximum':20,'detail':'所有已选证据披露日期不晚于研究时点' if date_pass else '存在越过时点的证据'},
                 {'name':'财务计算可回看','score':20 if financial else 0,'maximum':20,'detail':'四项指标有原值和公式' if financial else '缺少完整财务计算'},
-                {'name':'复核过程留存','score':10 if run.get('review') else 0,'maximum':10,'detail':f'{len(issues)}项模型提出的待核验问题'}]
+                {'name':'复核过程留存','score':10 if run.get('review') and run.get('mode')!='development_revision' else 0,'maximum':10,'detail':('开发侧逻辑修订，尚未新作模型复核；' if run.get('mode')=='development_revision' else f'{len(model_issues)}项模型复核、')+f'{len(checks)}项口径/推论规则问题'}]
     annotations=notes(run['id'])
     return {'run_id':run['id'],'score':sum(d['score'] for d in dimensions),'dimensions':dimensions,'claims':rows,'notes':annotations,
-            'high_issues':high,'review_issues':issues,'confirmed':sum(n['state']=='confirmed' for n in annotations),
+            'high_issues':high,'review_issues':issues,'comparison_checks':checks,'confirmed':sum(n['state']=='confirmed' for n in annotations),
             'refuted':sum(n['state']=='refuted' for n in annotations),
             'label':'结构与可追溯性检查分；不代表事实正确率或投资价值','scope':'引用的语义充分性、表头归属和因果仍需人工核对。'}
 

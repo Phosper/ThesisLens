@@ -1,0 +1,258 @@
+{
+  "audit_version": "v05_second_development_finance_review",
+  "run_id": "eb64fcc72e43",
+  "valuation_id": "67a2d0fad46c",
+  "created_at": "2026-10-12T17:36:15+08:00",
+  "scope": "只读开发财务与研究逻辑复查，依据保存运行和本机原PDF；不请求外部模型或网络，不修改模型原稿、程序、人审或运行记录。不是金融专家签认。",
+  "overall_status": "key_numeric_and_citation_errors_improved_logic_and_financial_review_pending",
+  "snapshot_sha256": "ff5821fb6ebb37371d3d8cfb184ab2d57c52077c6f8719da213fc29d46bf9a33",
+  "model_review_counts": {
+    "high": 0,
+    "medium": 2,
+    "low": 3
+  },
+  "generation_deterministic_rule_count": 1,
+  "current_deterministic_rule_count": 0,
+  "decision_status_at_generation": "暂缓投资判断",
+  "original_requested_prior_audit_path": "tmp/v05_live_finance_audit.json",
+  "prior_audit_used": "ThesisLens\\知衡初版\\demo\\v05_first_case_review.json",
+  "prior_audit_note": "原指定临时文件未找到，使用已公开保留的demo/v05_first_case_review.json，包含前次A01-A08原发现。",
+  "previous_findings_rechecked": [
+    {
+      "previous_id": "A01",
+      "status": "resolved",
+      "reason": "摘要、T1及跟踪均写海外5.54%-国内2.07%=3.47个百分点，匹配E8/物理52页，未沿用错误的约1个百分点。"
+    },
+    {
+      "previous_id": "A02",
+      "status": "resolved_with_net_gross_clarification_pending",
+      "reason": "一年以内398.82→612.93亿元、坏账准备17.20→20.88亿元改引E26/物理147页；E13/148页不再承担账龄金额。账龄为未扣坏账账面余额，应与净额619.55亿元明确分开。"
+    },
+    {
+      "previous_id": "A03",
+      "status": "resolved",
+      "reason": "减值压力写绝对额16.53/6.06高于同期3.66/3.46亿元。E14/177页现金流附注正数与98页利润表损失负数一致，未把带符号负同比写成损失改善。"
+    },
+    {
+      "previous_id": "A04",
+      "status": "replaced_by_remaining_logical_gap",
+      "reason": "旧版把支持观察写成反证的原文已更换；当前T3正文只是缺桥不能证明稳定，失效条件却反驳未提出的稳定假设，见B02。"
+    },
+    {
+      "previous_id": "A05",
+      "status": "improved_with_thesis_scope_review_pending",
+      "reason": "T1未来海外相对国内增长和T4未来同口径比值的阈值与新假设方向一致，旧存货/合同负债支持观察不再直接作退出触发。T2基准和T3反证对象仍需修订；T4不能把比值假设扩张成整体现金回收已稳健。"
+    },
+    {
+      "previous_id": "A06",
+      "status": "resolved",
+      "reason": "T3及待核实明确E20/8页非经常表合计68.51与E15/98页利润表49.97/30.40/14.83属不同科目，不能直接等同或加总。"
+    },
+    {
+      "previous_id": "A07",
+      "status": "resolved_with_output_wording_clarification",
+      "reason": "已不说PE结果未完成；写PE假设未核验，FCFE未输入所以DCF未计算。尚无估值结论可理解为未形成可靠判断，应进一步明确算术已完成。"
+    },
+    {
+      "previous_id": "A08",
+      "status": "monitoring_repaired_but_thesis_baseline_pending",
+      "reason": "monitoring:1明确基准待补、53.16%不作同比或周转基准；thesis:1仍说同比/周转不高于较期初增幅所隐含趋势，见B01。"
+    }
+  ],
+  "verified_facts": {
+    "regional_growth_difference_pp": {
+      "left_pct": "5.54",
+      "right_pct": "2.07",
+      "difference_pp": "3.47",
+      "citation": "E8",
+      "physical_page": 52
+    },
+    "receivables": {
+      "net_closing_yi": "619.54826",
+      "gross_closing_yi": "640.42458",
+      "age_under_one_year_closing_yi": "612.92625",
+      "age_under_one_year_opening_yi": "398.82419",
+      "allowance_closing_yi": "20.87632",
+      "allowance_opening_yi": "17.19771",
+      "citation": "E26",
+      "physical_page": 147
+    },
+    "impairment_absolute": {
+      "assets_current_yi": "16.52869",
+      "assets_prior_yi": "3.66345",
+      "credit_current_yi": "6.06402",
+      "credit_prior_yi": "3.46377",
+      "cashflow_citation": "E14",
+      "cashflow_page": 177,
+      "income_statement_citation": "E15",
+      "income_statement_page": 98
+    },
+    "nonrecurring_total_yi": "68.50858",
+    "pe_arithmetic": {
+      "eps_yuan": "5.828871623202742014200810871",
+      "reference_pe": "13.74193929424510359446279373",
+      "available": true,
+      "matches_saved": true,
+      "price_date": "2026-09-30",
+      "price_yuan": "80.100",
+      "share_count": "7613438907.00000000",
+      "scope": "所选期末/输入股数口径，不是官方当前PE"
+    },
+    "price_return_pct": [
+      "-41.78",
+      "-12.68",
+      "16.43"
+    ],
+    "total_return_pct": [
+      "-41.98",
+      "-12.88",
+      "16.23"
+    ],
+    "dividend_yuan": "0",
+    "fees_pct": "0.2"
+  },
+  "findings": [
+    {
+      "id": "B01",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "comparison_baseline",
+      "claim_ids": [
+        "thesis:1",
+        "invalidation:1"
+      ],
+      "thesis_ids": [
+        "T2"
+      ],
+      "citations": [
+        "E4",
+        "E26"
+      ],
+      "physical_pages": [
+        96,
+        147
+      ],
+      "claim": "下期同基期应收同比及周转天数应不高于本期较期初增幅所隐含的趋势",
+      "reason": "把应收同比百分比、周转天数与半年期末对期初百分比的隐含趋势建立大小关系仍不可复算，单位及基期不同；monitoring虽写基准待补，与正文不一致。",
+      "recommended_review": "金融同学分别补应收同年同月同比和上年同期间周转天数；在取得基准前仅设待验证方向，不用53.16%或其隐含趋势作阈值。"
+    },
+    {
+      "id": "B02",
+      "severity": "中",
+      "status": "confirmed",
+      "category": "thesis_invalidation_alignment",
+      "claim_ids": [
+        "thesis:2",
+        "invalidation:2"
+      ],
+      "thesis_ids": [
+        "T3"
+      ],
+      "citations": [
+        "E1",
+        "E20"
+      ],
+      "physical_pages": [
+        7,
+        8
+      ],
+      "claim": "T3正文缺桥不能证明稳定；失效条件却说核心盈利稳定判断被推翻",
+      "reason": "正文没有提出核心经营当前稳定的假设，反证层加入更强且未支持的命题，退出条件不能与原论据可靠关联。条件句本身没有肯定稳定，故原规则高风险定性是误报；论据与反证对象不一致仍是独立实质问题。",
+      "recommended_review": "将T3改为清楚的未来可验证假设并标出缺桥，或保持其为核验限制并用补桥后更新结论；不要以不存在的稳定判断作撤回对象。"
+    },
+    {
+      "id": "B03",
+      "severity": "低",
+      "status": "wording_direction_pending",
+      "category": "ageing_ratio_direction",
+      "claim_ids": [
+        "invalidation:1"
+      ],
+      "thesis_ids": [
+        "T2"
+      ],
+      "citations": [
+        "E26"
+      ],
+      "physical_pages": [
+        147
+      ],
+      "claim": "账龄一年以上占比继续抬升",
+      "reason": "按同表未扣坏账账面余额计算，一年以上占比期初5.42%、期末4.29%，本期占比实际下降；未来反证可以设抬升，但“继续”容易误示当前已抬升。",
+      "calculation": {
+        "opening_above_one_year_thousand_yuan": "2287449",
+        "closing_above_one_year_thousand_yuan": "2749833",
+        "opening_share_pct": "5.424368413958516540767924623",
+        "closing_share_pct": "4.293765551597035828949600904"
+      },
+      "recommended_review": "删除“继续”，把未来占比阈值或比较日期单列；明确账龄账面余额与净额口径。"
+    },
+    {
+      "id": "B04",
+      "severity": "低",
+      "status": "wording_pending",
+      "category": "signed_finance_income_label",
+      "claim_ids": [
+        "risks:0"
+      ],
+      "thesis_ids": [
+        "T1",
+        "T3"
+      ],
+      "citations": [
+        "E15"
+      ],
+      "physical_pages": [
+        98
+      ],
+      "claim": "上年同期为财务收入-59.88亿元",
+      "reason": "原利润表2025合并财务(费用)/收入为正5,987,740千元（收入59.88亿元）；转换到费用展示口径才是-59.88。将财务收入直接写负值易混淆，金额绝对值本身正确。",
+      "recommended_review": "写2025H1财务收入59.88亿元，或财务费用口径为-59.88亿元；同一段不要混用名称和符号。"
+    }
+  ],
+  "rule_review": {
+    "generation_rule": "classification_does_not_prove_core_profit_stability",
+    "generation_claim_id": "invalidation:2",
+    "classification": "false_positive_of_conditional_negation_not_financial_signoff",
+    "reason": "若后续利润桥显示核心利润仍为负，则稳定判断被推翻，是条件反证，不是当前肯定稳定；根代理修订后当前规则0。不得因此删除原生成rule1或称整体金融逻辑已经正确。",
+    "current_rule_count": 0,
+    "current_rules": []
+  },
+  "remaining_financial_review": [
+    "PE8/12/16仅流程演示，无金融同学确认的依据且pe_basis.reviewed=false",
+    "T2同基期同比、周转基准、季节性/合并范围与结算解释",
+    "T3逐项汇兑/衍生损益桥和反证对象",
+    "T4比值1.42只表示经营现金流/归母利润，不能替代全部现金转化或回款质量；单期维持>=1缺少独立合理性依据",
+    "谨慎-41.98%、基准-12.88%均超过示例10%损失约束，应继续暂缓",
+    "股类、库存股、稀释、交易前价格及股利/费用情景期间仍需核验"
+  ],
+  "source_checks": {
+    "pdf_path": "ThesisLens\\知衡数据资料\\家电行业_截至2026-10-06\\01_公司财报\\000333_美的集团\\000333_2026-08-29_2026年半年度报告_1225531404.pdf",
+    "sha256_matches_manifest": true,
+    "physical_pages_text_checked": [
+      7,
+      8,
+      52,
+      87,
+      96,
+      98,
+      147,
+      148,
+      177
+    ],
+    "physical_pages_visually_checked": [
+      8,
+      52,
+      98,
+      147,
+      148,
+      177
+    ],
+    "unit": "除另注外人民币千元",
+    "visual_render_note": "Poppler提示未找到若干备用西文字体，已逐页查看关键表头、列和数值，均可读；不以文字抽取单独证明表格归属"
+  },
+  "human_annotations_modified": false,
+  "run_record_modified": false,
+  "real_model_calls_made_by_auditor": 0,
+  "network_calls_made_by_auditor": 0
+}

@@ -1,4 +1,4 @@
-"""V0.4 HTTP checks. --live makes one full model case with saved valuation."""
+"""V0.4/V0.5-compatible HTTP checks. --live makes one full model case."""
 import argparse
 import json
 import time
@@ -8,8 +8,8 @@ import urllib.parse
 import core
 
 def main():
-    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group();mode.add_argument('--live',action='store_true');mode.add_argument('--run-id',help='Validate a saved model record without another model call');args=parser.parse_args()
-    base=json.loads((core.DATA/'service.json').read_text('utf-8'))['url'];checks=[]
+    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group();mode.add_argument('--live',action='store_true');mode.add_argument('--run-id',help='Validate a saved model record without another model call');parser.add_argument('--base-url',help='Use an explicit local test instance');args=parser.parse_args()
+    base=args.base_url or json.loads((core.DATA/'service.json').read_text('utf-8'))['url'];checks=[]
     def request(path,body=None):
         req=urllib.request.Request(base+path,data=json.dumps(body,ensure_ascii=False).encode() if body is not None else None,
                                    headers={'Content-Type':'application/json'})
@@ -26,7 +26,8 @@ def main():
             if row['status']=='complete':return request('/api/runs/'+row['run_id'])
             time.sleep(1)
         raise TimeoutError('Research task still running')
-    check('V0.4实例',request('/api/status')['version']=='0.4.0')
+    actual_version=request('/api/status')['version']
+    check('兼容V0.4/V0.5实例',actual_version in ['0.4.0','0.5.0'])
     for code in core.COMPANIES:
         for period in ['2025-FY','2026-H1']:
             p=request('/api/financial/depth?'+urllib.parse.urlencode({'code':code,'cutoff':'2026-10-06','period':period}))
@@ -57,7 +58,7 @@ def main():
     for fmt in ['md','json','html']:
         content=request('/api/runs/'+target['id']+'/export?format='+fmt)
         check('研究导出 '+fmt,('财务解剖' in (json.dumps(content,ensure_ascii=False) if isinstance(content,dict) else content.decode('utf-8'))))
-    report={'version':'0.4.0','date':core.now(),'checks':checks,'passed':sum(x['passed'] for x in checks),
+    report={'version':actual_version,'check_suite':'stage4_compatible','date':core.now(),'checks':checks,'passed':sum(x['passed'] for x in checks),
             'total':len(checks),'local_run_id':local['id'],'live_run_id':live['id'] if live else None,'valuation_id':v['id'],'reused_model_record':bool(args.run_id)}
     (core.DATA/'stage4_http.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),'utf-8')
     print(json.dumps(report,ensure_ascii=False))

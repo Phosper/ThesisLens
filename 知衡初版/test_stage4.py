@@ -106,7 +106,7 @@ class DepthTests(unittest.TestCase):
             tmp=Path(folder).resolve()
             self.assertTrue(tmp.is_relative_to(core.DATA.resolve()))
             with patch.object(core,'DATA',tmp),patch.object(core,'RUNS',tmp/'runs.sqlite3'),patch.object(knowledge,'DB',tmp/'library.sqlite3'),patch.object(workbench,'DB',tmp/'workbench.sqlite3'),patch('core.save_run',wraps=core.save_run) as save,patch('model.complete',side_effect=AssertionError('No model request for demo')):
-                r=demo_case.restore();run=save.call_args.args[0]
+                r=demo_case.restore('v04');run=save.call_args.args[0]
                 self.assertEqual(len(knowledge.sources()),1)
                 self.assertEqual(r['original_run_id'],'8d74405af148')
                 self.assertEqual(run['demo_original']['id'],r['original_run_id'])

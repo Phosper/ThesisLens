@@ -13,7 +13,7 @@ $('#depth-period').addEventListener('change',catchTask(loadDepth));
 function mountLogicLinks(report){
   const rows=report.draft.thesis||[];if(!rows.some(x=>x.id))return;
   const sections=[['risks','反证与风险'],['invalidation','失效条件'],['monitoring','跟踪指标']];
-  const html=`<details class="trace-details logic-links"><summary>论据如何被反证与跟踪 · ${rows.length}项</summary>${rows.map(t=>`<article><h4>${esc(t.id)} · ${esc(t.text)}</h4>${sections.map(([key,label])=>`<p><b>${label}</b></p><ul>${(report.draft[key]||[]).filter(x=>(x.thesis_ids||[]).includes(t.id)).map(x=>`<li>${esc(x.text)} ${citationButtons(x.citations)}</li>`).join('')||'<li>尚未关联，需补充核验。</li>'}</ul>`).join('')}</article>`).join('')}</details>`;
+  const html=`<details class="trace-details report-detail logic-links"><summary>论据如何被反证与跟踪 · ${rows.length}项</summary>${rows.map(t=>`<article><h4>${esc(t.id)} · ${esc(t.text)}</h4>${sections.map(([key,label])=>`<p><b>${label}</b></p><ul>${(report.draft[key]||[]).filter(x=>(x.thesis_ids||[]).includes(t.id)).map(x=>`<li>${esc(x.text)} ${citationButtons(x.citations)}</li>`).join('')||'<li>尚未关联，需补充核验。</li>'}</ul>`).join('')}</article>`).join('')}</details>`;
   $('#report-panel .report-body').insertAdjacentHTML('beforeend',html);
 }
 

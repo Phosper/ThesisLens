@@ -26,7 +26,7 @@ def safe_markup(text):
     text=html.escape(text)
     return re.sub(r'https://github.com/Phosper/ThesisLens',lambda m:f'<link href="{m[0]}" color="#174b43">{m[0]}</link>',text)
 
-def cover(c):
+def cover(c,text):
     c.setFillColor(GREEN);c.rect(0,0,WIDTH,HEIGHT,fill=1,stroke=0)
     c.setFillColor(ACCENT);c.rect(48,HEIGHT-95,48,4,fill=1,stroke=0)
     c.setFillColor(HexColor('#e3ece5'));c.setFont('YaHei',10)
@@ -40,8 +40,19 @@ def cover(c):
     c.drawString(48,HEIGHT-411,'以证据立论，以反证校准。')
     c.setStrokeColor(HexColor('#5c7d71'));c.line(48,235,WIDTH-48,235)
     c.setFillColor(HexColor('#edf2ec'));c.setFont('YaHei',11)
-    for y,text in [(206,'团队名称：待填写'),(181,'学校：待填写'),(156,'队员及指导教师：待填写')]:c.drawString(48,y,text)
-    c.setFont('YaHei',9);c.drawString(48,94,'项目计划书 / 可运行原型 V0.4 / 2026年10月7日')
+    match=re.search(r'团队名称：\s*(.*?)\s+学校：\s*([^\n]+)',text)
+    team,school=match.groups() if match else ('待填写','待填写')
+    members=re.search(r'队员及指导教师：\s*([^\n]+)',text)
+    identity=[f'团队名称：{team.strip()}',f'学校：{school.strip()}',
+              '队员及指导教师：'+(members[1].strip() if members else '待填写')]
+    y=213
+    identity_style=ParagraphStyle('cover_identity',fontName='YaHei',fontSize=11,leading=18,
+                                  textColor=HexColor('#edf2ec'),wordWrap='CJK')
+    for line in identity:
+        para=Paragraph(safe_markup(line),identity_style);_,h=para.wrap(WIDTH-96,100)
+        if y-h<113:raise ValueError('Cover identity information exceeds the reserved area')
+        para.drawOn(c,48,y-h);y-=h+7
+    c.setFont('YaHei',9);c.drawString(48,94,'提交前草稿 / 项目计划书 / V0.5 / 2026年10月12日')
     c.drawString(48,73,'项目代码：github.com/Phosper/ThesisLens')
     c.linkURL('https://github.com/Phosper/ThesisLens',(48,66,350,87),relative=0)
     c.showPage()
@@ -70,7 +81,7 @@ def body_page(c,text,page,total,manual=False):
             p.drawOn(c,45,y-h);y-=h+(5 if kind=='bullet' else 0)
         y-=after
     c.setStrokeColor(HexColor('#d9e0d9'));c.line(45,51,WIDTH-45,51)
-    c.setFont('YaHei',8);c.setFillColor(MUTED);c.drawString(45,34,'V0.4 / 公开资料研究原型 / 封面身份信息待团队补齐')
+    c.setFont('YaHei',8);c.setFillColor(MUTED);c.drawString(45,34,'V0.5 / 公开资料研究原型 / 提交前草稿 / 2026-10-12')
     c.drawRightString(WIDTH-45,34,f'{page:02d} / {total:02d}')
     c.showPage()
 
@@ -83,9 +94,9 @@ def build():
         if '{{' in text:raise ValueError('Acceptance placeholders must be materialized first')
         pages=text.split('<!-- PAGE -->');assert len(pages)==count
         file=OUT/name;c=canvas.Canvas(str(file),pagesize=A4,pageCompression=1)
-        c.setTitle(name.removesuffix('.pdf'));c.setAuthor('知衡项目组（身份待填写）')
+        c.setTitle(name.removesuffix('.pdf'));c.setAuthor('知衡参赛材料（提交前草稿）')
         for i,page in enumerate(pages,1):
-            if i==1 and not manual:cover(c)
+            if i==1 and not manual:cover(c,page)
             else:body_page(c,page,i,count,manual)
         c.save();print(json.dumps({'file':str(file.relative_to(ROOT)),'pages':count,'bytes':file.stat().st_size},ensure_ascii=False))
 

@@ -24,13 +24,20 @@ import questions
 import exporting
 import retrieval
 import announcements
+import audit
 
 JOBS={};JOBS_LOCK=threading.Lock();RESEARCH_GATE=threading.BoundedSemaphore(1)
 
 def job_work(job_id,body,operation='research'):
+    with audit.context(job_id=job_id,run_id=uuid.uuid4().hex[:12]):
+        return audited_job_work(job_id,body,operation)
+
+def audited_job_work(job_id,body,operation='research'):
     def progress(trace):
         with JOBS_LOCK: JOBS[job_id]['trace']=trace
     try:
+        audit.event('job',operation=operation,status='started')
+        with JOBS_LOCK:JOBS[job_id]['audit_run_id']=audit.current()['run_id']
         if operation=='research':
             result=research.run(body.get('code','000333'),body.get('cutoff','2026-10-06'),body.get('question',''),body.get('mode','local'),progress,body.get('options'))
             payload={'run_id':result['id']}
@@ -40,13 +47,16 @@ def job_work(job_id,body,operation='research'):
         elif operation=='official_import':payload={'result':announcements.import_selected(body,progress)}
         else:payload={'result':questions.answer(body)}
         with JOBS_LOCK: JOBS[job_id].update(status='complete',**payload)
+        audit.event('job',operation=operation,status='success')
     except Exception as exc:
+        try:audit.event('job',operation=operation,status='failed',error_kind=type(exc).__name__)
+        except Exception:pass
         with JOBS_LOCK:
             JOBS[job_id].update(status='failed',error=str(exc) if isinstance(exc,(ValueError,KeyError)) else '本次研究未完成，请检查资料或模型服务。')
     finally: RESEARCH_GATE.release()
 
 class Handler(BaseHTTPRequestHandler):
-    server_version='Zhiheng/0.4'
+    server_version='Zhiheng/0.5'
 
     def log_message(self,*args):
         pass  # No URLs, user questions or credentials in access logs.
@@ -60,9 +70,12 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Content-Length',str(len(data)));self.end_headers();self.wfile.write(data)
 
-    def send_file(self,path,download_name=None,trusted_html=False):
+    def send_file(self,path,download_name=None,trusted_html=False,source=None):
         path=Path(path)
-        if not path.is_file(): return self.reply({'error':'文件不存在'},404)
+        def access(status,http_status,bytes=0,error_kind=None,**extra):
+            if source:audit.event('original_http',source_id=source['source_id'],source_sha256=source.get('sha256'),purpose='original_file_http',status=status,http_status=http_status,bytes=bytes,error_kind=error_kind,**extra)
+        if not path.is_file():
+            access('failed',404,error_kind='not_found');return self.reply({'error':'文件不存在'},404)
         mime=mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
         if path.suffix.lower()=='.html' and path.parent!=core.APP/'static' and not trusted_html:
             mime='application/octet-stream';download_name=path.name
@@ -70,40 +83,50 @@ class Handler(BaseHTTPRequestHandler):
         range_header=self.headers.get('Range')
         if range_header:
             match=re.fullmatch(r'bytes=(\d*)-(\d*)',range_header)
-            if not match: return self.reply({'error':'不支持的文件范围'},416)
+            if not match:
+                access('failed',416,error_kind='invalid_range');return self.reply({'error':'不支持的文件范围'},416)
             if not match.group(1):
                 suffix=int(match.group(2) or 0);start=max(0,size-suffix)
             else: start=int(match.group(1));end=min(int(match.group(2) or size-1),size-1)
-            if not 0<=start<=end<size: return self.reply({'error':'文件范围越界'},416)
+            if not 0<=start<=end<size:
+                access('failed',416,error_kind='invalid_range');return self.reply({'error':'文件范围越界'},416)
             status=206
         self.send_response(status);self.send_header('Content-Type',mime+('; charset=utf-8' if mime.startswith('text/') else ''))
         self.send_header('Accept-Ranges','bytes');self.send_header('X-Content-Type-Options','nosniff')
         if status==206: self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
         if download_name: self.send_header('Content-Disposition',"attachment; filename*=UTF-8''"+urllib.parse.quote(download_name))
         self.send_header('Content-Length',str(end-start+1));self.end_headers()
-        with path.open('rb') as fp:
-            fp.seek(start);remaining=end-start+1
-            while remaining>0:
-                part=fp.read(min(65536,remaining))
-                if not part: break
-                try: self.wfile.write(part)
-                except (BrokenPipeError,ConnectionResetError): break
-                remaining-=len(part)
+        transferred=0;digest=hashlib.sha256();failure=None
+        try:
+            with path.open('rb') as fp:
+                fp.seek(start);remaining=end-start+1
+                while remaining>0:
+                    part=fp.read(min(65536,remaining))
+                    if not part:failure='unexpected_eof';break
+                    try:self.wfile.write(part)
+                    except (BrokenPipeError,ConnectionResetError):failure='connection_closed';break
+                    remaining-=len(part);transferred+=len(part);digest.update(part)
+        except OSError as error:
+            failure=type(error).__name__;raise
+        finally:
+            access('failed' if failure else 'success',status,bytes=transferred,error_kind=failure,transfer_sha256=digest.hexdigest(),range_start=start,range_end=end)
 
     def do_GET(self):
         if not self.valid_host(): return self.reply({'error':'仅允许本机访问'},403)
+        core.LOCAL_BASE_URL=f'http://127.0.0.1:{self.server.server_port}'
         parts=urllib.parse.urlparse(self.path);path=parts.path
         query=urllib.parse.parse_qs(parts.query)
         def get(key,default=''): return query.get(key,[default])[0]
         try:
             if path=='/api/status':
                 with core.connect() as db: index=dict(db.execute('SELECT key,value FROM meta').fetchall())
-                return self.reply({'version':'0.4.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
+                return self.reply({'version':'0.5.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
                       'companies':core.COMPANIES,'dataset':core.manifest()['stats'],
                       'cutoff':core.manifest()['research_cutoff'],'index':index,'model':model.get_config(),
                       'financial_coverage':financials.history(cutoff=core.manifest()['research_cutoff'])['coverage'],
                       'periods':sorted({r['period'] for r in financials.history(cutoff=core.manifest()['research_cutoff'])['data']},key=financials.period_end,reverse=True),
                       'pdf_import_available':importlib.util.find_spec('pypdf') is not None})
+            if path=='/api/audit':return self.reply(audit.snapshot(get('run_id') or None,get('job_id') or None,int(get('limit','1000'))))
             if path=='/api/financial/history':return self.reply(financials.history(get('code'),get('cutoff','2026-10-06'),get('kind')))
             if path=='/api/financial/depth':return self.reply(financial_depth.snapshot(get('code','000333'),get('cutoff','2026-10-06'),get('period') or None))
             if path=='/api/financial/depth/export':
@@ -133,26 +156,34 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(job)
             if path.startswith('/api/runs/'):
                 suffix=path[len('/api/runs/'):];run_id=suffix.split('/')[0]
-                result=core.get_run(run_id)
-                result['human_review']=workbench.quality(result)
+                result=exporting.prepare_run(core.get_run(run_id))
                 if suffix.endswith('/quality'):return self.reply(result['human_review'])
                 if suffix.endswith('/print'):
+                    view=exporting.report_view(get('view','full'))
                     folder=core.APP/'exports';folder.mkdir(exist_ok=True)
-                    file=folder/f"知衡_{result['company']}_{result['id']}.html";file.write_text(exporting.memo_html(result),encoding='utf-8')
+                    tail='_简略版' if view=='brief' else ''
+                    file=folder/f"知衡_{result['company']}_{result['id']}{tail}.html";file.write_text(exporting.memo_html(result,view),encoding='utf-8')
                     return self.send_file(file,trusted_html=True)
                 if suffix.endswith('/export'):
                     fmt=get('format','md')
                     if fmt not in ['md','json','html']: raise ValueError('导出格式应为md、json或html')
+                    view=exporting.report_view(get('view','full'))
                     export=core.APP/'exports';export.mkdir(exist_ok=True)
-                    file=export/f"知衡_{result['company']}_{result['id']}.{fmt}"
-                    content=exporting.memo_markdown(result) if fmt=='md' else exporting.memo_html(result) if fmt=='html' else json.dumps(result,ensure_ascii=False,indent=2)
+                    tail='_简略版' if view=='brief' and fmt!='json' else ''
+                    file=export/f"知衡_{result['company']}_{result['id']}{tail}.{fmt}"
+                    content=exporting.memo_markdown(result,view) if fmt=='md' else exporting.memo_html(result,view) if fmt=='html' else json.dumps(result,ensure_ascii=False,indent=2)
                     file.write_text(content,encoding='utf-8')
                     return self.send_file(file,file.name)
                 return self.reply(result)
             if path.startswith('/api/files/'):
-                record=core.source(urllib.parse.unquote(path[len('/api/files/'):]))
-                file=core.file_for(record)
-                return self.send_file(file,file.name if get('download')=='1' else None)
+                source_id=urllib.parse.unquote(path[len('/api/files/'):])
+                with audit.context(run_id=get('run_id') or None):
+                    try:
+                        record=core.source(source_id);file=core.file_for(record)
+                    except (ValueError,KeyError) as error:
+                        audit.event('original_http',source_id=source_id,purpose='original_file_http',status='failed',http_status=400,error_kind=type(error).__name__)
+                        raise
+                    return self.send_file(file,file.name if get('download')=='1' else None,source=record)
             static=core.APP/'static'
             file=(static/('index.html' if path=='/' else urllib.parse.unquote(path).lstrip('/'))).resolve()
             if not file.is_relative_to(static): return self.reply({'error':'路径无效'},403)

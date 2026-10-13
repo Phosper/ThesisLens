@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-10-12",
+  "method": "原样复制本机安装发行版许可证；未复制组件源代码或二进制",
+  "files": [
+    {
+      "file": "CPython-3.12.14-LICENSE.txt",
+      "source_in_python_prefix": "LICENSE.txt",
+      "license": "PSF License Version 2及文件所列历史许可",
+      "sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a",
+      "bytes": 25066
+    },
+    {
+      "file": "pypdf-6.10.0-LICENSE.txt",
+      "source_in_python_prefix": "Lib/site-packages/pypdf-6.10.0.dist-info/licenses/LICENSE",
+      "license": "BSD-3-Clause",
+      "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524",
+      "bytes": 1605
+    },
+    {
+      "file": "ReportLab-4.4.9-LICENSE.txt",
+      "source_in_python_prefix": "Lib/site-packages/reportlab-4.4.9.dist-info/licenses/LICENSE",
+      "license": "BSD三条款（本机原文）",
+      "sha256": "ef831761646313921375fc2cb888e8eeaf7da213d0b92852c10c42f3a0b4d138",
+      "bytes": 1707
+    },
+    {
+      "file": "Pillow-12.3.0-LICENSE.txt",
+      "source_in_python_prefix": "Lib/site-packages/pillow-12.3.0.dist-info/licenses/LICENSE",
+      "license": "MIT-CMU及文件所列捆绑依赖许可",
+      "sha256": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857",
+      "bytes": 78016
+    },
+    {
+      "file": "charset-normalizer-3.5.2-LICENSE.txt",
+      "source_in_python_prefix": "Lib/site-packages/charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+      "license": "MIT",
+      "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1",
+      "bytes": 1092
+    }
+  ]
+}

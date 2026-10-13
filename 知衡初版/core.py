@@ -10,6 +10,7 @@ import re
 import sqlite3
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
+import audit
 
 APP = Path(__file__).resolve().parent
 ROOT = APP.parent
@@ -19,7 +20,6 @@ DATA = APP/'data'
 INDEX = DATA/'index.sqlite3'
 RUNS = DATA/'runs.sqlite3'
 OVERRIDES = APP/'source_overrides.json'
-SOURCE_OVERRIDES = json.loads(OVERRIDES.read_text(encoding='utf-8'))['sources'] if OVERRIDES.exists() else {}
 DATA.mkdir(exist_ok=True)
 COMPANIES = {'000333':'美的集团','000651':'格力电器','600690':'海尔智家'}
 ALIASES = {'营收':'营业收入','收入':'营业收入','净利':'净利润','利润':'净利润','现金':'现金流',
@@ -38,12 +38,14 @@ def json_dump(obj):
 def now():
     return dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec='seconds')
 
+SOURCE_OVERRIDES = json.loads(audit.read_text(OVERRIDES,purpose='initialization_source_overrides'))['sources'] if OVERRIDES.exists() else {}
+
 def normalize_source(s):
     correction=SOURCE_OVERRIDES.get(s['source_id'])
     return dict(s,publication_date=correction['publication_date'],date_correction=correction) if correction else s
 
 def base_manifest():
-    m=json.loads(MANIFEST.read_text(encoding='utf-8'))
+    m=json.loads(audit.read_text(MANIFEST,purpose='manifest_read'))
     m['sources']=[normalize_source(s) for s in m['sources']]
     return m
 
@@ -120,14 +122,12 @@ def build_index():
             db.execute('INSERT INTO chunks VALUES (?,?,?,?,?,?,?,?,?,?)',
                        (counter,source_id,source.get('stock_code'),source['publication_date'],source.get('report_period'),kind,locator,pdf_page,part,int(ocr)))
             db.execute('INSERT INTO chunks_fts(rowid,tokens) VALUES (?,?)',(counter,' '.join(tokens(part))))
-    with (DATASET/'05_可检索文本/逐页语料.jsonl').open(encoding='utf-8') as fp:
-        for line in fp:
-            p = json.loads(line)
-            add(p['source_id'],p['text'],f"PDF第{p['pdf_page']}页",p['pdf_page'],'OCR' in p.get('text_origin',''))
+    for line in audit.read_text(DATASET/'05_可检索文本/逐页语料.jsonl',purpose='index_pdf_text_corpus').splitlines():
+        p = json.loads(line)
+        add(p['source_id'],p['text'],f"PDF第{p['pdf_page']}页",p['pdf_page'],'OCR' in p.get('text_origin',''))
     web = collections.defaultdict(list)
-    with (DATASET/'05_可检索文本/网页语料.jsonl').open(encoding='utf-8') as fp:
-        for line in fp:
-            p = json.loads(line);web[p['source_id']].append(p)
+    for line in audit.read_text(DATASET/'05_可检索文本/网页语料.jsonl',purpose='index_web_text_corpus').splitlines():
+        p = json.loads(line);web[p['source_id']].append(p)
     for source_id,paragraphs in web.items():
         buffer,first,last = [],None,None
         for p in paragraphs:
@@ -139,13 +139,13 @@ def build_index():
         if buffer: add(source_id,'\n'.join(buffer),f'网页段落{first}—{last}')
     for source in sources.values():
         if source['category']!='06_市场行情': continue
-        rows = json.loads((DATASET/source['relative_path']).read_text(encoding='utf-8'))['data']
+        rows = json.loads(audit.read_text(DATASET/source['relative_path'],source_id=source['source_id'],purpose='index_market_source'))['data']
         tail = rows[-1]
         add(source['source_id'],f"{source['company']}A股未复权日线。末个交易日{tail['day']}，开盘{tail['open']}元，最高{tail['high']}元，最低{tail['low']}元，收盘{tail['close']}元。共{len(rows)}条历史记录，起始日期{rows[0]['day']}。成交量原始单位待核验；不代表含分红的总收益。",'日线记录')
     db.executemany('INSERT INTO meta VALUES (?,?)',[
         ('built_at',now()),('chunk_count',str(counter)),('source_count',str(len(sources))),
-        ('dataset_sha256',hashlib.sha256(MANIFEST.read_bytes()).hexdigest()),('cutoff',m['research_cutoff'])])
-    db.execute('INSERT INTO meta VALUES (?,?)',('source_overrides_sha256',hashlib.sha256(OVERRIDES.read_bytes()).hexdigest() if OVERRIDES.exists() else ''))
+        ('dataset_sha256',hashlib.sha256(audit.read_bytes(MANIFEST,purpose='index_manifest_hash')).hexdigest()),('cutoff',m['research_cutoff'])])
+    db.execute('INSERT INTO meta VALUES (?,?)',('source_overrides_sha256',hashlib.sha256(audit.read_bytes(OVERRIDES,purpose='index_source_overrides_hash')).hexdigest() if OVERRIDES.exists() else ''))
     db.commit();db.close()
     staging.replace(INDEX)
     print(f'Indexed {len(sources)} sources, {counter} chunks',flush=True)
@@ -158,9 +158,10 @@ def connect():
 
 def ensure_index():
     if not INDEX.exists():return build_index()
+    audit.cache_hit('sqlite_fts_index')
     with connect() as db:
         row=db.execute("SELECT value FROM meta WHERE key='source_overrides_sha256'").fetchone()
-    expected=hashlib.sha256(OVERRIDES.read_bytes()).hexdigest() if OVERRIDES.exists() else ''
+    expected=hashlib.sha256(audit.read_bytes(OVERRIDES,purpose='index_version_check')).hexdigest() if OVERRIDES.exists() else ''
     if not row or row[0]!=expected:return build_index()
 
 def validate_cutoff(cutoff):
@@ -228,6 +229,7 @@ def search(query,code='',cutoff='2026-10-06',limit=12,kind='',period='',include_
         if key in locations: continue
         locations.add(key);result.append(r if r.get('user_imported') else decorate(r))
         if len(result)>=max(1,min(int(limit),30)): break
+    audit.event('index_query',purpose='keyword_search',cache_name='sqlite_fts_index',cache_hit=True,count=len(result),status='success')
     return result
 
 def page_evidence(source_id,page):
@@ -236,12 +238,14 @@ def page_evidence(source_id,page):
     if not rows:
         import knowledge
         custom=knowledge.passage(source_id,page)
+        audit.event('index_query',purpose='supplemental_page_text',source_id=source_id,page=page,cache_name='knowledge_sqlite_passages',cache_hit=True,status='success',count=len(custom))
         return custom[0] if custom else None
     r=dict(rows[0]);text=r['text']
     for part in rows[1:]:
         overlap=next((n for n in range(min(300,len(text),len(part['text'])),30,-1) if text[-n:]==part['text'][:n]),0)
         text+=part['text'][overlap:]
     r['text']=text[:12000]
+    audit.event('index_query',purpose='physical_page_text',source_id=source_id,page=page,cache_name='sqlite_fts_index',cache_hit=True,status='success',bytes=len(r['text'].encode()))
     return decorate(r)
 
 def source_evidence(source_id,contains='',limit=1):
@@ -251,15 +255,19 @@ def source_evidence(source_id,contains='',limit=1):
     if not rows:
         import knowledge
         rows=knowledge.passage(source_id)
-        return [r for r in rows if not contains or contains in r['text']][:limit]
+        result=[r for r in rows if not contains or contains in r['text']][:limit]
+        audit.event('index_query',purpose='supplemental_source_text',source_id=source_id,cache_name='knowledge_sqlite_passages',cache_hit=True,status='success',count=len(result))
+        return result
     if contains:
         matches=[r for r in rows if contains in r['text']]
         if matches: rows=matches
-    return [decorate(r) for r in rows[:limit]]
+    result=[decorate(r) for r in rows[:limit]]
+    audit.event('index_query',purpose='source_text',source_id=source_id,cache_name='sqlite_fts_index',cache_hit=True,status='success',count=len(result))
+    return result
 
 def curated_metric_rows(period='2026-H1',cutoff='2026-10-06'):
     validate_cutoff(cutoff)
-    definitions=json.loads((APP/'metrics.json').read_text(encoding='utf-8'))['metrics']
+    definitions=json.loads(audit.read_text(APP/'metrics.json',purpose='curated_metrics'))['metrics']
     output=[]
     for m in definitions:
         if m['period']!=period: continue
@@ -305,7 +313,7 @@ def prices(code,cutoff='2026-10-06'):
     validate_cutoff(cutoff)
     s=next((r for r in manifest()['sources'] if r['category']=='06_市场行情' and r.get('stock_code')==code),None)
     if not s: return {'data':[]}
-    package=json.loads((DATASET/s['relative_path']).read_text(encoding='utf-8'))
+    package=json.loads(audit.read_text(DATASET/s['relative_path'],source_id=s['source_id'],purpose='market_source_read'))
     package['data']=[r for r in package['data'] if r['day'][:10]<=cutoff]
     package['metadata']=dict(s)
     if package['data']:
