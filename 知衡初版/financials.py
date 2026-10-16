@@ -145,8 +145,7 @@ def catalogue():
         if _cache is not None and signature==_signature:
             audit.cache_hit('financial_catalogue',sha256=signature,count=len(_cache));return _cache
         pages={s['source_id']:[] for s in sources}
-        for line in audit.read_text(core.DATASET/'05_可检索文本/逐页语料.jsonl',purpose='financial_text_corpus').splitlines():
-            p=json.loads(line)
+        for p in core.corpus_pages():
             if p['source_id'] in pages and p['pdf_page']<=21:pages[p['source_id']].append(p)
         if hasattr(core,'imported_pages'):
             for p in core.imported_pages():

@@ -12,12 +12,13 @@ import uuid
 
 import core
 import knowledge
+import companies as company_registry
 
 DB=core.DATA/'announcements.sqlite3'
 TZ=dt.timezone(dt.timedelta(hours=8))
 CNINFO='https://www.cninfo.com.cn/new/hisAnnouncement/query'
 SSE='https://query.sse.com.cn/security/stock/queryCompanyBulletin.do'
-ORGS={'000333':'9900005965','000651':'gssz0000651','600690':'gssh0600690'}
+ORGS={r['code']:r['org_id'] for r in company_registry.DEFAULTS}
 MAX_PAGES=5;PAGE_SIZE=30
 
 def connect():
@@ -60,7 +61,7 @@ def normalize(code,row,provider):
         adjunct=str(row.get('adjunctUrl',''))
         if not re.fullmatch(r'finalpage/\d{4}-\d{2}-\d{2}/[\w.-]+\.pdf',adjunct,re.I):return None
         url='https://static.cninfo.com.cn/'+adjunct;publisher='巨潮资讯'
-        detail='https://www.cninfo.com.cn/new/disclosure/detail?'+urllib.parse.urlencode({'plate':'sse' if code=='600690' else 'szse','orgId':ORGS[code],
+        detail='https://www.cninfo.com.cn/new/disclosure/detail?'+urllib.parse.urlencode({'plate':'sse' if code.startswith('6') else 'szse','orgId':ORGS[code],
             'stockCode':code,'announcementId':aid,'announcementTime':date})
     else:
         if row.get('SECURITY_CODE')!=code:return None
@@ -82,7 +83,8 @@ def normalize(code,row,provider):
         'date_conflict':bool(file_date and file_date.group(1)!=date),'metadata_method':'官方公告列表登记的公司、标题和披露日期，正文仍需核验'}
 
 def fetch_page(code,start,end,keyword,page):
-    if code!='600690':
+    if code not in ORGS:raise ValueError('本企业尚未配置官方证券机构标识，请从发布方原件手动导入')
+    if not code.startswith('6'):
         params={'pageNum':page,'pageSize':PAGE_SIZE,'column':'szse','tabName':'fulltext','stock':code+','+ORGS[code],
             'searchkey':keyword,'seDate':start+'~'+end,'sortName':'time','sortType':'desc','isHLtitle':'false'}
         result=request_json(CNINFO,urllib.parse.urlencode(params).encode())
@@ -102,7 +104,7 @@ def fetch_page(code,start,end,keyword,page):
 def verified_mirror(candidate):
     """Read an independently published official copy; never solve/bypass a site's challenge."""
     code=candidate['code'];date=candidate['publication_date']
-    params={'pageNum':1,'pageSize':PAGE_SIZE,'column':'sse' if code=='600690' else 'szse','tabName':'fulltext',
+    params={'pageNum':1,'pageSize':PAGE_SIZE,'column':'sse' if code.startswith('6') else 'szse','tabName':'fulltext',
         'stock':code+','+ORGS[code],'searchkey':title_key(candidate['title'],code)[:80],
         'seDate':date+'~'+date,'sortName':'time','sortType':'desc','isHLtitle':'false'}
     result=request_json(CNINFO,urllib.parse.urlencode(params).encode());matches=[]
@@ -151,7 +153,8 @@ def discover(body,on_step=None):
     if a>b or b>dt.date.fromisoformat(today()) or (b-a).days>366 or a<dt.date(2021,1,1):raise ValueError('查询限2021年起、最长366天，结束日期不能晚于今天')
     if code and code not in core.COMPANIES:raise ValueError('请选择公司')
     if len(keyword)>80:raise ValueError('公告关键词最多80字')
-    companies=[code] if code else list(core.COMPANIES);trace=[];queries=[];found={};summaries=[]
+    if code and code not in ORGS:raise ValueError('本企业未配置官方公告查询，请按资料研究导入原件')
+    companies=[code] if code else list(ORGS);trace=[];queries=[];found={};summaries=[]
     for c in companies:
         count=0;total=0;complete=False;error=None;seen=set()
         try:

@@ -1,0 +1,59 @@
+{
+  "feedback_revision": "lab-feedback-r2",
+  "date": "2026-10-14",
+  "scope": "开发机对反馈修订的回归；机房原包测试结果另存，不代表已替机房补验",
+  "environment": {
+    "python": "3.12.14",
+    "pypdf": "6.10.0"
+  },
+  "unit_tests": {
+    "total": 145,
+    "passed": 145,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 134.063,
+    "new_tests": 1,
+    "log_sha256": "5791b0eca47f118a8de5c3a037d8eb8a78276d3e0e33d18a17c742e96399b724"
+  },
+  "ui_logic": {
+    "scope": "Node执行实际菜单与期间渲染函数，DOM替身；不是机房实测或人工视觉评价",
+    "passed": 6,
+    "total": 6,
+    "checks": [
+      {
+        "name": "静态计数为加载占位",
+        "passed": true
+      },
+      {
+        "name": "移除三家及旧数量说明",
+        "passed": true
+      },
+      {
+        "name": "动态企业菜单覆盖六家且保留原选择",
+        "passed": true
+      },
+      {
+        "name": "公告、资料库及导入菜单包含六家",
+        "passed": true
+      },
+      {
+        "name": "年度提示与列名采用年末/上年末",
+        "passed": true
+      },
+      {
+        "name": "半年提示与列名保留期末/期初",
+        "passed": true
+      }
+    ]
+  },
+  "js_syntax_checks": {
+    "depth.js": true,
+    "methods.js": true
+  },
+  "new_model_calls": 0,
+  "school_pdf_import_retested": false,
+  "school_unittest_retested": false,
+  "manual_visual_review": false,
+  "original_feedback_archived": true,
+  "historical_acceptance_counts_preserved": true
+}

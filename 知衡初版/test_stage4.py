@@ -19,8 +19,8 @@ class DepthTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):core.ensure_index()
 
-    def test_six_reports_reconcile_current_and_prior_balance_sheets(self):
-        self.assertEqual(len(depth.registry()),6)
+    def test_twelve_reports_reconcile_current_and_prior_balance_sheets(self):
+        self.assertEqual(len(depth.registry()),12)
         for record in depth.registry():
             p=depth.extract(record,core.source(record['source_id']));f=p['fields']
             for key in ['amount_yuan','prior']:

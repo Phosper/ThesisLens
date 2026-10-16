@@ -1,0 +1,17 @@
+{
+  "annotation_note":"2026-10-14新增的开发验收题。先冻结题目与原页再修改程序，原页由开发者从公开报告定位；不是独立盲测或投资效果测量。",
+  "cases":[
+    {"id":"s_h_ar","code":"002032","period":"2026-H1","cutoff":"2026-10-06","question":"客户欠我们的货款，在年中报表里怎样列出来？","source_id":"CNINFO_002032_1225522987","pages":[35,78,79]},
+    {"id":"s_h_count","code":"002032","period":"2026-H1","cutoff":"2026-10-06","question":"把有限售也算上，期末发行了多少普通股？","source_id":"CNINFO_002032_1225522987","pages":[28,29]},
+    {"id":"s_f_stock","code":"002032","period":"2025-FY","cutoff":"2026-10-06","question":"钱压在货上了吗，年度报表存货规模怎样？","source_id":"CNINFO_002032_1225076804","pages":[66]},
+    {"id":"s_f_cost","code":"002032","period":"2025-FY","cutoff":"2026-10-06","question":"国外卖货挣了多少毛利，外销的收入和成本是什么？","source_id":"CNINFO_002032_1225076804","pages":[13]},
+    {"id":"b_h_cash","code":"002508","period":"2026-H1","cutoff":"2026-10-06","question":"经营收支净额为什么是负的，半年现金流表怎么列？","source_id":"CNINFO_002508_1225519946","pages":[12,43]},
+    {"id":"b_h_due","code":"002508","period":"2026-H1","cutoff":"2026-10-06","question":"客户还没付的钱以及工程渠道的回款，要查哪张金额表？","source_id":"CNINFO_002508_1225519946","pages":[34,13]},
+    {"id":"b_f_count","code":"002508","period":"2025-FY","cutoff":"2026-10-06","question":"年末股份总数是否包括限售部分？","source_id":"CNINFO_002508_1225237757","pages":[45,46]},
+    {"id":"b_f_product","code":"002508","period":"2025-FY","cutoff":"2026-10-06","question":"烟机与灶具这两块分别卖了多少，收入结构怎样？","source_id":"CNINFO_002508_1225237757","pages":[13,14]},
+    {"id":"h_h_capex","code":"600060","period":"2026-H1","cutoff":"2026-10-06","question":"买设备和长期资产实际掏了多少现金？","source_id":"CNINFO_600060_1225502913","pages":[52]},
+    {"id":"h_h_count","code":"600060","period":"2026-H1","cutoff":"2026-10-06","question":"发行的普通股总数量有没有说明单位，半年度是否变了？","source_id":"CNINFO_600060_1225502913","pages":[60,40]},
+    {"id":"h_f_foreign","code":"600060","period":"2025-FY","cutoff":"2026-10-06","question":"中国以外卖货的收入和成本，用的是主营口径还是所有收入？","source_id":"CNINFO_600060_1225051157","pages":[27]},
+    {"id":"h_f_debt","code":"600060","period":"2025-FY","cutoff":"2026-10-06","question":"年度合并报表里，总负债与所有者权益能否和资产对上？","source_id":"CNINFO_600060_1225051157","pages":[85,86,87]}
+  ]
+}

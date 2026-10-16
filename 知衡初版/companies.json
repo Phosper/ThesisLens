@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {"code":"000333","name":"美的集团","listed":true,"segment":"综合家电","method":"white_goods","org_id":"9900005965","exchange":"szse","comparison_codes":["000651","600690"]},
+    {"code":"000651","name":"格力电器","listed":true,"segment":"空调及家电","method":"white_goods","org_id":"gssz0000651","exchange":"szse","comparison_codes":["000333","600690"]},
+    {"code":"600690","name":"海尔智家","listed":true,"segment":"综合家电","method":"white_goods","org_id":"gssh0600690","exchange":"sse","comparison_codes":["000333","000651"]},
+    {"code":"002032","name":"苏泊尔","listed":true,"segment":"小家电与炊具","method":"small_appliance","org_id":"gssz0002032","exchange":"szse","comparison_codes":["000333","600690"]},
+    {"code":"002508","name":"老板电器","listed":true,"segment":"厨房电器","method":"kitchen","org_id":"9900015938","exchange":"szse","comparison_codes":["000333","600690"]},
+    {"code":"600060","name":"海信视像","listed":true,"segment":"显示设备","method":"display","org_id":"gssh0600060","exchange":"sse","comparison_codes":["000333","600690"]}
+  ]
+}

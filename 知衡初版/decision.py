@@ -297,7 +297,7 @@ def comparison_checks(run):
                 if not linked or not any(_has_stability_prediction(thesis.get('text', ''), predicate) for thesis in linked):
                     flag('invalidation_target_not_in_thesis', '该失效条件撤回的是“核心/主营盈利稳定或改善”，但所关联论据没有提出这一方向，或仅说明不能证明/是否稳定待核验。反证对象须与实际经营假设一致；纯事实、管理层解释和资料缺口应归入待核实问题，不能被改写成更强判断。', '中')
         classification = bool(re.search(r'分类|经常性|汇兑|衍生', text))
-        stability_pattern = r'(?:核心|主营|基础).{0,12}(?:盈利|利润|经营).{0,12}(?:应更稳定|更稳定|稳定|稳健|改善)|(?:核心盈利能力|核心利润).{0,8}(?:保持|恢复|证明|说明)'
+        stability_pattern = r'(?:核心|主营|基础)[^，,。；;\n]{0,12}(?:盈利|利润|经营)[^，,。；;\n]{0,12}(?:应更稳定|更稳定|稳定|稳健|改善)|(?:核心盈利能力|核心利润)[^，,。；;\n]{0,8}(?:保持|恢复|证明|说明)'
         for stability in re.finditer(stability_pattern, text) if classification else []:
             # Do not let an unrelated "other factors need verification" erase an assertion.
             prefix = re.split(r'[，,；;。\n]', text[max(0, stability.start() - 24):stability.start()])[-1]
@@ -307,7 +307,7 @@ def comparison_checks(run):
             uncertainty = bool(re.search(r'可能|或许|待验证|待核验|研究假设', assertion))
             explicit_limit = bool(re.search(r'(?:这|该|此|上述).{0,8}(?:仅是|仅为|只是|属于).{0,8}(?:待验证|待核验).{0,8}(?:推测|假设)', text[stability.end():])
                                   and re.search(r'(?:不能|不足以|无法).{0,18}(?:投资判断|投资结论)', text[stability.end():]))
-            denied = denied or (uncertainty and explicit_limit)
+            denied = denied or (uncertainty and explicit_limit) or bool(re.search(r'(?:不能|不得|不应|无法)(?:将|把)[^，,。；;\n]{0,20}(?:等同|视为|认定为)[^，,。；;\n]{0,4}$',prefix))
             bridge = run.get('profit_adjustment_bridge') or {}
             quantified = bridge.get('available') is True and bridge.get('reviewed') is True and bool(bridge.get('citations'))
             if not denied and not quantified:
@@ -424,10 +424,19 @@ def build(run, historical=None):
         exit_rows.append({'text': f"达到用户设定的最大可接受损失{profile['max_loss_pct']}%时，暂停新增投入并复核持有/退出决定；阈值是用户研究假设，实际成交损失可能超出阈值。", 'thesis_ids': [], 'citations': []})
     exit_rows.append({'text': f"用户假设的{profile['horizon_months']}个月持有期届满时，重新评估论据、估值和继续持有条件。", 'thesis_ids': [], 'citations': []})
     # Missing total return is also a genuine gap in a requested complete memo.
-    status = '暂缓投资判断' if missing else '有条件纳入研究候选'
+    document_mode=((run.get('research_requirements') or {}).get('company_profile') or {}).get('listed') is False
+    if document_mode:
+        excluded=('未附带估值情景','未提供投入上限','未提供最大可接受损失约束')
+        missing=[item for item in missing if not item.startswith(excluded)]
+        missing.append('非上市资料研究尚未形成可核验的财务与投资判断，不套用上市公司PE或交易条件。')
+        entry=[{'text':'继续核对业务事实、财务主体和公开资料的支持关系；信息不足保留待补。','thesis_ids':[],'citations':[]}]
+        exit_rows=[{'text':'出现新的相反证据时重新评估资料中的经营假设：'+row.get('text',''),**_links(row)} for row in (run.get('draft') or {}).get('invalidation',[])]
+        returns=[]
+    status = '资料研究 · 暂不作投资判断' if document_mode else ('暂缓投资判断' if missing else '有条件纳入研究候选')
     reason = ('尚有证据、估值或约束缺口，先完成核验与条件设定。' if missing else '已记录论据支持依据与情景假设，可按列示条件继续研究；实际投资仍需交易前复核。')
+    if document_mode:reason='非上市企业当前整理业务、竞争与风险证据；财务主体和估值适用性需另行核验。'
     review_label = '历史记录补充视图 · 待人工核验' if historical else ('仍有未决事项' if missing else '已记录人工复核 · 仍需交易前复核')
-    return {'status': status, 'reason': reason, 'objective': profile['goal'], 'horizon_months': profile['horizon_months'],
+    return {'status': status, 'reason': reason, 'document_mode': document_mode, 'objective': profile['goal'], 'horizon_months': profile['horizon_months'],
             'profile': profile, 'basis': basis, 'return_scenarios': returns, 'entry_conditions': entry,
             'exit_conditions': exit_rows, 'missing': list(dict.fromkeys(missing)),
             'review_status': {'label': review_label, 'unresolved_high': high, 'unresolved_medium': medium,
@@ -439,6 +448,13 @@ def markdown(run, checks=None, concise=False):
     is_view = 'status' in run and 'profile' in run and 'basis' in run
     view = run if is_view else build(run)
     profile = view['profile']
+    if view.get('document_mode'):
+        lines=['\n## 资料研究与核验要求\n',f"**{view['status']}**：{view['reason']}\n"]
+        for name,key in [('资料核验','entry_conditions'),('相反证据复核','exit_conditions'),('信息缺口','missing')]:
+            lines.append('\n### '+name+'\n')
+            for row in view[key]:
+                lines.append('- '+(row if isinstance(row,str) else row['text']+''.join(f'[{ref}]' for ref in row['citations']))+'\n')
+        return ''.join(lines)
     lines = ['\n## 投资判断与执行条件\n', f"**{view['status']}**：{view['reason']}\n",
              f"投资目标：{view['objective']}；用户假设持有期：{view['horizon_months']}个月。\n",
              f"核验状态：{view['review_status']['label']}。{SCOPE}\n"]

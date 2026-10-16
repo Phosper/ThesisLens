@@ -1,0 +1,783 @@
+{
+  "received_on": "2026-10-14",
+  "source_file": "知衡_核验反馈表 (1)(1).xlsx",
+  "source_sha256": "8c1f2d73a34892087840745ae548ad2a8b3e132d4cb57e91ba11eeba44f962e1",
+  "case_id": "8d74405af148",
+  "source_case_label": "美的集团 2026-H1 | 截止 2026-10-06 | 已保存案例 8d74405af148 | 2026-10-07T13:13:38+08:00",
+  "scope": "附件E至G列的原样登记；没有自动写入应用的人审记录，也不适用于其他案例或改编号后的论据。",
+  "user_message_context": {
+    "pe_selection": "截图说明PE倍数由用户自行预设，入口不够显眼。",
+    "t2": "截图建议不要强行得出核心盈利稳定结论。",
+    "annotation_clarification": "用户已澄清是在复述此前的问题，没有新增标注空缺；按附件的实际结论登记。"
+  },
+  "sheets": [
+    {
+      "sheet": "核验反馈",
+      "count": 69,
+      "status_counts": {
+        "通过": 64,
+        "证据不足": 4,
+        "有问题": 1
+      },
+      "rows": [
+        {
+          "id": "S1",
+          "category": "摘要",
+          "source_row": 11,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E11:G11"
+        },
+        {
+          "id": "T1",
+          "category": "论据",
+          "source_row": 12,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E12:G12"
+        },
+        {
+          "id": "T2",
+          "category": "论据",
+          "source_row": 13,
+          "status": "证据不足",
+          "reason": "见复核意见A01，“分类所致”为公司解释，未必直接采信，不需要补充证据，此处不应得出该结论",
+          "reviewer": null,
+          "locator": "核验反馈!E13:G13"
+        },
+        {
+          "id": "T3",
+          "category": "论据",
+          "source_row": 14,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E14:G14"
+        },
+        {
+          "id": "T4",
+          "category": "论据",
+          "source_row": 15,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E15:G15"
+        },
+        {
+          "id": "R1",
+          "category": "风险",
+          "source_row": 16,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E16:G16"
+        },
+        {
+          "id": "R2",
+          "category": "风险",
+          "source_row": 17,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E17:G17"
+        },
+        {
+          "id": "R3",
+          "category": "风险",
+          "source_row": 18,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E18:G18"
+        },
+        {
+          "id": "R4",
+          "category": "风险",
+          "source_row": 19,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E19:G19"
+        },
+        {
+          "id": "I1",
+          "category": "失效条件",
+          "source_row": 20,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E20:G20"
+        },
+        {
+          "id": "I2",
+          "category": "失效条件",
+          "source_row": 21,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E21:G21"
+        },
+        {
+          "id": "I3",
+          "category": "失效条件",
+          "source_row": 22,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E22:G22"
+        },
+        {
+          "id": "I4",
+          "category": "失效条件",
+          "source_row": 23,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E23:G23"
+        },
+        {
+          "id": "M1",
+          "category": "持续跟踪",
+          "source_row": 24,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E24:G24"
+        },
+        {
+          "id": "M2",
+          "category": "持续跟踪",
+          "source_row": 25,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E25:G25"
+        },
+        {
+          "id": "M3",
+          "category": "持续跟踪",
+          "source_row": 26,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E26:G26"
+        },
+        {
+          "id": "M4",
+          "category": "持续跟踪",
+          "source_row": 27,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E27:G27"
+        },
+        {
+          "id": "Q1",
+          "category": "待解决问题",
+          "source_row": 28,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E28:G28"
+        },
+        {
+          "id": "Q2",
+          "category": "待解决问题",
+          "source_row": 29,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E29:G29"
+        },
+        {
+          "id": "Q3",
+          "category": "待解决问题",
+          "source_row": 30,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E30:G30"
+        },
+        {
+          "id": "Q4",
+          "category": "待解决问题",
+          "source_row": 31,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E31:G31"
+        },
+        {
+          "id": "F01",
+          "category": "核心财务数值",
+          "source_row": 32,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E32:G32"
+        },
+        {
+          "id": "F02",
+          "category": "核心财务数值",
+          "source_row": 33,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E33:G33"
+        },
+        {
+          "id": "F03",
+          "category": "核心财务数值",
+          "source_row": 34,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E34:G34"
+        },
+        {
+          "id": "F04",
+          "category": "核心财务数值",
+          "source_row": 35,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E35:G35"
+        },
+        {
+          "id": "F05",
+          "category": "EPS单位",
+          "source_row": 36,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E36:G36"
+        },
+        {
+          "id": "F06",
+          "category": "核心财务数值",
+          "source_row": 37,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E37:G37"
+        },
+        {
+          "id": "F07",
+          "category": "核心财务数值",
+          "source_row": 38,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E38:G38"
+        },
+        {
+          "id": "F08",
+          "category": "核心财务数值",
+          "source_row": 39,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E39:G39"
+        },
+        {
+          "id": "F09",
+          "category": "核心财务数值",
+          "source_row": 40,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E40:G40"
+        },
+        {
+          "id": "F10",
+          "category": "EPS单位",
+          "source_row": 41,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E41:G41"
+        },
+        {
+          "id": "F11",
+          "category": "核心财务数值",
+          "source_row": 42,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E42:G42"
+        },
+        {
+          "id": "F12",
+          "category": "核心财务数值",
+          "source_row": 43,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E43:G43"
+        },
+        {
+          "id": "F13",
+          "category": "核心财务数值",
+          "source_row": 44,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E44:G44"
+        },
+        {
+          "id": "F14",
+          "category": "核心财务数值",
+          "source_row": 45,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E45:G45"
+        },
+        {
+          "id": "F15",
+          "category": "EPS单位",
+          "source_row": 46,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E46:G46"
+        },
+        {
+          "id": "F16",
+          "category": "财务深挖",
+          "source_row": 47,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E47:G47"
+        },
+        {
+          "id": "F17",
+          "category": "财务深挖",
+          "source_row": 48,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E48:G48"
+        },
+        {
+          "id": "F18",
+          "category": "财务深挖",
+          "source_row": 49,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E49:G49"
+        },
+        {
+          "id": "F19",
+          "category": "财务深挖",
+          "source_row": 50,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E50:G50"
+        },
+        {
+          "id": "F20",
+          "category": "财务深挖",
+          "source_row": 51,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E51:G51"
+        },
+        {
+          "id": "F21",
+          "category": "财务深挖",
+          "source_row": 52,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E52:G52"
+        },
+        {
+          "id": "F22",
+          "category": "财务深挖",
+          "source_row": 53,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E53:G53"
+        },
+        {
+          "id": "F23",
+          "category": "财务深挖",
+          "source_row": 54,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E54:G54"
+        },
+        {
+          "id": "F24",
+          "category": "财务深挖",
+          "source_row": 55,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E55:G55"
+        },
+        {
+          "id": "F25",
+          "category": "财务深挖",
+          "source_row": 56,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E56:G56"
+        },
+        {
+          "id": "F26",
+          "category": "财务深挖",
+          "source_row": 57,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E57:G57"
+        },
+        {
+          "id": "F27",
+          "category": "财务深挖",
+          "source_row": 58,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E58:G58"
+        },
+        {
+          "id": "F28",
+          "category": "财务深挖",
+          "source_row": 59,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E59:G59"
+        },
+        {
+          "id": "F29",
+          "category": "财务深挖",
+          "source_row": 60,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E60:G60"
+        },
+        {
+          "id": "F30",
+          "category": "财务深挖",
+          "source_row": 61,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E61:G61"
+        },
+        {
+          "id": "F31",
+          "category": "财务深挖",
+          "source_row": 62,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E62:G62"
+        },
+        {
+          "id": "F32",
+          "category": "财务比率",
+          "source_row": 63,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E63:G63"
+        },
+        {
+          "id": "F33",
+          "category": "财务比率",
+          "source_row": 64,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E64:G64"
+        },
+        {
+          "id": "F34",
+          "category": "财务比率",
+          "source_row": 65,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E65:G65"
+        },
+        {
+          "id": "F35",
+          "category": "现金流口径",
+          "source_row": 66,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E66:G66"
+        },
+        {
+          "id": "F36",
+          "category": "收入结构",
+          "source_row": 67,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E67:G67"
+        },
+        {
+          "id": "F37",
+          "category": "收入结构",
+          "source_row": 68,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E68:G68"
+        },
+        {
+          "id": "F38",
+          "category": "收入结构",
+          "source_row": 69,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E69:G69"
+        },
+        {
+          "id": "F39",
+          "category": "收入结构",
+          "source_row": 70,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E70:G70"
+        },
+        {
+          "id": "F40",
+          "category": "收入结构",
+          "source_row": 71,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E71:G71"
+        },
+        {
+          "id": "F41",
+          "category": "股数口径",
+          "source_row": 72,
+          "status": "通过",
+          "reason": "出处没写，他怎知美的只在H股上市",
+          "reviewer": null,
+          "locator": "核验反馈!E72:G72"
+        },
+        {
+          "id": "F42",
+          "category": "TTM计算",
+          "source_row": 73,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E73:G73"
+        },
+        {
+          "id": "F43",
+          "category": "TTM计算",
+          "source_row": 74,
+          "status": "有问题",
+          "reason": "最后没算出市盈率",
+          "reviewer": null,
+          "locator": "核验反馈!E74:G74"
+        },
+        {
+          "id": "F44",
+          "category": "估值演示假设",
+          "source_row": 75,
+          "status": "证据不足",
+          "reason": "pe倍数估计的依据是什么，同步见复核意见A04",
+          "reviewer": null,
+          "locator": "核验反馈!E75:G75"
+        },
+        {
+          "id": "F45",
+          "category": "估值演示假设",
+          "source_row": 76,
+          "status": "证据不足",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E76:G76"
+        },
+        {
+          "id": "F46",
+          "category": "估值演示假设",
+          "source_row": 77,
+          "status": "证据不足",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E77:G77"
+        },
+        {
+          "id": "F47",
+          "category": "行情参考",
+          "source_row": 78,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E78:G78"
+        },
+        {
+          "id": "F48",
+          "category": "资料时点",
+          "source_row": 79,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "核验反馈!E79:G79"
+        }
+      ]
+    },
+    {
+      "sheet": "模型复核意见",
+      "count": 14,
+      "status_counts": {
+        "通过": 10,
+        "不适用": 4
+      },
+      "rows": [
+        {
+          "id": "A01",
+          "category": "第一轮 / 中",
+          "source_row": 11,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E11:G11"
+        },
+        {
+          "id": "A02",
+          "category": "第一轮 / 中",
+          "source_row": 12,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E12:G12"
+        },
+        {
+          "id": "A03",
+          "category": "第一轮 / 中",
+          "source_row": 13,
+          "status": "不适用",
+          "reason": "此处无偏差，可以接受",
+          "reviewer": null,
+          "locator": "模型复核意见!E13:G13"
+        },
+        {
+          "id": "A04",
+          "category": "第一轮 / 低",
+          "source_row": 14,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E14:G14"
+        },
+        {
+          "id": "A05",
+          "category": "第一轮 / 低",
+          "source_row": 15,
+          "status": "不适用",
+          "reason": "在数据库不足时不能强行要求构建传导链，但是又不能忽视政策的作用，所以此处模型的给出没有问题，可以再额外建议读者自行对渠道结构、产品结构或统计口径进行补充判断",
+          "reviewer": null,
+          "locator": "模型复核意见!E15:G15"
+        },
+        {
+          "id": "A06",
+          "category": "第一轮 / 低",
+          "source_row": 16,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E16:G16"
+        },
+        {
+          "id": "B01",
+          "category": "修订后 / 高",
+          "source_row": 17,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E17:G17"
+        },
+        {
+          "id": "B02",
+          "category": "修订后 / 中",
+          "source_row": 18,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E18:G18"
+        },
+        {
+          "id": "B03",
+          "category": "修订后 / 中",
+          "source_row": 19,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E19:G19"
+        },
+        {
+          "id": "B04",
+          "category": "修订后 / 中",
+          "source_row": 20,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E20:G20"
+        },
+        {
+          "id": "B05",
+          "category": "修订后 / 中",
+          "source_row": 21,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E21:G21"
+        },
+        {
+          "id": "B06",
+          "category": "修订后 / 低",
+          "source_row": 22,
+          "status": "不适用",
+          "reason": "对投资者的建议不需要细致到观察期约束，交由买方自行决定",
+          "reviewer": null,
+          "locator": "模型复核意见!E22:G22"
+        },
+        {
+          "id": "B07",
+          "category": "修订后 / 低",
+          "source_row": 23,
+          "status": "不适用",
+          "reason": "并置本身合规，不用把读者当傻子，在表述清楚的情况下不用一直强调公司口径待附注核验",
+          "reviewer": null,
+          "locator": "模型复核意见!E23:G23"
+        },
+        {
+          "id": "B08",
+          "category": "修订后 / 低",
+          "source_row": 24,
+          "status": "通过",
+          "reason": null,
+          "reviewer": null,
+          "locator": "模型复核意见!E24:G24"
+        }
+      ]
+    }
+  ]
+}

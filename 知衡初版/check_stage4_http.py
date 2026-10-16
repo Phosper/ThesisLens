@@ -27,7 +27,7 @@ def main():
             time.sleep(1)
         raise TimeoutError('Research task still running')
     actual_version=request('/api/status')['version']
-    check('兼容V0.4/V0.5实例',actual_version in ['0.4.0','0.5.0'])
+    check('兼容V0.4至V0.6实例',actual_version in ['0.4.0','0.5.0','0.6.0'])
     for code in core.COMPANIES:
         for period in ['2025-FY','2026-H1']:
             p=request('/api/financial/depth?'+urllib.parse.urlencode({'code':code,'cutoff':'2026-10-06','period':period}))

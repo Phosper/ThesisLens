@@ -83,7 +83,7 @@ def worker(output, restore_only=False):
             status = request('/api/status')
             report['version'] = status['version']
             report['index'] = status['index']
-            check('干净副本独立启动V0.5', status['version'] == '0.5.0' and http.server_port != 8765,
+            check('干净副本独立启动V0.5或V0.6', status['version'] in ['0.5.0','0.6.0'] and http.server_port != 8765,
                   {'port': http.server_port, 'instance_id': status['instance_id']})
             check('基础公开来源与索引恢复', int(status['index']['source_count']) == 96 and int(status['index']['chunk_count']) > 7000,
                   {'sources': status['index']['source_count'], 'chunks': status['index']['chunk_count']})

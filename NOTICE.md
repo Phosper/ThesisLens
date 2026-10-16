@@ -9,7 +9,8 @@
 - [ReportLab 4.4.9](third_party_licenses/ReportLab-4.4.9-LICENSE.txt)：本机BSD三条款原文。
 - [Pillow 12.3.0](third_party_licenses/Pillow-12.3.0-LICENSE.txt)：MIT-CMU及本机发行包所列内含库许可。
 - [charset-normalizer 3.5.2](third_party_licenses/charset-normalizer-3.5.2-LICENSE.txt)：MIT。
+- [LXGW WenKai Screen v1.522](知衡初版/static/fonts/README.md)：2026年10月14日起随网页提供本地 WOFF2 字体；[OFL 原文](知衡初版/static/fonts/OFL.txt)及补充字形的 [Apache License 2.0 原文](知衡初版/static/fonts/Apache-2.0.txt)一并保留。Comic Sans MS 只引用系统安装字体，不分发其文件。
 
-文本从本机安装发行版原样复制，校验值见[许可文件清单](third_party_licenses/manifest.json)。实际软件及字体二进制未随体验包分发；SQLite官方公有领域声明、商业API与字体限制、资料/行情权限边界及Poppler发行版许可未核实状态见详细说明。
+原有运行时许可文本从本机安装发行版原样复制，校验值见[许可文件清单](third_party_licenses/manifest.json)。新增界面字体来源与校验值见上方独立说明；其他软件及商业字体二进制未随体验包分发。SQLite官方公有领域声明、商业API与字体限制、资料/行情权限边界及Poppler发行版许可未核实状态见详细说明。
 
 公开财报、网页与行情的可访问性不自动授予整包公开再分发许可。现有原件来源标注不等于授权已全部确认，正式公开或商用前仍须按具体来源和用途核实。

@@ -14,7 +14,8 @@ class ResearchTests(unittest.TestCase):
 
     def test_units_and_recomputed_yoy(self):
         half=core.metric_rows('2026-H1');annual=core.metric_rows('2025-FY')
-        self.assertEqual(len(half),3);self.assertEqual(len(annual),3)
+        self.assertEqual(len(half),6);self.assertEqual(len(annual),6)
+        self.assertEqual({r['code'] for r in half},{'000333','000651','600690','002032','002508','600060'})
         m=next(r for r in half if r['code']=='000333')
         self.assertEqual(m['revenue_yi'],'2600.42')
         self.assertEqual(m['core_profit_yi'],'195.95')

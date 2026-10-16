@@ -24,7 +24,7 @@ def main():
                 return json.loads(raw) if response.headers.get('Content-Type','').startswith('application/json') else raw
         except urllib.error.HTTPError as exc:raise ValueError('本机服务HTTP '+str(exc.code)) from None
     status=request('/api/status')
-    if status['version']!='0.5.0':raise ValueError('本机服务不是V0.5')
+    if status['version'] not in ['0.5.0','0.6.0']:raise ValueError('本机服务不是V0.5或V0.6')
     if args.live:
         if not status['model']['configured']:raise ValueError('模型未配置，未发起真实调用')
         ctx=request('/api/valuation/context?code=000333&cutoff=2026-10-06');shares=ctx['reported_shares']

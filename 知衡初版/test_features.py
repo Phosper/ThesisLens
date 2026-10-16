@@ -24,7 +24,8 @@ class FinancialFeatureTests(unittest.TestCase):
 
     def test_history_complete_and_quarter_cumulative_columns(self):
         rows=financials.history()['data']
-        self.assertEqual(len(rows),51)
+        self.assertEqual(len(rows),57)
+        self.assertEqual(sum(r['code'] in ['000333','000651','600690'] for r in rows),51)
         self.assertTrue(all(all(k in r['fields'] for k in financials.FLOWS) for r in rows))
         m=next(r for r in rows if r['code']=='000333' and r['period']=='2025-Q3')
         self.assertEqual(m['fields']['revenue']['value'],'363056751')

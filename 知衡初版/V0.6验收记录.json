@@ -1,0 +1,638 @@
+{
+  "version": "0.6.0",
+  "checked_at": "2026-10-14T07:35:19+08:00",
+  "unit_tests": {
+    "passed": 136,
+    "failed": 0
+  },
+  "http": {
+    "version": "0.6.0",
+    "checked_at": "2026-10-14T07:31:09+08:00",
+    "live": false,
+    "private_fixture": false,
+    "checks": [
+      {
+        "name": "V0.6服务",
+        "passed": true
+      },
+      {
+        "name": "六家真实企业及报告覆盖",
+        "passed": true
+      },
+      {
+        "name": "002032四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002032自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "002508四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002508自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "600060四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "600060自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "海外毛利计算与PE隔离",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔披露时点",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "压力基数原页进入证据",
+        "passed": true
+      },
+      {
+        "name": "002032保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002032调用身份",
+        "passed": true
+      },
+      {
+        "name": "老板电器披露时点",
+        "passed": true
+      },
+      {
+        "name": "老板电器研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "老板电器方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "002508保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002508调用身份",
+        "passed": true
+      },
+      {
+        "name": "海信视像披露时点",
+        "passed": true
+      },
+      {
+        "name": "海信视像研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "海信视像方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "海信视像brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "600060保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "600060调用身份",
+        "passed": true
+      },
+      {
+        "name": "美的集团披露时点",
+        "passed": true
+      },
+      {
+        "name": "美的集团研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "美的集团方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "美的集团brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "000333保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "000333调用身份",
+        "passed": true
+      }
+    ],
+    "passed": 54,
+    "cases": [
+      {
+        "code": "002032",
+        "company": "苏泊尔",
+        "mode": "local",
+        "run_id": "1c435ebe9902",
+        "evidence_count": 19,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "002508",
+        "company": "老板电器",
+        "mode": "local",
+        "run_id": "4ec9a5d09bbe",
+        "evidence_count": 16,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "600060",
+        "company": "海信视像",
+        "mode": "local",
+        "run_id": "7bbcaf8ba54d",
+        "evidence_count": 19,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "000333",
+        "company": "美的集团",
+        "mode": "local",
+        "run_id": "f12ca61a5c44",
+        "evidence_count": 23,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "scope": "程序流程验收，不代表金融签认或投资效果验证。"
+  },
+  "live": {
+    "version": "0.6.0",
+    "checked_at": "2026-10-14T07:32:22+08:00",
+    "live": true,
+    "private_fixture": false,
+    "checks": [
+      {
+        "name": "V0.6服务",
+        "passed": true
+      },
+      {
+        "name": "六家真实企业及报告覆盖",
+        "passed": true
+      },
+      {
+        "name": "002032四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002032自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "002508四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002508自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "600060四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "600060自身TTM及报价缺口",
+        "passed": true
+      },
+      {
+        "name": "海外毛利计算与PE隔离",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔披露时点",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "压力基数原页进入证据",
+        "passed": true
+      },
+      {
+        "name": "002032保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002032调用身份",
+        "passed": true
+      }
+    ],
+    "passed": 24,
+    "cases": [
+      {
+        "code": "002032",
+        "company": "苏泊尔",
+        "mode": "llm",
+        "run_id": "965d0992d2f6",
+        "evidence_count": 19,
+        "model_calls": 5,
+        "review_counts": {
+          "高": 0,
+          "中": 1,
+          "低": 6
+        },
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "scope": "程序流程验收，不代表金融签认或投资效果验证。"
+  },
+  "public_case": {
+    "file": "demo/case_model_v06.json",
+    "sha256": "f46b9aca48aa83df1e271c6730980c9dafaa4eebf34c59fb7a38d27846ef23b1",
+    "run_id": "965d0992d2f6",
+    "successful_model_calls": 5,
+    "expert_signoff": false
+  },
+  "limitations": [
+    "新增三家每家两期财报，未登记深度原页或行情",
+    "非上市企业目前为资料研究，真实样本原件待补",
+    "开发侧研究规范待金融同学确认",
+    "未验证实际投资效果",
+    "计划书与视频由用户另行制作"
+  ],
+  "clean_install": {
+    "passed": true,
+    "private": {
+      "version": "0.6.0",
+      "checked_at": "2026-10-14T07:37:23+08:00",
+      "live": false,
+      "private_fixture": true,
+      "checks": [
+        {
+          "name": "V0.6服务",
+          "passed": true
+        },
+        {
+          "name": "合成测试仅用于空安装",
+          "passed": true
+        },
+        {
+          "name": "缺本企业原文不借用行业生成研究",
+          "passed": true
+        },
+        {
+          "name": "合成原文导入成功",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）披露时点",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）研究要求已保存",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）方法进入检索",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）brief/md需求与缺口导出",
+          "passed": true
+        },
+        {
+          "name": "非上市导出不套用交易约束 brief/md",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）brief/html需求与缺口导出",
+          "passed": true
+        },
+        {
+          "name": "非上市导出不套用交易约束 brief/html",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）full/md需求与缺口导出",
+          "passed": true
+        },
+        {
+          "name": "非上市导出不套用交易约束 full/md",
+          "passed": true
+        },
+        {
+          "name": "验收合成企业（非真实样本）full/html需求与缺口导出",
+          "passed": true
+        },
+        {
+          "name": "非上市导出不套用交易约束 full/html",
+          "passed": true
+        },
+        {
+          "name": "JSON保留完整研究快照",
+          "passed": true
+        },
+        {
+          "name": "非上市财务与交易分支隔离",
+          "passed": true
+        },
+        {
+          "name": "合成材料不转成经营论据",
+          "passed": true
+        },
+        {
+          "name": "非上市PE拒绝",
+          "passed": true
+        }
+      ],
+      "passed": 19,
+      "cases": [
+        {
+          "code": "LOCAL_446fd156c204",
+          "company": "验收合成企业（非真实样本）",
+          "mode": "local",
+          "run_id": "42839c38579d",
+          "evidence_count": 6,
+          "model_calls": 0,
+          "review_counts": {
+            "高": 0,
+            "中": 0,
+            "低": 0
+          },
+          "decision": "资料研究 · 暂不作投资判断"
+        }
+      ],
+      "scope": "程序流程验收，不代表金融签认或投资效果验证。"
+    },
+    "restored_v06_original": "965d0992d2f6",
+    "restored_model_calls_are_historical": 5,
+    "public_network_attempts": 0,
+    "new_model_attempts": 0,
+    "scope": "同机干净源码副本与公开资料路径；非另一实体电脑验证。"
+  },
+  "general_http": {
+    "passed": 19,
+    "checks": [
+      {
+        "检查": "服务启动、已登记来源与索引覆盖一致",
+        "结果": "通过"
+      },
+      {
+        "检查": "设置接口不返回本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "2026-H1已登记公司指标可读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "2025-FY已登记公司指标可读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "研究截止日前未披露的半年报指标不返回",
+        "结果": "通过"
+      },
+      {
+        "检查": "研究记录完整保留当前模式的调用过程",
+        "结果": "通过"
+      },
+      {
+        "检查": "最新行业数据和补贴政策进入证据包",
+        "结果": "通过"
+      },
+      {
+        "检查": "md导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "md导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "备忘录导出保留研究时点、正文和原件引用",
+        "结果": "通过"
+      },
+      {
+        "检查": "json导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "json导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "完整记录导出保留证据、公式和模型输出",
+        "结果": "通过"
+      },
+      {
+        "检查": "html导出可下载并落盘",
+        "结果": "通过"
+      },
+      {
+        "检查": "html导出不包含本机模型密钥",
+        "结果": "通过"
+      },
+      {
+        "检查": "PDF原件支持页预览所需的分段读取",
+        "结果": "通过"
+      },
+      {
+        "检查": "静态文件路径不能越过页面目录",
+        "结果": "通过"
+      },
+      {
+        "检查": "拒绝外部网页修改本机模型设置",
+        "结果": "通过"
+      },
+      {
+        "检查": "拒绝非JSON设置请求",
+        "结果": "通过"
+      }
+    ],
+    "version": "0.6.0",
+    "run_id": "965d0992d2f6"
+  },
+  "browser_validation": {
+    "six_company_coverage": true,
+    "supor_pressure_result": {
+      "revenue_yi": "31.87",
+      "gross_profit_yi": "4.07",
+      "gross_profit_change_yi": "-0.81"
+    },
+    "observed_console_errors": 0,
+    "screenshots": [
+      "企业覆盖预览V0.6.jpg",
+      "海外压力预览V0.6.jpg"
+    ]
+  },
+  "demo_restore_regression": {
+    "passed": 28,
+    "failed": 0
+  }
+}

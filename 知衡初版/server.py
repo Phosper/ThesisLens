@@ -9,6 +9,8 @@ import urllib.parse
 import uuid
 import hashlib
 import importlib.util
+import companies
+import research_requirements
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -56,7 +58,7 @@ def audited_job_work(job_id,body,operation='research'):
     finally: RESEARCH_GATE.release()
 
 class Handler(BaseHTTPRequestHandler):
-    server_version='Zhiheng/0.5'
+    server_version='Zhiheng/0.6'
 
     def log_message(self,*args):
         pass  # No URLs, user questions or credentials in access logs.
@@ -120,12 +122,18 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if path=='/api/status':
                 with core.connect() as db: index=dict(db.execute('SELECT key,value FROM meta').fetchall())
-                return self.reply({'version':'0.5.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
+                return self.reply({'version':'0.7.0','name':'知衡','today':announcements.today(),'instance_id':hashlib.sha256(str(core.APP).encode()).hexdigest()[:16],
                       'companies':core.COMPANIES,'dataset':core.manifest()['stats'],
+                      'company_profiles':companies.profiles(),
                       'cutoff':core.manifest()['research_cutoff'],'index':index,'model':model.get_config(),
                       'financial_coverage':financials.history(cutoff=core.manifest()['research_cutoff'])['coverage'],
                       'periods':sorted({r['period'] for r in financials.history(cutoff=core.manifest()['research_cutoff'])['data']},key=financials.period_end,reverse=True),
                       'pdf_import_available':importlib.util.find_spec('pypdf') is not None})
+            if path=='/api/companies':
+                sources=core.manifest()['sources'];history=financials.history(cutoff=get('cutoff','2026-10-06'))['data']
+                return self.reply({'data':[dict(profile,reports=sum(s.get('stock_code')==profile['code'] and bool(s.get('report_period')) for s in sources),
+                    financial_period=next((r['period'] for r in reversed(history) if r['code']==profile['code']),None)) for profile in companies.profiles()]})
+            if path=='/api/research/requirements':return self.reply(research_requirements.context(get('code','000333')))
             if path=='/api/audit':return self.reply(audit.snapshot(get('run_id') or None,get('job_id') or None,int(get('limit','1000'))))
             if path=='/api/financial/history':return self.reply(financials.history(get('code'),get('cutoff','2026-10-06'),get('kind')))
             if path=='/api/financial/depth':return self.reply(financial_depth.snapshot(get('code','000333'),get('cutoff','2026-10-06'),get('period') or None))
@@ -203,6 +211,10 @@ class Handler(BaseHTTPRequestHandler):
             if not 1<=size<=maximum: raise ValueError('请求大小无效')
             body=json.loads(self.rfile.read(size))
             if not isinstance(body,dict): raise ValueError('请求格式无效')
+            if self.path=='/api/companies':
+                if not RESEARCH_GATE.acquire(blocking=False):return self.reply({'error':'研究进行中，请稍后登记企业'},409)
+                try:return self.reply(companies.register(body))
+                finally:RESEARCH_GATE.release()
             if self.path=='/api/config':
                 if not RESEARCH_GATE.acquire(blocking=False):return self.reply({'error':'研究进行中，请完成后再修改模型连接'},409)
                 try:return self.reply(model.configure(body))

@@ -34,15 +34,17 @@ def main():
 
     code, _, data = request('/api/status')
     status = json.loads(data)
-    check('服务启动、96份来源与7,855个检索片段', code == 200 and
-          status['dataset']['downloaded_sources'] == 96 and
-          int(status['index']['chunk_count']) == 7855)
+    expected=core.base_manifest()
+    check('服务启动、已登记来源与索引覆盖一致', code == 200 and
+          status['dataset']['downloaded_sources'] == expected['stats']['downloaded_sources'] and
+          int(status['index']['chunk_count']) >= 7855)
     secrets = [os.environ.get(k) for k in ['DEEPSEEK_API_KEY', 'OPENAI_API_KEY']]
     check('设置接口不返回本机模型密钥', all(not key or key.encode() not in data for key in secrets))
 
     for period in ['2026-H1', '2025-FY']:
         code, _, data = request('/api/metrics?period=' + period)
-        check(period + '三家公司指标可读取', code == 200 and len(json.loads(data)['data']) == 3)
+        issuers={s['stock_code'] for s in expected['sources'] if s.get('report_period')==period}
+        check(period + '已登记公司指标可读取', code == 200 and {r['code'] for r in json.loads(data)['data']} == issuers)
     code, _, data = request('/api/metrics?period=2026-H1&cutoff=2026-05-01')
     check('研究截止日前未披露的半年报指标不返回', code == 200 and json.loads(data)['data'] == [])
 

@@ -9,6 +9,8 @@ import workbench
 import decision
 import research
 import audit
+import research_requirements
+import operating_scenarios
 
 def report_view(view):
     if view not in ['brief','full']:raise ValueError('报告展示应为brief或full')
@@ -32,9 +34,12 @@ def memo_markdown(run,view='full'):
     report_view(view);run=prepare_run(run);quality=run['human_review']
     if view=='full':text=research.markdown(run)
     else:
-        text=f"# 知衡 · {run['company']}投资判断简略版\n\n研究截止日：{run['cutoff']}；财务期间：{run['period'] or '待核对'}；运行编号：{run['id']}\n\n"
+        label='资料研究简略版' if run['decision'].get('document_mode') else '投资判断简略版'
+        text=f"# 知衡 · {run['company']}{label}\n\n研究截止日：{run['cutoff']}；财务期间：{run['period'] or '待核对'}；运行编号：{run['id']}\n\n"
         text+=decision.markdown(run['decision'],run['comparison_checks'])
         text+='\n## 研究摘要\n\n'+run['draft']['summary']+'\n\n## 关键风险与保留事项\n\n'
+        text+=research_requirements.markdown(run)
+        text+=operating_scenarios.markdown((run.get('valuation') or {}).get('operating_scenario'))
         for row in run['draft'].get('risks',[]):text+='- '+row['text']+' '+''.join(f'[{c}]' for c in row.get('citations',[]))+'\n'
         for issue in run['review'].get('issues',[]):text+=f"- 模型复核 {issue.get('severity','待核验')}：{issue.get('claim','')}。{issue.get('reason','')}\n"
         for warning in run.get('warnings',[]):text+='- '+warning+'\n'
@@ -66,26 +71,29 @@ def memo_html(run,view='full'):
     def paragraph(text):
         text=esc(text)
         return re.sub(r'\[(E\d+)\]',lambda m:f'<a href="#ref-{m[1]}">[{m[1]}]</a>' if m[1] in evidence else m[0],text).replace('\n','<br>')
-    label='投资判断简略版' if view=='brief' else '买方投资备忘录草稿'
+    document_mode=run['decision'].get('document_mode')
+    label=('资料研究简略版' if view=='brief' else '资料研究备忘录草稿') if document_mode else ('投资判断简略版' if view=='brief' else '买方投资备忘录草稿')
     pieces=[f'<h1>{esc(run["company"])}{label}</h1>',f'<p class="meta">知衡 ThesisLens · 研究时点 {esc(run["cutoff"])} · {esc(financials.period_label(run["period"]))} · {esc(run["mode_label"])}</p>']
     d=run['decision'];profile=d.get('profile',{})
-    pieces.append('<section class="decision"><h2>投资判断</h2><h3>'+esc(d['status'])+'</h3><p>'+paragraph(d['reason'])+'</p>')
-    pieces.append('<p>研究目标：'+esc(d['objective'])+'；观察期限：'+esc(d['horizon_months'])+'个月（研究假设）。</p>')
-    pieces.append('<p>投入上限：'+(esc(profile['budget_yuan'])+'元' if profile.get('budget_yuan') is not None else '尚未提供')+'；可接受损失上限：'+(esc(profile['max_loss_pct'])+'%' if profile.get('max_loss_pct') is not None else '尚未提供')+'。这些约束不代表系统建议仓位或保证损失上限。</p>')
+    pieces.append('<section class="decision"><h2>'+('资料研究与核验' if document_mode else '投资判断')+'</h2><h3>'+esc(d['status'])+'</h3><p>'+paragraph(d['reason'])+'</p>')
+    if not document_mode:
+        pieces.append('<p>研究目标：'+esc(d['objective'])+'；观察期限：'+esc(d['horizon_months'])+'个月（研究假设）。</p>')
+        pieces.append('<p>投入上限：'+(esc(profile['budget_yuan'])+'元' if profile.get('budget_yuan') is not None else '尚未提供')+'；可接受损失上限：'+(esc(profile['max_loss_pct'])+'%' if profile.get('max_loss_pct') is not None else '尚未提供')+'。这些约束不代表系统建议仓位或保证损失上限。</p>')
     state=d.get('review_status',{})
     pieces.append('<p class="meta">'+esc(state.get('label','待人工核验'))+'。'+esc(state.get('scope',''))+'</p>')
     if state.get('compatibility_view'):pieces.append('<p class="notice">历史记录补充视图：本页依据保存资料整理，不代表原模型已输出或人工已核验。</p>')
-    for key,title in [('basis','判断依据'),('entry_conditions','进入研究候选的条件'),('exit_conditions','重新评估与退出条件')]:
+    sections=[('basis','判断依据'),('entry_conditions','资料核验' if document_mode else '进入研究候选的条件'),('exit_conditions','相反证据复核' if document_mode else '重新评估与退出条件')]
+    for key,title in sections:
         pieces.append('<h3>'+title+'</h3><ul>')
         for row in d.get(key,[]):
             pieces.append('<li>'+paragraph(row['text'])+' '+''.join(f'<a href="#ref-{esc(c)}">[{esc(c)}]</a> ' for c in row.get('citations',[]))+('；关联论据 '+esc(','.join(row['thesis_ids'])) if row.get('thesis_ids') else '')+'</li>')
         pieces.append('</ul>')
-    pieces.append('<h3>情景回报与下行空间</h3><ul>')
+    pieces.append('<h3>'+('财务与估值适用性' if document_mode else '情景回报与下行空间')+'</h3><ul>')
     for row in d.get('return_scenarios',[]):
         price_return=row.get('price_return_pct');total=row.get('total_return_pct')
         pieces.append('<li>'+esc(row['label'])+'：价格空间 '+(esc(price_return)+'%' if price_return is not None else '尚未计算')+'；含股利及费用的情景回报 '+(esc(total)+'%' if total is not None else '股利或费率假设尚未补齐')+'。'+esc(row.get('note',''))+'</li>')
-    if not d.get('return_scenarios'):pieces.append('<li>尚未附带可计算的估值情景，无法给出回报范围。</li>')
-    pieces.append('</ul><p>情景结果依赖用户输入，可能收益与损失均非保证；不是目标价或自动买卖评级。</p>')
+    if not d.get('return_scenarios'):pieces.append('<li>'+('非上市资料研究，不套用上市公司PE或交易条件。' if document_mode else '尚未附带可计算的估值情景，无法给出回报范围。')+'</li>')
+    pieces.append('</ul>'+('' if document_mode else '<p>情景结果依赖用户输入，可能收益与损失均非保证；不是目标价或自动买卖评级。</p>'))
     if d.get('missing'):pieces.append('<h3>尚需补齐</h3><ul>'+''.join('<li>'+esc(m)+'</li>' for m in d['missing'])+'</ul>')
     pieces.append('</section>')
     checks=run.get('comparison_checks',[])
@@ -107,11 +115,25 @@ def memo_html(run,view='full'):
         d=run['financial_depth'];pieces.append('<h2>财务解剖与口径</h2><ul>')
         for k,f in d['fields'].items():pieces.append(f'<li>{esc(financial_depth.NAMES.get(k,"购建长期资产现金支出"))}：{esc(f["amount_yi"])}亿元；期初/同期{esc(f["prior_yi"])}亿元；{esc(f["basis"])}；物理第{f["pdf_page"]}页。</li>')
         for r in d['ratios']:pieces.append(f'<li>{esc(r["name"])}：{esc(r["value"])}{esc(r["unit"])}；{esc(r["formula"])}。</li>')
-        for s in d['segments']:pieces.append(f'<li>{esc(s["group"])} · {esc(s["label"])}：{esc(s["amount_yi"])}亿元；同比{esc(s["change_pct"])}%；{esc(s["source_id"])}物理第{s["pdf_page"]}页；{esc(s["basis"])}。</li>')
+        for s in d['segments']:pieces.append(f'<li>{esc(s["group"])} · {esc(s["label"])}：{esc(s["amount_yi"])}亿元；同比{esc(s["change_pct"] if s["change_pct"] is not None else "未取得")}%；分母{esc(s.get("denominator_label","营业收入"))} {esc(s.get("denominator_yi",d["operating_revenue_yi"]))}亿元；{esc(s.get("growth_basis","按本报告同口径原值复算"))}；{esc(s["source_id"])}物理第{s["pdf_page"]}页；{esc(s["basis"])}。</li>')
+        if d.get('segment_note'):pieces.append('<li>'+esc(d['segment_note'])+'</li>')
         sh=d['shares'];pieces.append(f'<li>报告期末股份：{sh["total"]}股；{esc(sh["source_id"])}物理第{sh["pdf_page"]}页。{esc(sh["note"])}<ul>')
         pieces.extend(f'<li>{esc(c["label"])}：{c["count"]}股。</li>' for c in sh['classes'])
         pieces.append('</ul></li></ul><p>'+esc(d['cash_proxy']['name'])+'：'+esc(d['cash_proxy']['amount_yi'])+'亿元。'+esc(d['cash_proxy']['note'])+'</p>')
         pieces.extend('<p>'+esc(n)+'</p>' for n in d['notes'])
+    requirement=run.get('research_requirements')
+    if run.get('disclosure_coverage'):
+        pieces.append('<h2>金额附注取回状态</h2><ul>')
+        for row in run['disclosure_coverage']['rows']:pieces.append('<li>'+esc(row['name'])+'：'+esc(row['status'])+'；'+esc(row['source_id'])+'；物理页'+','.join(str(p['pdf_page']) for p in row['pages'])+'</li>')
+        pieces.append('</ul><p>'+esc(run['disclosure_coverage']['note'])+'</p>')
+    if requirement:
+        pieces.append('<h2>研究要求与数据覆盖</h2><p>'+esc(requirement['focus'])+'。'+esc(requirement['owner'])+'</p><ul>')
+        for row in requirement['requirements']:pieces.append('<li>'+esc(row['name'])+'：'+esc(row['input'])+'。'+esc(row['check'])+'</li>')
+        for row in (run.get('research_coverage') or {}).get('rows',[]):pieces.append('<li>'+esc(row['name'])+'：'+esc(row['status'])+'。'+esc(row['detail'])+'</li>')
+        pieces.append('</ul><p>'+esc(requirement['comparison_note'])+'</p>')
+    operating=(run.get('valuation') or {}).get('operating_scenario')
+    if operating and operating.get('available'):
+        pieces.append('<h2>海外经营压力情景</h2><p>'+paragraph(operating_scenarios.markdown(operating).split('\n',2)[2])+'</p>')
     if run.get('valuation'):
         v=run['valuation'];market=v.get('market_pe',{});basis=v.get('pe_basis',{})
         pieces.append('<h2>估值依据与参考市盈率</h2><p>倍数依据：'+esc(basis.get('text') or '尚未提供，仍为演示假设')+'；'+('用户声明已人工复核，仍需核对原件与适用范围' if basis.get('reviewed') is True else '尚未完成人工复核')+'。</p>')

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "description": "按具体报告原页登记的海外收入和成本；压力计算不是净利润或投资收益预测。",
+  "baselines": [
+    {
+      "code": "000333",
+      "period": "2026-H1",
+      "source_id": "CNINFO_000333_1225531404",
+      "unit": "千元",
+      "overseas_revenue": "113127028",
+      "overseas_cost": "83393878",
+      "reported_margin_pct": "26.28",
+      "pdf_page": 52,
+      "source_sha256": "576dd80e353e53296a800b03e9889a9cbb2e8b91fa2ab3c1dace7c10159179b8"
+    },
+    {
+      "code": "002032",
+      "period": "2026-H1",
+      "source_id": "CNINFO_002032_1225522987",
+      "unit": "元",
+      "overseas_revenue": "3540885454.18",
+      "overseas_cost": "3052845787.05",
+      "reported_margin_pct": "13.78",
+      "pdf_page": 12,
+      "source_sha256": "7460d1d9513785afd2596cea30d6a33b2a1a524089b77cec862222dd2d86ff45"
+    },
+    {
+      "code": "000651",
+      "period": "2026-H1",
+      "source_id": "CNINFO_000651_1225515004",
+      "unit": "元",
+      "overseas_revenue": "12743950035.00",
+      "overseas_cost": "10221097576.91",
+      "reported_margin_pct": "19.80",
+      "pdf_page": 24,
+      "basis": "外销主营业务，不含未分配地区的其他业务。",
+      "source_sha256": "50da2e03fddbe9dd424d8fe7881f47fb34efa5d38c96aa9449c12e445c3b2dec"
+    },
+    {
+      "code": "002032",
+      "period": "2025-FY",
+      "source_id": "CNINFO_002032_1225076804",
+      "unit": "元",
+      "overseas_revenue": "7437959967.44",
+      "overseas_cost": "6159509406.96",
+      "reported_margin_pct": "17.19",
+      "pdf_page": 13,
+      "basis": "年度营业收入构成的外销；不与母公司收入混用。",
+      "source_sha256": "d323425e24b34f7cfa8fbff819cdd1b0daa47a5bd331da6d27c9f956478a6a7b"
+    },
+    {
+      "code": "600060",
+      "period": "2025-FY",
+      "source_id": "CNINFO_600060_1225051157",
+      "unit": "万元",
+      "overseas_revenue": "2923008.17",
+      "overseas_cost": "2571242.22",
+      "reported_margin_pct": "12.03",
+      "pdf_page": 27,
+      "basis": "中国境外主营业务，原表单位万元，不是公司全部营业收入。",
+      "source_sha256": "23e8341c13ac4bb45cea4862b802a00d6b22fadcdc07ed833a2514f510f81ccc"
+    }
+  ]
+}

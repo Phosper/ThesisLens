@@ -42,7 +42,7 @@ def main():
             time.sleep(.3)
         raise AssertionError('本机任务未按时完成')
 
-    status=get('/api/status');check('V0.5正式版可访问',status['version']=='0.5.0')
+    status=get('/api/status');check('V0.5及后续正式版可访问',status['version'] in ['0.5.0','0.6.0'])
     context=get('/api/valuation/context?code=000333&cutoff=2026-10-06')
     check('未选股数不会自动产生PE',not context['market_pe']['available'])
     shares=context['reported_shares']

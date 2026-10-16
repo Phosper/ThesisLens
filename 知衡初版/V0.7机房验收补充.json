@@ -1,0 +1,150 @@
+{
+  "version": "0.7.0",
+  "acceptance_date": "2026-10-14",
+  "provenance": "用户提交的机房报告及完整证据ZIP；项目负责人在本机核对ZIP摘要清单、原始日志、模型调用及审计快照，未重新执行机房测试。",
+  "inputs": [
+    {
+      "file": "机房验收报告_2026-10-14.md",
+      "sha256": "0bea68109eaaa106ecff9af5c6b70039df6d4769e537e601d66590959d79648d",
+      "bytes": 58333
+    },
+    {
+      "file": "02_机房验收记录模板_已填写_2026-10-14.md",
+      "sha256": "3b5e555bcbe2787b4baabebc53b390f935f5bfcf099ef954ddbf465c41fe4886",
+      "bytes": 27379
+    },
+    {
+      "file": "机房验收记录_2026-10-14.json",
+      "sha256": "2bc05644e82022ee58581e3e8adb27146ffbcf03b3ea5e1032ceb28813a6784c",
+      "bytes": 31106
+    }
+  ],
+  "environment": {
+    "os": "Windows 10 (10.0.19043)",
+    "python": "3.14.3",
+    "sqlite": "3.50.4",
+    "fts5": true,
+    "pypdf_installed": false
+  },
+  "reported_results": {
+    "sources": 105,
+    "chunks": 8956,
+    "pdf_pages": 8440,
+    "price_rows": 6138,
+    "companies": 6,
+    "unit_tests": {
+      "total": 144,
+      "passed": 142,
+      "failures": 0,
+      "errors": 2,
+      "status": "未通过（缺pypdf，重复两次一致）"
+    },
+    "check_http": {
+      "passed": 20,
+      "total": 20
+    },
+    "check_v07": {
+      "passed": 61,
+      "total": 61,
+      "new_model_calls": 0
+    },
+    "web_groups": 10,
+    "console_errors": 0,
+    "new_pdf_import": "未测",
+    "model_case": {
+      "run_id": "f851cc76adb1",
+      "code": "002032",
+      "cutoff": "2026-10-06",
+      "semantic_rerank": false,
+      "successful_calls": 5,
+      "steps": 11,
+      "seconds": 65.51,
+      "evidence": 30,
+      "auto_revision_rounds": 1,
+      "first_review_issues": 15,
+      "first_review_high": 3,
+      "final_review_issues": 3,
+      "final_review_all_low": true,
+      "decision": "暂缓投资判断",
+      "expert_signoff": false,
+      "first_review_severity_counts": {
+        "高": 3,
+        "中": 8,
+        "低": 4
+      },
+      "final_review_severity_counts": {
+        "低": 3
+      },
+      "audit_successful_attempts_verified": 5,
+      "source": "完整导出previous_review与反向复核调用response一致；原报告分级计数有误，核对后更正。"
+    }
+  },
+  "evidence_boundary": {
+    "received": "三份反馈文件、交付说明及完整证据ZIP（84个文件，83项清单摘要全部匹配）",
+    "raw_screenshots_outputs_exports_received": true,
+    "browser_mode": "报告称采用无头Edge 145/CDP；下拉使用赋值与原生change；未做人工视觉评价",
+    "key_privacy": "完整导出、审计快照及交付文本中典型明文密钥样式无命中；只核对交付文件，未复测现场运行安全。",
+    "package_sha256": "bb9c0006ba7508139bd4ceb36ceeb5ee6c67bd82102a5532ccca24cffa00bf58",
+    "artifact_counts": {
+      "screenshots": 28,
+      "test_outputs": 22,
+      "exports": 13,
+      "scripts": 12,
+      "packaging_files": 4
+    },
+    "raw_model_export_checked": true,
+    "raw_model_audit_attempts_checked": 5,
+    "screenshots_inspected": [
+      "A_scope_coverage.png",
+      "I_live_model_memo.png"
+    ]
+  },
+  "clarifications": [
+    "报告中financial_reports=51来自旧基础计数，原三家51份加新增6份共57份；源码合并统计已修正。",
+    "报告“不在本次范围”仍列另一台实体电脑，与用户确认的机房验收场景及报告环境信息不一致。按用户提交的机房实测证据登记已完成主要功能及账号流程；完整自动测试与新PDF仍未通过/未测。",
+    "开发历史144项通过与本次机房142项通过、2项报错分别保留，不合并为全通过。",
+    "完整证据核对补充：首轮实际3高/8中/4低共15项，原说明误记2高/7中/6低；修订后3低一致。交付清单83项加清单本身共84个文件，原说明79项未更新。"
+  ],
+  "remaining": [
+    "在同一机房Python中安装pypdf，再重跑完整自动测试。",
+    "实际导入一份新的文字型PDF并核验原文、页码、检索、日期过滤。",
+    "金融人员复审f851cc76adb1的3项低风险意见及6类人工核验事项。",
+    "人工检查演示页面，用户完成计划书和视频。"
+  ],
+  "financial_review_categories": [
+    "应收同口径基期",
+    "利润调节桥与减值构成",
+    "SEB关联交易金额",
+    "外币敞口量化基础",
+    "行业政策口径",
+    "全部原页金额独立复审"
+  ],
+  "technical_feedback_changes": [
+    "静态企业菜单由企业接口填充，初始显示加载占位；资料计数显示加载占位。",
+    "年度与半年度资产负债提示和列名随期间变化。",
+    "合并统计包含新增财报、PDF、行情序列及各公司PDF数，防止重复累计。"
+  ],
+  "current_patch_verification": "V0.7机房反馈修订验证.json",
+  "feedback_revision": "lab-feedback-r2",
+  "later_evidence_verification": {
+    "date": "2026-10-14",
+    "manifest_entries": 83,
+    "all_sha256_matched": true,
+    "new_machine_test": false,
+    "new_model_calls": 0,
+    "unit_test_errors_still": 2,
+    "new_pdf_import_still": "未测",
+    "doc_file_count_corrected_from": 79,
+    "doc_file_count_corrected_to": 83,
+    "first_review_corrected_from": {
+      "高": 2,
+      "中": 7,
+      "低": 6
+    },
+    "first_review_corrected_to": {
+      "高": 3,
+      "中": 8,
+      "低": 4
+    }
+  }
+}

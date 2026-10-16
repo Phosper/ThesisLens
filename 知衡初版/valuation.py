@@ -3,6 +3,8 @@ from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 import core
 import financials
 import financial_depth
+import companies
+import operating_scenarios
 
 def decimal(value,name,low,high):
     if isinstance(value,bool):raise ValueError(name+'需要数字')
@@ -51,6 +53,7 @@ def market_pe(ctx,shares=None,assumptions=None):
 
 def context(code,cutoff):
     if code not in core.COMPANIES:raise ValueError('请选择公司')
+    if not companies.get(code)['listed']:raise ValueError('非上市企业当前按资料研究处理，不套用上市公司PE情景')
     core.validate_cutoff(cutoff)
     profit=financials.rolling(code,cutoff,'profit')
     cash=financials.rolling(code,cutoff,'cashflow')
@@ -67,6 +70,7 @@ def context(code,cutoff):
             'notes':['PE倍数是演示假设，没有声称来自行业可比估值。','股数需填已核对的普通股分摊数量；不能用报告EPS反推期末股本。',
                      '股权现金流需单独输入，不能把经营现金流直接当成FCFE。','A/H/D股价格差异、库存股和潜在稀释未完整建模；每股数值仅为所填分母下的情景参考。']}
     result['market_pe']=market_pe(result)
+    result['operating_baseline']=operating_scenarios.context(code,cutoff)
     return result
 
 def discounted_cashflow(fcfe,growth,discount,terminal,years):
@@ -90,6 +94,7 @@ def calculate(body):
     if type(reviewed) is not bool:raise ValueError('PE倍数人工复核声明需要布尔值')
     basis=basis.strip()[:2000]
     p=dict(p,pe_basis=basis,pe_basis_reviewed=reviewed)
+    operating=operating_scenarios.calculate(ctx.get('operating_baseline') or {'available':False,'reason':'海外经营基数不可用'},p)
     pe_basis={'text':basis,'reviewed':reviewed,
               'status':'missing' if not basis else ('user_reviewed' if reviewed else 'unreviewed')}
     dividend=decimal(p['dividend_per_share_yuan'],'每股期间股利假设',0,10000) if p.get('dividend_per_share_yuan') not in [None,''] else None
@@ -152,6 +157,6 @@ def calculate(body):
              'sensitivity':sensitivity,'formula':'股权价值 = 各年FCFE折现值之和 + 末年FCFE×(1+永续增长率)/(股权资本成本−永续增长率)的折现值',
              'input_basis':str(p.get('fcfe_basis','用户自行设定的情景假设'))[:500],
              'note':'采用股权现金流折现，直接得到股权价值，未再次加现金或减净债务；这不是FCFF/WACC模型。'}
-    return dict(ctx,assumptions=p,assumption_status='用户假设，未经独立验证',pe_basis=pe_basis,market_pe=reference,pe_scenarios=scenarios,dcf=dcf,
+    return dict(ctx,assumptions=p,assumption_status='用户假设，未经独立验证',pe_basis=pe_basis,market_pe=reference,pe_scenarios=scenarios,dcf=dcf,operating_scenario=operating,
                 earnings_formula=f"{ctx['ttm_profit']['amount_yi']} × (1 + {changes*100}%)",
                 notes=ctx['notes']+['情景值不是目标价，不形成买卖评级；未经核验的FCFE、倍数与股数会直接影响结果。'])

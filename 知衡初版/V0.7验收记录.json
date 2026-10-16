@@ -1,0 +1,822 @@
+{
+  "version": "0.7.0",
+  "checked_at": "2026-10-14T10:41:08+08:00",
+  "unit_tests": {
+    "passed": 144,
+    "failed": 0
+  },
+  "http": {
+    "version": "0.7.0",
+    "checked_at": "2026-10-14T10:38:25+08:00",
+    "live": false,
+    "private_fixture": false,
+    "checks": [
+      {
+        "name": "V0.7服务",
+        "passed": true
+      },
+      {
+        "name": "六家真实企业及报告覆盖",
+        "passed": true
+      },
+      {
+        "name": "002032四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002032自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "002508四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002508自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "600060四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "600060自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "海外毛利计算与PE隔离",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔披露时点",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "压力基数原页进入证据",
+        "passed": true
+      },
+      {
+        "name": "002032保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002032已定位附注全部取回",
+        "passed": true
+      },
+      {
+        "name": "002032调用身份",
+        "passed": true
+      },
+      {
+        "name": "老板电器披露时点",
+        "passed": true
+      },
+      {
+        "name": "老板电器研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "老板电器方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "老板电器研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "002508保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002508已定位附注全部取回",
+        "passed": true
+      },
+      {
+        "name": "002508调用身份",
+        "passed": true
+      },
+      {
+        "name": "海信视像披露时点",
+        "passed": true
+      },
+      {
+        "name": "海信视像研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "海信视像方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "海信视像研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "海信视像brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "海信视像full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "600060保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "600060已定位附注全部取回",
+        "passed": true
+      },
+      {
+        "name": "600060调用身份",
+        "passed": true
+      },
+      {
+        "name": "美的集团披露时点",
+        "passed": true
+      },
+      {
+        "name": "美的集团研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "美的集团方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "美的集团研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "美的集团brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "美的集团full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "000333保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "000333调用身份",
+        "passed": true
+      }
+    ],
+    "passed": 61,
+    "cases": [
+      {
+        "code": "002032",
+        "company": "苏泊尔",
+        "mode": "local",
+        "run_id": "ed88824bc309",
+        "evidence_count": 30,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "002508",
+        "company": "老板电器",
+        "mode": "local",
+        "run_id": "844605dcaa3f",
+        "evidence_count": 28,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "600060",
+        "company": "海信视像",
+        "mode": "local",
+        "run_id": "bc8fd6af7564",
+        "evidence_count": 30,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "000333",
+        "company": "美的集团",
+        "mode": "local",
+        "run_id": "90d808580a5e",
+        "evidence_count": 20,
+        "model_calls": 0,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 0
+        },
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "scope": "程序流程验收，不代表金融签认或投资效果验证。"
+  },
+  "live": {
+    "version": "0.7.0",
+    "checked_at": "2026-10-14T10:36:36+08:00",
+    "live": true,
+    "private_fixture": false,
+    "checks": [
+      {
+        "name": "V0.7服务",
+        "passed": true
+      },
+      {
+        "name": "六家真实企业及报告覆盖",
+        "passed": true
+      },
+      {
+        "name": "002032四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002032自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "002508四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "002508自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "600060四项流量与原页",
+        "passed": true
+      },
+      {
+        "name": "600060自身TTM、股份与保存日期报价",
+        "passed": true
+      },
+      {
+        "name": "海外毛利计算与PE隔离",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔披露时点",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "brief/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/md海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "苏泊尔full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "full/html海外毛利情景导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "压力基数原页进入证据",
+        "passed": true
+      },
+      {
+        "name": "002032保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002032已定位附注全部取回",
+        "passed": true
+      },
+      {
+        "name": "002032调用身份",
+        "passed": true
+      },
+      {
+        "name": "老板电器披露时点",
+        "passed": true
+      },
+      {
+        "name": "老板电器研究要求已保存",
+        "passed": true
+      },
+      {
+        "name": "老板电器方法进入检索",
+        "passed": true
+      },
+      {
+        "name": "老板电器研究章节完整",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器brief/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/md需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "老板电器full/html需求与缺口导出",
+        "passed": true
+      },
+      {
+        "name": "JSON保留完整研究快照",
+        "passed": true
+      },
+      {
+        "name": "002508保持核验边界",
+        "passed": true
+      },
+      {
+        "name": "002508已定位附注全部取回",
+        "passed": true
+      },
+      {
+        "name": "002508调用身份",
+        "passed": true
+      }
+    ],
+    "passed": 38,
+    "cases": [
+      {
+        "code": "002032",
+        "company": "苏泊尔",
+        "mode": "llm",
+        "run_id": "9eff0d73d74e",
+        "evidence_count": 30,
+        "model_calls": 5,
+        "review_counts": {
+          "高": 0,
+          "中": 4,
+          "低": 3
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "002508",
+        "company": "老板电器",
+        "mode": "llm",
+        "run_id": "c23a17985863",
+        "evidence_count": 29,
+        "model_calls": 5,
+        "review_counts": {
+          "高": 0,
+          "中": 4,
+          "低": 2
+        },
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "scope": "程序流程验收，不代表金融签认或投资效果验证。"
+  },
+  "public_cases": [
+    {
+      "code": "002032",
+      "company": "苏泊尔",
+      "mode": "llm",
+      "run_id": "9eff0d73d74e",
+      "evidence_count": 30,
+      "model_calls": 5,
+      "review_counts": {
+        "高": 0,
+        "中": 4,
+        "低": 3
+      },
+      "decision": "暂缓投资判断",
+      "file": "demo/case_model_v07.json",
+      "sha256": "430c65df2805230d012e4dee1e263956c9f45bc5e3b5d2f5585049083d75ed1c",
+      "expert_signoff": false,
+      "rule_findings": 0
+    },
+    {
+      "code": "002508",
+      "company": "老板电器",
+      "mode": "llm",
+      "run_id": "c23a17985863",
+      "evidence_count": 29,
+      "model_calls": 5,
+      "review_counts": {
+        "高": 0,
+        "中": 4,
+        "低": 2
+      },
+      "decision": "暂缓投资判断",
+      "file": "demo/case_model_v07_boss.json",
+      "sha256": "ea39bdf26975a28687d83ba583d5e39b610f95a5ac1da82f3f810eb49b36dfda",
+      "expert_signoff": false,
+      "rule_findings": 0
+    },
+    {
+      "code": "600060",
+      "company": "海信视像",
+      "mode": "llm",
+      "run_id": "6332d66b11d0",
+      "evidence_count": 32,
+      "model_calls": 5,
+      "review_counts": {
+        "高": 0,
+        "中": 4,
+        "低": 13
+      },
+      "decision": "暂缓投资判断",
+      "file": "demo/case_model_v07_hisense.json",
+      "sha256": "c14885d31ebaceabe13253cf113cebf86b9ad50d46c28056a1b68d1ab52c41d6",
+      "expert_signoff": false,
+      "rule_findings": 0
+    }
+  ],
+  "retrieval": {
+    "case_sha256": "5ec5d09b08bbee8b682ddcfc12860973c3cb1e3d97935481273ad9cf0706cb22",
+    "checked_at": "2026-10-14T10:27:12+08:00",
+    "phase": "after_technical_changes",
+    "cases": [
+      {
+        "id": "s_h_ar",
+        "rank": 1,
+        "top_pages": [
+          35,
+          38,
+          37,
+          114,
+          62
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "s_h_count",
+        "rank": 1,
+        "top_pages": [
+          28,
+          30,
+          98,
+          123,
+          32
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "s_f_stock",
+        "rank": 1,
+        "top_pages": [
+          66,
+          69,
+          114,
+          93,
+          113
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "s_f_cost",
+        "rank": 1,
+        "top_pages": [
+          13,
+          12,
+          160,
+          129,
+          8
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "b_h_cash",
+        "rank": 1,
+        "top_pages": [
+          43,
+          12,
+          109,
+          42,
+          44
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "b_h_due",
+        "rank": 1,
+        "top_pages": [
+          34,
+          35,
+          58,
+          36,
+          115
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "b_f_count",
+        "rank": 1,
+        "top_pages": [
+          46,
+          40,
+          8,
+          130,
+          32
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "b_f_product",
+        "rank": 1,
+        "top_pages": [
+          14,
+          13,
+          53,
+          38,
+          17
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "h_h_capex",
+        "rank": 1,
+        "top_pages": [
+          52,
+          53,
+          139,
+          73,
+          64
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "h_h_count",
+        "rank": 1,
+        "top_pages": [
+          60,
+          40,
+          129,
+          42,
+          58
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "h_f_foreign",
+        "rank": 1,
+        "top_pages": [
+          27,
+          240,
+          180,
+          12,
+          29
+        ],
+        "cutoff_valid": true
+      },
+      {
+        "id": "h_f_debt",
+        "rank": 1,
+        "top_pages": [
+          86,
+          85,
+          87,
+          88,
+          197
+        ],
+        "cutoff_valid": true
+      }
+    ],
+    "hit_at_5": 12,
+    "total": 12,
+    "mrr_at_5": 1.0,
+    "before_hit_at_5": 10,
+    "note": "固定开发验收题，已看过原页定位；不等同独立盲测、金融准确率或投资效果。"
+  },
+  "initial_model_iteration": {
+    "calls": 13,
+    "cases": [
+      {
+        "code": "002032",
+        "company": "苏泊尔",
+        "mode": "llm",
+        "run_id": "eb49ad4ce55d",
+        "evidence_count": 30,
+        "model_calls": 3,
+        "review_counts": {
+          "高": 0,
+          "中": 0,
+          "低": 3
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "002508",
+        "company": "老板电器",
+        "mode": "llm",
+        "run_id": "c4fc89964d9f",
+        "evidence_count": 28,
+        "model_calls": 5,
+        "review_counts": {
+          "高": 0,
+          "中": 3,
+          "低": 6
+        },
+        "decision": "暂缓投资判断"
+      },
+      {
+        "code": "600060",
+        "company": "海信视像",
+        "mode": "llm",
+        "run_id": "6332d66b11d0",
+        "evidence_count": 32,
+        "model_calls": 5,
+        "review_counts": {
+          "高": 0,
+          "中": 4,
+          "低": 13
+        },
+        "decision": "暂缓投资判断"
+      }
+    ],
+    "finding": "苏泊尔仅摘要空章节曾被接受；已加入空稿拦截和一次格式修复并复测。老板现金流调节跨页漏取已补，否定稳定结论误报已修正。"
+  },
+  "successful_model_calls_this_round": 23,
+  "dataset": {
+    "sources": 105,
+    "reports": 57,
+    "pdf_pages": 8440,
+    "market_rows": 6138,
+    "depth_reports": 12,
+    "operating_baselines": 5
+  },
+  "limitations": [
+    "开发标注12题不是独立盲测",
+    "真实模型仍有复核意见，未获金融签认",
+    "非上市企业真实样本原件待补",
+    "未验证实际投资效果",
+    "另一实体电脑及团队模型账号待验收",
+    "计划书和视频由用户制作"
+  ],
+  "clean_install": {
+    "passed": true,
+    "private_checks": 20,
+    "restored": [
+      {
+        "version": "v07",
+        "original": "9eff0d73d74e",
+        "historical_calls": 5
+      },
+      {
+        "version": "v07_boss",
+        "original": "c23a17985863",
+        "historical_calls": 5
+      },
+      {
+        "version": "v07_hisense",
+        "original": "6332d66b11d0",
+        "historical_calls": 5
+      }
+    ],
+    "new_model_calls": 0,
+    "public_network_calls": 0,
+    "scope": "同机干净安装，不代表另一实体电脑。"
+  },
+  "unit_tests_environment": {
+    "scope": "开发环境历史结果；完整144项包含需要pypdf的历史PDF案例恢复测试",
+    "pdf_dependency_installed": true,
+    "pdf_dependency_requirement": "pypdf==6.10.0",
+    "school_result_is_separate": true,
+    "school_supplement": "V0.7机房验收补充.json"
+  },
+  "limitations_as_of": "2026-10-14T10:41:08+08:00",
+  "later_acceptance_record": "V0.7机房验收补充.json"
+}

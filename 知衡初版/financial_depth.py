@@ -68,8 +68,7 @@ def registered_pages():
 @lru_cache(maxsize=1)
 def _registered_pages():
     ids={r['source_id'] for r in registry()}; pages={}
-    for line in audit.read_text(core.DATASET/'05_可检索文本/逐页语料.jsonl',purpose='registered_page_text_corpus').splitlines():
-        p=json.loads(line)
+    for p in core.corpus_pages():
         if p['source_id'] in ids:pages[(p['source_id'],p['pdf_page'])]=p['text']
     return pages
 
@@ -80,7 +79,7 @@ def reference(source, page):
             'source_sha256':source['sha256'],'file_url':f"/api/files/{source['source_id']}#page={page}"}
 
 def field(source, page, value, prior, unit, excerpt, basis):
-    factor=Decimal(1000 if unit=='千元' else 1)
+    factor=Decimal({'元':1,'千元':1000,'万元':10000}[unit])
     value=Decimal(value); prior=Decimal(prior) if prior is not None else None
     return dict(reference(source,page), value=str(value),prior=str(prior) if prior is not None else None,
                 unit=unit,amount_yuan=str(value*factor),amount_yi=fmt(value*factor/100000000),
@@ -121,8 +120,8 @@ def extract(record, source):
                          '合并现金流；购建长期资产支付现金的绝对值；不含收购子公司或全部投资支出')
     metrics=next((m for m in financials.metrics(source['report_period'],source['publication_date']) if m['source_id']==source['source_id']),None)
     ratios=[ratio('资产负债率',fields['liabilities'],fields['assets'],'总负债 ÷ 总资产 × 100'),
-            ratio('流动比率',fields['current_assets'],fields['current_liabilities'],'流动资产 ÷ 流动负债','倍'),
-            ratio('商誉占总资产',fields['goodwill'],fields['assets'],'商誉 ÷ 总资产 × 100')]
+            ratio('流动比率',fields['current_assets'],fields['current_liabilities'],'流动资产 ÷ 流动负债','倍')]
+    if 'goodwill' in fields:ratios.append(ratio('商誉占总资产',fields['goodwill'],fields['assets'],'商誉 ÷ 总资产 × 100'))
     proxy=None
     if metrics:
         cash=Decimal(metrics['cashflow'])*Decimal(metrics['factor_to_yuan']);cap=Decimal(fields['capex']['amount_yuan'])
@@ -138,16 +137,28 @@ def extract(record, source):
         # Curated values must occur on the original page, including line-wrapped decimals.
         compact=re.sub(r'\s+','',excerpt).replace(',','')
         if str(value) not in compact or (prior is not None and str(prior) not in compact):raise ValueError('分部登记金额在原页不存在')
-        f=field(source,item['page'],value,prior,record['unit'],item['label']+'；金额核对原页',item.get('basis',record['segment_basis']))
-        f.update(label=item['label'],group=item['group'],parent=item.get('parent'),share_pct=fmt(value/total*100),
-                 denominator=str(total),denominator_label='本报告营业收入 / 对外收入，非营业总收入')
+        unit=item.get('unit',record['unit'])
+        denominator=record.get('segment_denominators',{}).get(item['group'],{'value':str(total),'unit':record['unit'],'label':'本报告营业收入 / 对外收入，非营业总收入'})
+        numerator_yuan=value*Decimal({'元':1,'千元':1000,'万元':10000}[unit])
+        denominator_yuan=Decimal(denominator['value'])*Decimal({'元':1,'千元':1000,'万元':10000}[denominator['unit']])
+        f=field(source,item['page'],value,prior,unit,item['label']+'；金额核对原页',item.get('basis',record['segment_basis']))
+        if item.get('reported_growth') is not None:
+            f['change_pct']=str(item['reported_growth'])
+            f['growth_basis']='报告列示同比，未取得基期原值，不反推'
+        f.update(label=item['label'],group=item['group'],parent=item.get('parent'),share_pct=fmt(numerator_yuan/denominator_yuan*100),
+                 denominator=str(denominator_yuan),denominator_yi=fmt(denominator_yuan/100000000),denominator_label=denominator['label'])
         segments.append(f)
     for group in ['产品','地区']:
-        top=[Decimal(x['value']) for x in segments if x['group']==group and not x.get('parent')]
-        if top and abs(sum(top)-total)>Decimal('.02'):raise ValueError('分部或地区合计未匹配营业收入')
+        top=[Decimal(x['amount_yuan']) for x in segments if x['group']==group and not x.get('parent')]
+        denominator=record.get('segment_denominators',{}).get(group,{'value':str(total),'unit':record['unit']})
+        group_total=Decimal(denominator['value'])*Decimal({'元':1,'千元':1000,'万元':10000}[denominator['unit']])
+        tolerance=Decimal('.02')*Decimal({'元':1,'千元':1000,'万元':10000}[denominator['unit']])
+        if top and abs(sum(top)-group_total)>tolerance:raise ValueError('分部或地区合计未匹配登记分母')
     shares=dict(record['shares'],**reference(source,record['shares']['page']))
     share_text=re.sub(r'\s+','',pages[(source['source_id'],shares['page'])]).replace(',','')
-    if str(shares['total']) not in share_text:raise ValueError('期末股份总数未匹配登记原页')
+    raw_share=shares.get('raw_total',str(shares['total']))
+    if str(raw_share) not in share_text:raise ValueError('期末股份总数未匹配登记原页')
+    if Decimal(str(raw_share))*Decimal(shares.get('factor_to_shares',1))!=Decimal(shares['total']):raise ValueError('股数单位换算不一致')
     if sum(int(x['count']) for x in shares['classes'])!=int(shares['total']):raise ValueError('股份类别合计不匹配')
     shares.update(total_yi=str(Decimal(shares['total'])/100000000),
                   note='报告期末已发行股份，未扣库存股、未考虑潜在稀释；不等同于EPS加权平均股数或研究日即时股数。不同上市类别不共用同一市场价格。')
@@ -157,8 +168,9 @@ def extract(record, source):
     return {'available':True,'company':core.COMPANIES[source['stock_code']],'code':source['stock_code'],
             'period':source['report_period'],'publication_date':source['publication_date'],'source_id':source['source_id'],
             'source_sha256':source['sha256'],'fields':fields,'ratios':ratios,'cash_proxy':proxy,'segments':segments,'shares':shares,
-            'operating_revenue_yi':fmt(total*Decimal(1000 if record['unit']=='千元' else 1)/100000000),
-            'notes':flags,'verification':'已登记6份财报原页；规则复算，非独立专家认证'}
+            'operating_revenue_yi':fmt(total*Decimal({'元':1,'千元':1000,'万元':10000}[record['unit']])/100000000),
+            'notes':flags,'segment_note':record.get('segment_note',''),
+            'verification':f'已登记{len(registry())}份财报原页；规则复算，非独立专家认证'}
 
 def snapshot(code, cutoff, period=None):
     if code not in core.COMPANIES:raise ValueError('请选择公司')
